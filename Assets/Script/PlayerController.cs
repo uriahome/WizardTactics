@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     public Text CostText;//マナコスト表示用のテキスト
 
-    public int Attack;
+    public int Attack;//攻撃力
 
     // Start is called before the first frame update
     void Start()
