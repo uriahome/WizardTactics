@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         DeltaTime = 0;
-        Mana = 0;
+        Mana = 0;//初期化
     }
 
     // Update is called once per frame
