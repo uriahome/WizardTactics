@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     public int Mana;//マナコスト
 
-    public int MaxMana;
+    public int MaxMana;//最大マナコスト
 
     public Text CostText;//マナコスト表示用のテキスト
 
