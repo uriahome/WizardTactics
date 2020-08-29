@@ -23,26 +23,29 @@ public class PlayerController : MonoBehaviour
 
     public int Attack;//攻撃力
 
+    public Animator PlayerAnim;//Animator用
+
     // Start is called before the first frame update
     void Start()
     {
         DeltaTime = 0;
         Mana = 0;//初期化
+        PlayerAnim = GetComponent<Animator>();//自身のAnimatorの取得
     }
 
     // Update is called once per frame
     void Update()
     {
         //Summon();
-        DeltaTime  += AddMana * Time.deltaTime;
-        if(DeltaTime >= SpanTime && Mana != MaxMana)//一定時間貯まったらマナが1つ増える
+        DeltaTime += AddMana * Time.deltaTime;
+        if (DeltaTime >= SpanTime && Mana != MaxMana)//一定時間貯まったらマナが1つ増える
         {
             DeltaTime = 0;
             Mana++;
         }
 
         CostText.text = "Cost:" + Mana + "/" + MaxMana.ToString();
-        
+
     }
     /*public void Summon()
     {
@@ -54,4 +57,11 @@ public class PlayerController : MonoBehaviour
 
         }
     }*/
+    public void PlayerAnimation(int Num)//Playerのアニメーション変更する
+    {
+        if(Num == 0)
+        {
+            PlayerAnim.SetTrigger("Magic");//魔法を唱えるアニメーションに移行させる
+        }
+    }
 }

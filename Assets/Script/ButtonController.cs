@@ -42,6 +42,8 @@ public class ButtonController : MonoBehaviour
         int NowMana = PCon.Mana;
         if(NowMana >= MyCost)
         {
+            PCon.PlayerAnimation(0);//魔法を唱えるアニメーションに移行させる
+
             if (!Magic)//モンスターなら
             {
                 GameObject Summon = Instantiate(Card) as GameObject;//生成する
