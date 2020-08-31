@@ -102,24 +102,24 @@ public class Monster : MonoBehaviour
     {
         //Debug.Log("AttackMove");
         IsAttack = true;
-        StartCoroutine("AttackMotion");
+        StartCoroutine("AttackMotion");//攻撃モーションの開始
     }
 
     IEnumerator AttackMotion()
     {
-        StartCoroutine("UpDown");
+        StartCoroutine("UpDown");//なんとなく上下に動かす
         rigid2d.velocity = new Vector2(0, 0) * 0;//止める
-        IsAttack = true;
+        IsAttack = true;//攻撃中の設定にする
         //Debug.Log("AttackMotion");
         //transform.Translate(0, 0.1f, 0);
         GameObject Obj = Instantiate(AttackObj) as GameObject;//攻撃範囲を生成する
-        if (IsEnemy)
+        if (IsEnemy)//敵キャラの時の処理
         {
             Obj.gameObject.tag = "EnemyAttack";
             //Obj.transform.position = MyRangePosition.transform.position;//射程の範囲に出す
             Obj.transform.position = new Vector3(MyRangePosition.transform.position.x-1, MyRangePosition.transform.position.y, MyRangePosition.transform.position.z);
         }
-        else
+        else//自キャラの時の処理
         {
             Obj.gameObject.tag = "PlayerAttack";
             //Obj.transform.position = MyRangePosition.transform.position;//射程の範囲に出す
@@ -198,6 +198,10 @@ public class Monster : MonoBehaviour
         this.Hp -= Power;//ダメージを受ける
         if (Hp <= 0)//未満なら破壊される
         {
+            Debug.Log("やられた"+this.gameObject);
+            if(Master){//マスターがやられたなら
+                GManager.instance.Battle = false;//戦闘終了
+            }
             Destroy(this.gameObject);
         }
     }
