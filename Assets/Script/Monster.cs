@@ -28,8 +28,10 @@ public class Monster : MonoBehaviour
     public SpriteRenderer MySprite;//色変更用
     public bool Freeze;//氷状態
 
+    public bool Master;//マスターかどうか
 
-    public Monster(string Name, float Hp, int Attack ,float Speed,float MaxSpeed,GameObject Body,int ManaCost)
+
+    public Monster(string Name, float Hp, int Attack ,float Speed,float MaxSpeed,GameObject Body,int ManaCost)//生かせてない
     {
         this.Name = Name;
         this.Hp = Hp;
@@ -78,6 +80,9 @@ public class Monster : MonoBehaviour
         {
             rigid2d.velocity = new Vector2(0, 0) * 0;
             StartCoroutine("FreezeDelete");
+        }
+        if(Master){
+            this.transform.position = new Vector3(7.56f,1.0f,0.0f);
         }
     }
 
@@ -190,8 +195,8 @@ public class Monster : MonoBehaviour
     {
         //Debug.Log("Hit" + this.gameObject);
         StartCoroutine("Blink");//点滅処理そして無敵
-        this.Hp -= Power;
-        if (Hp < 0)
+        this.Hp -= Power;//ダメージを受ける
+        if (Hp <= 0)//未満なら破壊される
         {
             Destroy(this.gameObject);
         }

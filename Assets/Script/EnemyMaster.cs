@@ -17,14 +17,17 @@ public class EnemyMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.delta += Time.deltaTime;
-        if(this.delta > this.span)
+        if (GManager.instance.Battle)//戦闘中ならば
         {
-            this.delta = 0;
-            int Num = Random.Range(1,100);
-            int SummonNum = Num % 3;
-            GameObject Enemy = Instantiate(EnemyList[SummonNum]) as GameObject;
-            Enemy.transform.position = new Vector3(this.transform.position.x,0.1f,this.transform.position.z);
+            this.delta += Time.deltaTime;
+            if (this.delta > this.span)
+            {
+                this.delta = 0;
+                int Num = Random.Range(1, 100);
+                int SummonNum = Num % 3;
+                GameObject Enemy = Instantiate(EnemyList[SummonNum]) as GameObject;
+                Enemy.transform.position = new Vector3(this.transform.position.x, 0.1f, this.transform.position.z);
+            }
         }
     }
 }

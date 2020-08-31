@@ -36,15 +36,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Summon();
-        DeltaTime += AddMana * Time.deltaTime;
-        if (DeltaTime >= SpanTime && Mana != MaxMana)//一定時間貯まったらマナが1つ増える
+        if (GManager.instance.Battle)//戦闘中なら
         {
-            DeltaTime = 0;
-            Mana++;
-        }
+            //Summon();
+            DeltaTime += AddMana * Time.deltaTime;
+            if (DeltaTime >= SpanTime && Mana != MaxMana)//一定時間貯まったらマナが1つ増える
+            {
+                DeltaTime = 0;
+                Mana++;
+            }
 
-        CostText.text = "Cost:" + Mana + "/" + MaxMana.ToString();
+            CostText.text = "Cost:" + Mana + "/" + MaxMana.ToString();
+        }
 
     }
     /*public void Summon()
@@ -59,7 +62,7 @@ public class PlayerController : MonoBehaviour
     }*/
     public void PlayerAnimation(int Num)//Playerのアニメーション変更する
     {
-        if(Num == 0)
+        if (Num == 0)
         {
             PlayerAnim.SetTrigger("Magic");//魔法を唱えるアニメーションに移行させる
         }
