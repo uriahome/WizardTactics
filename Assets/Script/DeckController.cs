@@ -15,19 +15,19 @@ public class DeckController : MonoBehaviour
     void Start()
     {
 
-        DeckSetting();
-        DeckShuffle();
-       /* for(int i =0; i < 3; i++)
-        {
-            Button Draw = DeckDraw();
-            Draw.transform.SetParent(DeckCanvas.transform);
-        }*/
+        DeckSetting();//この戦闘で使用するデッキをセットする
+        DeckShuffle();//デッキを混ぜる
+        /* for(int i =0; i < 3; i++)
+         {
+             Button Draw = DeckDraw();
+             Draw.transform.SetParent(DeckCanvas.transform);
+         }*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void DeckSetting()
@@ -37,7 +37,7 @@ public class DeckController : MonoBehaviour
 
     public void DeckShuffle()
     {
-        for(int i = 0;i < BattleDeckList.Count; i++)
+        for (int i = 0; i < BattleDeckList.Count; i++)
         {
             GameObject temp = BattleDeckList[i];
             int RandomIndex = Random.Range(0, BattleDeckList.Count);
@@ -47,12 +47,12 @@ public class DeckController : MonoBehaviour
         NowDeckList = new List<GameObject>(BattleDeckList);//更新したデッキをセットする
     }
 
-    public  GameObject DeckDraw()//デッキから1枚引く
+    public GameObject DeckDraw()//デッキから1枚引く
     {
         GameObject Draw;
         Draw = NowDeckList[NowDeckList.Count - 1];
         NowDeckList.RemoveAt(NowDeckList.Count - 1);
-        Debug.Log(Draw+"を引きました");
+        Debug.Log(Draw + "を引きました");
         if (NowDeckList.Count == 0)
         {
             DeckShuffle();
@@ -66,5 +66,10 @@ public class DeckController : MonoBehaviour
         GameObject Draw = DeckDraw();
         GameObject Summon = Instantiate(Draw) as GameObject;
         Summon.transform.SetParent(DeckCanvas.transform);
+    }
+
+    public void DeckAdd(GameObject AddCard)
+    {//デッキ内にカードを追加する
+        DeckList.Add(AddCard);//デッキに追加する
     }
 }
