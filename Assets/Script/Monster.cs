@@ -203,13 +203,24 @@ public class Monster : MonoBehaviour
         {
             Debug.Log("やられた"+this.gameObject);
             if(Master){//マスターがやられたなら
-                GManager.instance.Battle = false;//戦闘終了
-                GManager.instance.Win();//勝ち
-            }
+                //GManager.instance.Battle = false;//戦闘終了
+                //GManager.instance.Win();//勝ち
+                StartCoroutine("MasterDeath");
+            }else{
+
             Destroy(this.gameObject);
+            }
         }
     }
 
+public IEnumerator MasterDeath(){
+    yield return new WaitForSeconds(0.1f);
+    Destroy(this.gameObject);
+    GManager.instance.Battle = false;//戦闘終了
+    GManager.instance.Win();//勝ち
+    //Destroy(this.gameObject);
+    //yield break;
+}
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (IsEnemy)//敵かどうか

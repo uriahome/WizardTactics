@@ -199,7 +199,7 @@ MonoBehaviour:
   - {fileID: 407444071, guid: feeb1674981eb394c8ebb599ffb95342, type: 3}
   - {fileID: 6829478240434471785, guid: 9c20fd642a2dbca4ba48e2b18b1fbe12, type: 3}
   - {fileID: 983478005507316424, guid: 1131aa2ea67c75c45bddc2bff036c96b, type: 3}
-  span: 10
+  span: 3
   delta: 0
 --- !u!114 &8591054784371441492
 MonoBehaviour:
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8591054784371441490}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7531af2e8dcd5134194fae1681d6f2d2, type: 3}
   m_Name: 

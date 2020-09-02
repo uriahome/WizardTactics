@@ -37,7 +37,7 @@ public class RewardController : MonoBehaviour
             Destroy(child.gameObject);
         }
         Random.InitState(System.DateTime.Now.Millisecond);//現在の時間をシード値にする
-        CardListRange = 5;//CardList.Length;//カードリストの長さを代入//とりあえず5にするしかない
+        CardListRange = 3;//CardList.Length;//カードリストの長さを代入//とりあえず5にするしかない
         for (int i = 0; i < 3; i++)
         {
             RandomNum = Random.Range(0, CardListRange);//ランダムに1枚選択
