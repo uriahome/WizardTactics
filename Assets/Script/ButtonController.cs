@@ -28,27 +28,27 @@ public class ButtonController : MonoBehaviour
         Deck = GameObject.Find("Deck");
         DCon = Deck.gameObject.GetComponent<DeckController>();
 
-        AttackButton = GameObject.Find("Canvas/Mana/AttackButton");
+        AttackButton = GameObject.Find("DeckCanvas/Mana/AttackButton");
         AttackCon = AttackButton.GetComponent<AttackButtonController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void OnClick() //ボタンが押されたとき
     {
         int NowMana = PCon.Mana;
-        if(NowMana >= MyCost)
+        if (NowMana >= MyCost)
         {
             PCon.PlayerAnimation(0);//魔法を唱えるアニメーションに移行させる
 
             if (!Magic)//モンスターなら
             {
                 GameObject Summon = Instantiate(Card) as GameObject;//生成する
-             //   Summon.transform.position = Player.transform.position;//Playerの場所に出す
-                Summon.transform.position = new Vector3(Player.transform.position.x,0.1f,Player.transform.position.z);
+                                                                    //   Summon.transform.position = Player.transform.position;//Playerの場所に出す
+                Summon.transform.position = new Vector3(Player.transform.position.x, 0.1f, Player.transform.position.z);
                 DCon.DestroyCard(this.gameObject);
                 PCon.Mana -= MyCost;
                 Debug.Log("召喚しました！");
@@ -104,4 +104,9 @@ public class ButtonController : MonoBehaviour
             yield return new WaitForSeconds(interval);
         }
     }*/
+
+    public void RewardOnClick(int Num)
+    {//報酬画面でのクリック時
+        GManager.instance.BattleReward(Num);//自分の番号を送る
+    }
 }

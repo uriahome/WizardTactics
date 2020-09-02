@@ -84,6 +84,9 @@ public class Monster : MonoBehaviour
         if(Master){
             this.transform.position = new Vector3(7.56f,1.0f,0.0f);
         }
+        if(!GManager.instance.Battle){
+            Destroy(this.gameObject);//非戦闘時は消える
+        }
     }
 
     public void Move()
@@ -201,6 +204,7 @@ public class Monster : MonoBehaviour
             Debug.Log("やられた"+this.gameObject);
             if(Master){//マスターがやられたなら
                 GManager.instance.Battle = false;//戦闘終了
+                GManager.instance.Win();//勝ち
             }
             Destroy(this.gameObject);
         }

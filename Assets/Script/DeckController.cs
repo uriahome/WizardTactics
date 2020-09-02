@@ -61,7 +61,7 @@ public class DeckController : MonoBehaviour
     }
 
     public void DestroyCard(GameObject DButton)
-    {
+    {//使用したカードは破棄されて新たに1枚引く
         Destroy(DButton);
         GameObject Draw = DeckDraw();
         GameObject Summon = Instantiate(Draw) as GameObject;
