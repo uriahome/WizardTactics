@@ -30,6 +30,8 @@ public class Monster : MonoBehaviour
 
     public bool Master;//マスターかどうか
 
+    public bool FreezeAttackM;//氷属性の攻撃かどうか
+
 
     public Monster(string Name, float Hp, int Attack ,float Speed,float MaxSpeed,GameObject Body,int ManaCost)//生かせてない
     {
@@ -131,6 +133,9 @@ public class Monster : MonoBehaviour
         //Obj.transform.position = MyRangePosition.transform.position;//射程の範囲に出す
         ShockWave SObj = Obj.GetComponent<ShockWave>();
         SObj.Power = this.Attack;//攻撃力の代入
+        if(FreezeAttackM){//氷属性攻撃なら氷攻撃にちゃんとする
+            SObj.FreezeAttack = true;
+        }
         yield return new WaitForSeconds(AttackSpan);
         //transform.Translate(0, -0.1f, 0);
         Destroy(Obj.gameObject);//判定を消す
@@ -229,7 +234,8 @@ public IEnumerator MasterDeath(){
             {
                 if (!collision.GetComponent<ShockWave>().IsHit)//まだその攻撃に誰も当たっていないか
                 {
-                    if (collision.GetComponent<ShockWave>().FreezeAttack)
+                    //Debug.Log(collision.GetComponent<ShockWave>().IsHit);
+                    if (collision.GetComponent<ShockWave>().FreezeAttack &&(!Freeze))
                     {
                         Freeze = true;
                         MySprite.color = new Color(0, 255f, 255f, 255f);
