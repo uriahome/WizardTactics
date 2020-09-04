@@ -255,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShotObject: {fileID: 3083025813808912546, guid: 9976c3e7577a5f94faee1c767a411cf0,
     type: 3}
-  span: 1
+  span: 3
   delta: 0
   Player: {fileID: 0}
   PCon: {fileID: 0}
