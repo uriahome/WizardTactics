@@ -2346,27 +2346,32 @@ PrefabInstance:
     - target: {fileID: 9203825510015162791, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203825510015162791, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
+        type: 3}
+      propertyPath: m_Name
+      value: MagicEnhanceButton
       objectReference: {fileID: 0}
     - target: {fileID: 360493373295104147, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 360493373295104147, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 360493373295104147, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 420
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 360493373295104147, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2994671095925748136, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
         type: 3}
@@ -2403,6 +2408,12 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6087121449909076765, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ac937b6cc98750c49a2029c4371b0d9e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e, type: 3}
 --- !u!1001 &4063732095437440093

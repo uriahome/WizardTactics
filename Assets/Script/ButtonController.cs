@@ -56,7 +56,7 @@ public class ButtonController : MonoBehaviour
             else
             {
                 string Name = this.gameObject.name;
-                Name = Name.Replace("(Clone)", "");
+                Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
                 Debug.Log(Name);
                 OnMagic(Name);
                 DCon.DestroyCard(this.gameObject);
@@ -70,20 +70,25 @@ public class ButtonController : MonoBehaviour
             Debug.Log("コストを払えませんでした");
         }
     }
-    public void OnMagic(string Name)
+    public void OnMagic(string Name)//名前によって処理を変える
     {
         Debug.Log("Magic!!");
         Debug.Log(Name);
         switch (Name)
         {
             case "ThreeRedPotionButton":
-                Debug.Log("aaa");
+                //Debug.Log("aaa");
                 //StartCoroutine("ThreePotion");
                 AttackCon.ThreePotion(0);
                 break;
             case "ThreePotionButton":
                 AttackCon.ThreePotion(1);
                 break;
+            case "MagicEnhanceButton":
+                Debug.Log("魔力アップ！！");
+                PCon.Attack += 10;//プレイヤー自身の攻撃力を上げる(ポーションとかの威力が上がる)
+                break;
+
         }
     }
 
