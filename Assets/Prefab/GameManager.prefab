@@ -44,3 +44,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Battle: 1
+  DeckCon: {fileID: 0}
+  DCon: {fileID: 0}
+  ButtonList:
+  - {fileID: 8523457917720517580, guid: 138ad0766e7f5b14eadfcb215b269a03, type: 3}
+  - {fileID: 4122617889234532883, guid: 25f9e13b7c526af40bf3c47557daef6f, type: 3}
+  - {fileID: 3458110646260029856, guid: fcb2e9951b2d23348bb5e9fb5f43d51a, type: 3}
+  - {fileID: 8956544647980665590, guid: 756415b26a8c0df499e2609fc5901000, type: 3}
+  - {fileID: 3008023740709798629, guid: efcca98f73a2eb74198d7a970b670033, type: 3}
+  - {fileID: 8409850122532748439, guid: 37508568af8d13c4ab044b5579fc5dab, type: 3}
+  - {fileID: 3999146781125628979, guid: cb783373774b75a4282f36371b3ab5cb, type: 3}
+  - {fileID: 5159378420589732681, guid: f66770679f366d9418bdf2b9f04557bd, type: 3}
+  RewardCon: {fileID: 0}
+  RCon: {fileID: 0}
+  EnemyM: {fileID: 0}
+  EnemyMan: {fileID: 0}
