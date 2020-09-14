@@ -84,7 +84,7 @@ public class Monster : MonoBehaviour
             StartCoroutine("FreezeDelete");
         }
         if(Master){
-            this.transform.position = new Vector3(7.56f,1.0f,0.0f);
+            this.transform.position = new Vector3(7.56f,1.0f,0.0f);//敵のマスターならこの座標にいる
         }
         if(!GManager.instance.Battle){
             Destroy(this.gameObject);//非戦闘時は消える
