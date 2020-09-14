@@ -13,9 +13,11 @@ public class Building : MonoBehaviour
     public GameObject Player;
     public PlayerController PCon;
     public bool MakeFire;//モンスター以外を召喚するかどうか(ポーション系の場合はtrue)
+    public Monster BuildMon;//耐久値を削れるように自分のMonsterにアクセスできるようにする
     // Start is called before the first frame update
     void Start()
     {
+        BuildMon = this.GetComponent<Monster>();
         delta = 0;
         Player = GameObject.Find("PlayerMaster");
         PCon = Player.GetComponent<PlayerController>();
@@ -34,6 +36,7 @@ public class Building : MonoBehaviour
         {
             this.delta += Time.deltaTime;//経過時間の加算(いつものやつ)
         }
+        BuildMon.Hp -= Time.deltaTime*10;//少しずつ耐久を削る
     }
 
     void MakeObj()
