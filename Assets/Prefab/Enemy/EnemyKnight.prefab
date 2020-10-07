@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Knight
+  MaxHp: 100
   Hp: 100
   Attack: 20
   Body: {fileID: 0}
@@ -332,6 +333,11 @@ MonoBehaviour:
   AttackObj: {fileID: 6835973432984648619, guid: 07ee13c4bc586af4791279d585eb0c8b,
     type: 3}
   rigid2d: {fileID: 0}
+  MySprite: {fileID: 0}
+  Freeze: 0
+  Master: 0
+  FreezeAttackM: 0
+  PlayerMaster: 0
 --- !u!1 &8157617796900524774
 GameObject:
   m_ObjectHideFlags: 0

@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: EnemyMaster
+  MaxHp: 300
   Hp: 300
   Attack: 0
   Body: {fileID: 0}
@@ -233,6 +234,8 @@ MonoBehaviour:
   MySprite: {fileID: 0}
   Freeze: 0
   Master: 1
+  FreezeAttackM: 0
+  PlayerMaster: 0
 --- !u!50 &8591054784371441495
 Rigidbody2D:
   serializedVersion: 4

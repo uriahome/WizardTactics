@@ -17,6 +17,10 @@ public class GManager : MonoBehaviour
 
     public GameObject EnemyM;//敵の生成をしてくれるやつ
     public EnemyManager EnemyMan;
+
+    public GameObject PlayerM;//プレイヤーマスター
+    public PlayerController PCon;//プレイヤーコントローラー
+    public Monster PMon;//プレイヤーのモンスター
     // public GameObject RewardCard;//実際に手に入れるカード
     private void Awake()
     {
@@ -39,6 +43,12 @@ public class GManager : MonoBehaviour
         EnemyM = GameObject.Find("EnemyManager");
         EnemyMan = EnemyM.GetComponent<EnemyManager>();
 
+        PlayerM = GameObject.Find("PlayerMaster");
+        PCon = PlayerM.GetComponent<PlayerController>();
+        PMon = PlayerM.GetComponent<Monster>();
+
+        BattleStart();
+
     }
 
     public void BattleReward(int Num)
@@ -48,7 +58,11 @@ public class GManager : MonoBehaviour
     }
 
     public void BattleStart()
-    {//
+    {
+        //GameObject Master = Instantiate(PlayerM) as GameObject;
+        //Master.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        PCon.SetUp();//プレイヤーマスターの攻撃力等をデフォルトに再設定する
+        PMon.Refresh();//全回復させる
         Battle = true;
         DCon.DeckSetting();
         DCon.DeckShuffle();

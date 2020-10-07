@@ -59,3 +59,4 @@ MonoBehaviour:
   RCon: {fileID: 0}
   EnemyM: {fileID: 0}
   EnemyMan: {fileID: 0}
+  PlayerM: {fileID: 5442020063730069642, guid: ba439deed2efe874ca1177ced90598c1, type: 3}

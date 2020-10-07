@@ -7,6 +7,8 @@ public class Monster : MonoBehaviour
 
 
     public string Name;
+
+    public float MaxHp;//最大体力
     public float Hp;
     public int Attack;
     public GameObject Body;
@@ -20,7 +22,7 @@ public class Monster : MonoBehaviour
     public int MoveDirection;
 
     public GameObject MyRangePosition;
-    [SerializeField] MonsterRange  MyRange= default;
+    [SerializeField] MonsterRange MyRange = default;
     public GameObject AttackObj;//攻撃判定
 
     public Rigidbody2D rigid2d;
@@ -28,12 +30,14 @@ public class Monster : MonoBehaviour
     public SpriteRenderer MySprite;//色変更用
     public bool Freeze;//氷状態
 
-    public bool Master;//マスターかどうか
+    public bool Master;//マスターかどうか(敵)
 
     public bool FreezeAttackM;//氷属性の攻撃かどうか
 
+    public bool PlayerMaster;//プレイヤーのマスターかどうか
 
-    public Monster(string Name, float Hp, int Attack ,float Speed,float MaxSpeed,GameObject Body,int ManaCost)//生かせてない
+
+    public Monster(string Name, float Hp, int Attack, float Speed, float MaxSpeed, GameObject Body, int ManaCost)//生かせてない
     {
         this.Name = Name;
         this.Hp = Hp;
@@ -59,7 +63,8 @@ public class Monster : MonoBehaviour
     void Update()
     {
         SpeedX = Mathf.Abs(this.rigid2d.velocity.x);//現在の速度を代入
-        if (!Freeze) {//凍っていないことが前提
+        if (!Freeze)
+        {//凍っていないことが前提
             if (MyRange.DetectTarget)
             {
                 //Debug.Log("nyaa");
@@ -83,11 +88,16 @@ public class Monster : MonoBehaviour
             rigid2d.velocity = new Vector2(0, 0) * 0;
             StartCoroutine("FreezeDelete");
         }
-        if(Master){
-            this.transform.position = new Vector3(7.56f,1.0f,0.0f);//敵のマスターならこの座標にいる
+        if (Master)
+        {
+            this.transform.position = new Vector3(7.56f, 1.0f, 0.0f);//敵のマスターならこの座標にいる
         }
-        if(!GManager.instance.Battle){
-            Destroy(this.gameObject);//非戦闘時は消える
+        if (!GManager.instance.Battle)
+        {
+            if (!PlayerMaster)
+            {
+                Destroy(this.gameObject);//非戦闘時は消える
+            }
         }
     }
 
@@ -101,7 +111,7 @@ public class Monster : MonoBehaviour
         {
             this.rigid2d.AddForce(transform.right * this.Speed);
         }*/
-        this.rigid2d.AddForce(transform.right * this.Speed*MoveDirection);
+        this.rigid2d.AddForce(transform.right * this.Speed * MoveDirection);
     }
     public void AttackMove()
     {
@@ -122,7 +132,7 @@ public class Monster : MonoBehaviour
         {
             Obj.gameObject.tag = "EnemyAttack";
             //Obj.transform.position = MyRangePosition.transform.position;//射程の範囲に出す
-            Obj.transform.position = new Vector3(MyRangePosition.transform.position.x-1, MyRangePosition.transform.position.y, MyRangePosition.transform.position.z);
+            Obj.transform.position = new Vector3(MyRangePosition.transform.position.x - 1, MyRangePosition.transform.position.y, MyRangePosition.transform.position.z);
         }
         else//自キャラの時の処理
         {
@@ -133,7 +143,8 @@ public class Monster : MonoBehaviour
         //Obj.transform.position = MyRangePosition.transform.position;//射程の範囲に出す
         ShockWave SObj = Obj.GetComponent<ShockWave>();
         SObj.Power = this.Attack;//攻撃力の代入
-        if(FreezeAttackM){//氷属性攻撃なら氷攻撃にちゃんとする
+        if (FreezeAttackM)
+        {//氷属性攻撃なら氷攻撃にちゃんとする
             SObj.FreezeAttack = true;
         }
         yield return new WaitForSeconds(AttackSpan);
@@ -155,7 +166,7 @@ public class Monster : MonoBehaviour
             transform.Translate(0, 0.1f, 0);
             yield return new WaitForSeconds(interval);
             transform.Translate(0, -0.1f, 0);
-            if(UpCount >= 2)
+            if (UpCount >= 2)
             {
                 yield break;
             }
@@ -206,36 +217,46 @@ public class Monster : MonoBehaviour
         this.Hp -= Power;//ダメージを受ける
         if (Hp <= 0)//未満なら破壊される
         {
-            Debug.Log("やられた"+this.gameObject);
-            if(Master){//マスターがやられたなら
+            Debug.Log("やられた" + this.gameObject);
+            if (Master)
+            {//マスターがやられたなら
                 //GManager.instance.Battle = false;//戦闘終了
                 //GManager.instance.Win();//勝ち
                 StartCoroutine("MasterDeath");
-            }else{
+            }
+            else
+            {
 
-            Destroy(this.gameObject);
+                Destroy(this.gameObject);
             }
         }
     }
 
-public IEnumerator MasterDeath(){
-    yield return new WaitForSeconds(0.1f);
-    Destroy(this.gameObject);
-    GManager.instance.Battle = false;//戦闘終了
-    GManager.instance.Win();//勝ち
-    //Destroy(this.gameObject);
-    //yield break;
-}
+    public IEnumerator MasterDeath()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Destroy(this.gameObject);
+        GManager.instance.Battle = false;//戦闘終了
+        GManager.instance.Win();//勝ち
+                                //Destroy(this.gameObject);
+                                //yield break;
+    }
+
+    public void Refresh()
+    {//全回復
+        this.Hp = MaxHp;
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (IsEnemy)//敵かどうか
         {
-            if(collision.gameObject.tag == "PlayerAttack")//Player側からの攻撃か
+            if (collision.gameObject.tag == "PlayerAttack")//Player側からの攻撃か
             {
                 if (!collision.GetComponent<ShockWave>().IsHit)//まだその攻撃に誰も当たっていないか
                 {
                     //Debug.Log(collision.GetComponent<ShockWave>().IsHit);
-                    if (collision.GetComponent<ShockWave>().FreezeAttack &&(!Freeze))
+                    if (collision.GetComponent<ShockWave>().FreezeAttack && (!Freeze))
                     {
                         Freeze = true;
                         MySprite.color = new Color(0, 255f, 255f, 255f);

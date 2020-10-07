@@ -15,12 +15,14 @@ public class PlayerController : MonoBehaviour
 
     public float DeltaTime;//経過時間
 
+    public int DefaultMana;//初期マナ
     public int Mana;//マナコスト
 
     public int MaxMana;//最大マナコスト
 
     public Text CostText;//マナコスト表示用のテキスト
-
+    
+    public int DefaultAttack;//初期攻撃力 
     public int Attack;//攻撃力
 
     public Animator PlayerAnim;//Animator用
@@ -66,5 +68,10 @@ public class PlayerController : MonoBehaviour
         {
             PlayerAnim.SetTrigger("Magic");//魔法を唱えるアニメーションに移行させる
         }
+    }
+
+    public void SetUp(){
+        Attack = DefaultAttack;//攻撃力をリセット
+        Mana = DefaultMana;//マナもリセット
     }
 }

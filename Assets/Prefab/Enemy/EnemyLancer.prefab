@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Lancer
+  MaxHp: 120
   Hp: 120
   Attack: 15
   Body: {fileID: 0}
@@ -161,6 +162,11 @@ MonoBehaviour:
   AttackObj: {fileID: 6835973432984648619, guid: 07ee13c4bc586af4791279d585eb0c8b,
     type: 3}
   rigid2d: {fileID: 0}
+  MySprite: {fileID: 0}
+  Freeze: 0
+  Master: 0
+  FreezeAttackM: 0
+  PlayerMaster: 0
 --- !u!1 &4856545196419869975
 GameObject:
   m_ObjectHideFlags: 0
