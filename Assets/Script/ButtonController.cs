@@ -23,6 +23,7 @@ public class ButtonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //this.GameObject.transform.localscale = new Vector3(1.0f,1.0f,1.0f);
         Player = GameObject.Find("PlayerMaster");
         PCon = Player.gameObject.GetComponent<PlayerController>();
         Deck = GameObject.Find("Deck");

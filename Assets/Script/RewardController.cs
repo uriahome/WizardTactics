@@ -42,7 +42,7 @@ public class RewardController : MonoBehaviour
         {
             RandomNum = Random.Range(0, CardListRange);//ランダムに1枚選択
             GameObject Summon = Instantiate(CardList[RandomNum]) as GameObject;//カードリストの対応した番号から出す
-            Summon.transform.SetParent(RewardPanel.transform);//RewardPanelの子供にする
+            Summon.transform.SetParent(RewardPanel.transform,false);//RewardPanelの子供にする
         }
     }
 }

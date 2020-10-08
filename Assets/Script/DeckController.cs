@@ -65,7 +65,7 @@ public class DeckController : MonoBehaviour
         Destroy(DButton);
         GameObject Draw = DeckDraw();
         GameObject Summon = Instantiate(Draw) as GameObject;
-        Summon.transform.SetParent(DeckCanvas.transform);
+        Summon.transform.SetParent(DeckCanvas.transform,false);//falseにすることでローカル座標での位置サイズに対応してくれる
     }
 
     public void DeckAdd(GameObject AddCard)
