@@ -698,7 +698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wizard Tactics
+  m_Text: "\u3046\u308A\u3042\u306E\u9B54\u5C0E\u66F8"
 --- !u!222 &1835062479
 CanvasRenderer:
   m_ObjectHideFlags: 0
