@@ -99,6 +99,22 @@ public class Monster : MonoBehaviour
                 Destroy(this.gameObject);//非戦闘時は消える
             }
         }
+
+         if (Hp <= 0)//未満なら破壊される
+        {
+            Debug.Log("やられた" + this.gameObject);
+            if (Master)
+            {//マスターがやられたなら
+                //GManager.instance.Battle = false;//戦闘終了
+                //GManager.instance.Win();//勝ち
+                StartCoroutine("MasterDeath");
+            }
+            else
+            {
+
+                Destroy(this.gameObject);
+            }
+        }
     }
 
     public void Move()
