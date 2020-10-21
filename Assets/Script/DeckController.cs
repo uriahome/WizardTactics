@@ -15,13 +15,15 @@ public class DeckController : MonoBehaviour
     void Start()
     {
 
-        DeckSetting();//この戦闘で使用するデッキをセットする
-        DeckShuffle();//デッキを混ぜる
+        //DeckSetting();//この戦闘で使用するデッキをセットする
+        //DeckShuffle();//デッキを混ぜる
         /* for(int i =0; i < 3; i++)
          {
              Button Draw = DeckDraw();
              Draw.transform.SetParent(DeckCanvas.transform);
          }*/
+
+        DeckPreparation();
     }
 
     // Update is called once per frame
@@ -65,11 +67,28 @@ public class DeckController : MonoBehaviour
         Destroy(DButton);
         GameObject Draw = DeckDraw();
         GameObject Summon = Instantiate(Draw) as GameObject;
-        Summon.transform.SetParent(DeckCanvas.transform,false);//falseにすることでローカル座標での位置サイズに対応してくれる
+        Summon.transform.SetParent(DeckCanvas.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
     }
 
     public void DeckAdd(GameObject AddCard)
     {//デッキ内にカードを追加する
         DeckList.Add(AddCard);//デッキに追加する
+    }
+
+    public void DeckPreparation()
+    {//デッキの全体的な準備
+        foreach (Transform child in gameObject.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        NowDeckList.Clear();//今のデッキの中身を空にする
+        DeckSetting();//この戦闘で使用するデッキをセットする
+        DeckShuffle();//デッキを混ぜる
+        for (int j = 0; j < 5; j++)//5枚引く
+        {
+            GameObject Draw = DeckDraw();
+            GameObject Summon = Instantiate(Draw) as GameObject;
+            Summon.transform.SetParent(DeckCanvas.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
+        }
     }
 }

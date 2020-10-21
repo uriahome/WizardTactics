@@ -64,8 +64,9 @@ public class GManager : MonoBehaviour
         PCon.SetUp();//プレイヤーマスターの攻撃力等をデフォルトに再設定する
         PMon.Refresh();//全回復させる
         Battle = true;
-        DCon.DeckSetting();
-        DCon.DeckShuffle();
+        //DCon.DeckSetting();
+        //DCon.DeckShuffle();
+        DCon.DeckPreparation();
         EnemyMan.EnemyStart();
     }
     public void Win()
