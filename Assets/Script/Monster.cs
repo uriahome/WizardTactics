@@ -162,6 +162,7 @@ public class Monster : MonoBehaviour
         if (FreezeAttackM)
         {//氷属性攻撃なら氷攻撃にちゃんとする
             SObj.FreezeAttack = true;
+            Destroy(this.gameObject);//氷属性攻撃は一度使用したらやられるようにする（バランス調整のため)
         }
         yield return new WaitForSeconds(AttackSpan);
         //transform.Translate(0, -0.1f, 0);
@@ -172,7 +173,7 @@ public class Monster : MonoBehaviour
 
     }
 
-    IEnumerator UpDown()
+    IEnumerator UpDown()//攻撃の動作
     {
         int UpCount = 0;
         float interval = 0.1f;
@@ -226,7 +227,7 @@ public class Monster : MonoBehaviour
         }
     }
 
-    public void AttackHit(int Power)
+    public void AttackHit(int Power)//攻撃がヒットしたときの処理
     {
         //Debug.Log("Hit" + this.gameObject);
         StartCoroutine("Blink");//点滅処理そして無敵
@@ -248,7 +249,7 @@ public class Monster : MonoBehaviour
         }
     }
 
-    public IEnumerator MasterDeath()
+    public IEnumerator MasterDeath()//敵マスターの撃破時
     {
         yield return new WaitForSeconds(0.1f);
         Destroy(this.gameObject);
