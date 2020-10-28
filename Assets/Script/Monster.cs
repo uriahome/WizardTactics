@@ -100,7 +100,7 @@ public class Monster : MonoBehaviour
             }
         }
 
-         if (Hp <= 0)//未満なら破壊される
+        if (Hp <= 0)//未満なら破壊される
         {
             Debug.Log("やられた" + this.gameObject);
             if (Master)
@@ -108,6 +108,10 @@ public class Monster : MonoBehaviour
                 //GManager.instance.Battle = false;//戦闘終了
                 //GManager.instance.Win();//勝ち
                 StartCoroutine("MasterDeath");
+            }
+            else if (PlayerMaster)
+            {//自分がやられたならば
+                StartCoroutine("PlayerMasterDeath");
             }
             else
             {
@@ -241,6 +245,10 @@ public class Monster : MonoBehaviour
                 //GManager.instance.Win();//勝ち
                 StartCoroutine("MasterDeath");
             }
+            else if (PlayerMaster)
+            {
+                StartCoroutine("PlayerMasterDeath");
+            }
             else
             {
 
@@ -257,6 +265,14 @@ public class Monster : MonoBehaviour
         GManager.instance.Win();//勝ち
                                 //Destroy(this.gameObject);
                                 //yield break;
+    }
+
+    public IEnumerator PlayerMasterDeath()
+    {//自分が敗北した時
+        yield return new WaitForSeconds(0.1f);
+        Destroy(this.gameObject);
+        GManager.instance.Battle = false;//戦闘終了
+        GManager.instance.Lose();//勝ち
     }
 
     public void Refresh()

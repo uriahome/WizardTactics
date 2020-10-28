@@ -8,7 +8,7 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -16,10 +16,17 @@ public class SceneController : MonoBehaviour
     {
     }
 
-    public void ChangeScene(){
-       // SceneManager.LoadScene("BattleSceme",LoadSceneMode,Single);//メインの戦闘シーンを読み込む
-       Debug.Log("SceneLoad");//シーンの読み込み(非同期)
-       AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("BattleScene");
+    public void ChangeScene()
+    {
+        // SceneManager.LoadScene("BattleSceme",LoadSceneMode,Single);//メインの戦闘シーンを読み込む
+        Debug.Log("SceneLoad");//シーンの読み込み(非同期)
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("BattleScene");
+    }
+
+    public void ChangeTitle()
+    {//タイトルに戻ってくるとき
+        Debug.Log("SceneLoad");//シーンの読み込み(非同期)
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Title");
     }
 
 }

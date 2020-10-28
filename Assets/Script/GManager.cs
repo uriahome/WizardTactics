@@ -22,6 +22,10 @@ public class GManager : MonoBehaviour
     public PlayerController PCon;//プレイヤーコントローラー
     public Monster PMon;//プレイヤーのモンスター
     // public GameObject RewardCard;//実際に手に入れるカード
+
+    public GameObject SceneCon;
+    public SceneController SCon;
+
     private void Awake()
     {
         if (instance == null)//1つだけ存在するようにする
@@ -46,6 +50,9 @@ public class GManager : MonoBehaviour
         PlayerM = GameObject.Find("PlayerMaster");
         PCon = PlayerM.GetComponent<PlayerController>();
         PMon = PlayerM.GetComponent<Monster>();
+
+        SceneCon = GameObject.Find("SceneController");
+        SCon = SceneCon.GetComponent<SceneController>();
 
         BattleStart();
 
@@ -73,5 +80,10 @@ public class GManager : MonoBehaviour
     {//ゲーム勝利時
         RewardCon.gameObject.SetActive(true);
         RCon.SelectCard();//3枚表示して選ぶ奴
+    }
+
+    public void Lose()
+    {//ゲーム敗北時
+        SCon.ChangeTitle();//タイトルに戻る
     }
 }
