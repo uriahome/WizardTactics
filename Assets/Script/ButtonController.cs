@@ -89,6 +89,9 @@ public class ButtonController : MonoBehaviour
                 Debug.Log("魔力アップ！！");
                 PCon.Attack += 10;//プレイヤー自身の攻撃力を上げる(ポーションとかの威力が上がる)
                 break;
+            case "MagicExpansionButton":
+                PCon.MagicExpansion();
+                break;
 
         }
     }

@@ -351,13 +351,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 2861131227753113401, guid: dd4a7ddcea9e3204bbe70ce64bed8e46, type: 3}
   AddMana: 1
+  DefaultAddMana: 1
   SpanTime: 2
   DeltaTime: 0
   DefaultMana: 0
   Mana: 0
+  DefaultMaxMana: 3
   MaxMana: 3
   CostText: {fileID: 0}
-  DefaultAttack: 0
+  DefaultAttack: 30
   Attack: 30
   PlayerAnim: {fileID: 0}
 --- !u!50 &1262705661

@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 ClickPosition;//クリックした場所
 
-    public float AddMana = 1.0f;//増えるマナの速度
+    public float AddMana;// = 1.0f;//増えるマナの速度
+    public float DefaultAddMana;//試合開始時の増えるマナの速度
 
     public float SpanTime = 2.0f;//1マナ増えるのに必要なポイン
 
@@ -17,11 +18,11 @@ public class PlayerController : MonoBehaviour
 
     public int DefaultMana;//初期マナ
     public int Mana;//マナコスト
-
+    public int DefaultMaxMana;//試合開始時の最大マナコスト
     public int MaxMana;//最大マナコスト
 
     public Text CostText;//マナコスト表示用のテキスト
-    
+
     public int DefaultAttack;//初期攻撃力 
     public int Attack;//攻撃力
 
@@ -70,8 +71,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetUp(){
+    public void SetUp()
+    {
         Attack = DefaultAttack;//攻撃力をリセット
         Mana = DefaultMana;//マナもリセット
+        AddMana = DefaultAddMana;
+        MaxMana = DefaultMaxMana;//全部リセットしような...
+    }
+
+    public void MagicExpansion()
+    {//魔力速度アップと最大マナを拡大
+        MaxMana++;
+        AddMana *= 1.2f;
     }
 }
