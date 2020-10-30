@@ -5,6 +5,20 @@ using UnityEngine.UI;
 
 public class DeckController : MonoBehaviour
 {
+    //[System.SerializableAttribute]
+    /*public class StructureDeckList
+    {
+        public List<GameObject> List = new List<GameObject>();//デッキリスト
+        public StructureDeckList(List<GameObject> list)
+        {
+            List = list;
+        }
+    }
+    public List<StructureDeckList> StructureList = new List<StructureDeckList>();
+    */
+
+    public List<GameObject> StructureList_monster = new List<GameObject>();//デッキリスト 
+    public List<GameObject> StructureList_magic = new List<GameObject>();//デッキリスト 
     public List<GameObject> DeckList = new List<GameObject>();//デッキリスト
     public List<GameObject> BattleDeckList = new List<GameObject>();//戦闘で使うデッキリスト
     public List<GameObject> NowDeckList = new List<GameObject>();//今の戦闘で使用しているデッキリスト
@@ -23,6 +37,7 @@ public class DeckController : MonoBehaviour
              Draw.transform.SetParent(DeckCanvas.transform);
          }*/
 
+        DeckSelect();
         DeckPreparation();
     }
 
@@ -30,6 +45,23 @@ public class DeckController : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void DeckSelect()//ゲーム開始時のデッキを設定する
+    {
+        int num = PlayerPrefs.GetInt("DeckNum");
+        switch (num)
+        {
+            case 0:
+                DeckList = new List<GameObject>(StructureList_monster);
+                Debug.Log("StructureList_monsterで戦います");
+                break;
+            case 1:
+                DeckList = new List<GameObject>(StructureList_magic);
+                Debug.Log("StructureList_magicで戦います");
+                break;
+        }
+        //DeckList = new List<GameObject>(StructureList[0]);
     }
 
     public void DeckSetting()

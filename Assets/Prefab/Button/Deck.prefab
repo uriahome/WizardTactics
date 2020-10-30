@@ -75,6 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95bc03fbf18da9b40897b1fb9867eaf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StructureList_monster: []
+  StructureList_magic: []
   DeckList:
   - {fileID: 3458110646260029856, guid: fcb2e9951b2d23348bb5e9fb5f43d51a, type: 3}
   - {fileID: 4122617889234532883, guid: 25f9e13b7c526af40bf3c47557daef6f, type: 3}
