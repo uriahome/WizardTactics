@@ -86,7 +86,7 @@ public class DeckController : MonoBehaviour
         GameObject Draw;
         Draw = NowDeckList[NowDeckList.Count - 1];
         NowDeckList.RemoveAt(NowDeckList.Count - 1);
-        Debug.Log(Draw + "を引きました");
+        //Debug.Log(Draw + "を引きました");
         if (NowDeckList.Count == 0)
         {
             DeckShuffle();

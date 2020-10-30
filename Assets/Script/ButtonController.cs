@@ -52,29 +52,29 @@ public class ButtonController : MonoBehaviour
                 Summon.transform.position = new Vector3(Player.transform.position.x, 0.1f, Player.transform.position.z);
                 DCon.DestroyCard(this.gameObject);
                 PCon.Mana -= MyCost;
-                Debug.Log("召喚しました！");
+                //Debug.Log("召喚しました！");
             }
             else
             {
                 string Name = this.gameObject.name;
                 Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
-                Debug.Log(Name);
+                //Debug.Log(Name);
                 OnMagic(Name);
                 DCon.DestroyCard(this.gameObject);
                 PCon.Mana -= MyCost;
-                Debug.Log(Name);
-                Debug.Log("唱えました!");
+                //Debug.Log(Name);
+                //Debug.Log("唱えました!");
             }
         }
         else
         {
-            Debug.Log("コストを払えませんでした");
+           //Debug.Log("コストを払えませんでした");
         }
     }
     public void OnMagic(string Name)//名前によって処理を変える
     {
-        Debug.Log("Magic!!");
-        Debug.Log(Name);
+        //Debug.Log("Magic!!");
+        //Debug.Log(Name);
         switch (Name)
         {
             case "ThreeRedPotionButton":

@@ -22,7 +22,7 @@ public class SceneController : MonoBehaviour
         // SceneManager.LoadScene("BattleSceme",LoadSceneMode,Single);//メインの戦闘シーンを読み込む
         Debug.Log("SceneLoad");//シーンの読み込み(非同期)
 
-        PlayerPrefs.SetInt("DeckNum", SelectDeckNum);//デッキを選択
+        PlayerPrefs.SetInt("DeckNum", SelectDeckNum);//デッキを選択してそれをPlayerPrefsに保存
         PlayerPrefs.Save();
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("BattleScene");

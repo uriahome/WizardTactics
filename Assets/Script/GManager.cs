@@ -28,6 +28,7 @@ public class GManager : MonoBehaviour
 
     private void Awake()
     {
+        
         if (instance == null)//1つだけ存在するようにする
         {
             instance = this;
@@ -66,6 +67,7 @@ public class GManager : MonoBehaviour
 
     public void BattleStart()
     {
+        Debug.Log("戦闘開始!!");
         //GameObject Master = Instantiate(PlayerM) as GameObject;
         //Master.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         PCon.SetUp();//プレイヤーマスターの攻撃力等をデフォルトに再設定する
@@ -85,5 +87,6 @@ public class GManager : MonoBehaviour
     public void Lose()
     {//ゲーム敗北時
         SCon.ChangeTitle();//タイトルに戻る
+        Destroy(this.gameObject);//ここで消さないとタイトルからリスタートした時に試合開始できなかったため負けたら削除するように変更
     }
 }
