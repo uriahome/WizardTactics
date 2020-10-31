@@ -6,6 +6,7 @@ public class GManager : MonoBehaviour
 {
     public static GManager instance = null;
     public bool Battle;//戦闘中かどうか
+    public int WinNum;//勝利回数
 
     public GameObject DeckCon;//デッキコントローラーを参照できるように
     public DeckController DCon;
@@ -33,6 +34,7 @@ public class GManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
+            WinNum = 0;//勝利回数を０に設定
         }
         else
         {
@@ -80,6 +82,7 @@ public class GManager : MonoBehaviour
     }
     public void Win()
     {//ゲーム勝利時
+        WinNum++;
         RewardCon.gameObject.SetActive(true);
         RCon.SelectCard();//3枚表示して選ぶ奴
     }
