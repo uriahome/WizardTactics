@@ -45,14 +45,24 @@ public class ButtonController : MonoBehaviour
         int NowMana = PCon.Mana;
         if (NowMana >= MyCost)
         {
-            if(Dual){//Dualカードであるならば
-            string Name = this.gameObject.name;
-            Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
-            string SearchName = Name.Substring(0,Name.Length-1);//この行でButton_LのL部分を削除
-            SearchName +="R";//Rを文字列に追加(相方を探すため)
-            Debug.Log(Name);
-            Debug.Log(SearchName);
-            //GameObject DualObj = GameObject.Find(Name+"R");
+            if (Dual)
+            {//Dualカードであるならば
+                string Name = this.gameObject.name;
+                Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
+                string SearchName = Name.Substring(0, Name.Length - 1);//この行でButton_LのL部分を削除
+                SearchName += "R(Clone)";//Rを文字列に追加(相方を探すため)
+                Debug.Log(Name);
+                Debug.Log(SearchName);
+                GameObject DualObj = GameObject.Find("DeckCanvas/Deck/" + SearchName);
+                if (DualObj)
+                {
+                    Debug.Log(DualObj + "発見!!!");
+                }
+                else
+                {
+                    Debug.Log("発見できませんでした...");
+                    return;//発見できない場合はここで終了する
+                }
             }
             PCon.PlayerAnimation(0);//魔法を唱えるアニメーションに移行させる
 
@@ -79,7 +89,7 @@ public class ButtonController : MonoBehaviour
         }
         else
         {
-           //Debug.Log("コストを払えませんでした");
+            //Debug.Log("コストを払えませんでした");
         }
     }
     public void OnMagic(string Name)//名前によって処理を変える
