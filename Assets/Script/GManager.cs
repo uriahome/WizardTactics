@@ -77,7 +77,7 @@ public class GManager : MonoBehaviour
         Battle = true;
         //DCon.DeckSetting();
         //DCon.DeckShuffle();
-        DCon.DeckPreparation();
+        //DCon.DeckPreparation();//なぜかここでエラーが出るようになってしまった
         EnemyMan.EnemyStart();
     }
     public void Win()

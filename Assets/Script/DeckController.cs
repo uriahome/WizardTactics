@@ -25,6 +25,9 @@ public class DeckController : MonoBehaviour
     public List<GameObject> NowDeckList = new List<GameObject>();//今の戦闘で使用しているデッキリスト
 
 
+    public List<GameObject> NowHandList = new List<GameObject>();//現在の手札
+    public List<string> NowHandNameList = new List<string>();//現在の手札の名前一覧
+
     public GameObject DeckCanvas;
     // Start is called before the first frame update
     void Start()
@@ -37,15 +40,19 @@ public class DeckController : MonoBehaviour
              Button Draw = DeckDraw();
              Draw.transform.SetParent(DeckCanvas.transform);
          }*/
-         
+
         PlayerPrefs.SetInt("DeckNum", 100);//デバッグ用のデッキを選択(最終的にはコメントアウトする必要あり)
         DeckSelect();
         DeckPreparation();
+        //HandSort();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown("space")){
+            HandSort();
+        }
 
     }
 
@@ -127,6 +134,17 @@ public class DeckController : MonoBehaviour
             GameObject Draw = DeckDraw();
             GameObject Summon = Instantiate(Draw) as GameObject;
             Summon.transform.SetParent(DeckCanvas.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
+        }
+    }
+
+    public void HandSort()
+    {//手札の並び替え
+        int i = 0;
+        foreach (Transform child in DeckCanvas.transform)
+        {//子オブジェクトをすべて取得
+            NowHandList[i] = child.gameObject;
+            NowHandNameList[i] = child.gameObject.name;
+            i++;
         }
     }
 }
