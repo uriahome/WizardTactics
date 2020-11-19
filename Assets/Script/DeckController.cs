@@ -19,6 +19,7 @@ public class DeckController : MonoBehaviour
 
     public List<GameObject> StructureList_monster = new List<GameObject>();//デッキリスト 
     public List<GameObject> StructureList_magic = new List<GameObject>();//デッキリスト 
+    public List<GameObject> StructureList_Debug = new List<GameObject>();//デッキリスト(デバッグ用)
     public List<GameObject> DeckList = new List<GameObject>();//デッキリスト
     public List<GameObject> BattleDeckList = new List<GameObject>();//戦闘で使うデッキリスト
     public List<GameObject> NowDeckList = new List<GameObject>();//今の戦闘で使用しているデッキリスト
@@ -36,7 +37,8 @@ public class DeckController : MonoBehaviour
              Button Draw = DeckDraw();
              Draw.transform.SetParent(DeckCanvas.transform);
          }*/
-
+         
+        PlayerPrefs.SetInt("DeckNum", 100);//デバッグ用のデッキを選択(最終的にはコメントアウトする必要あり)
         DeckSelect();
         DeckPreparation();
     }
@@ -59,6 +61,10 @@ public class DeckController : MonoBehaviour
             case 1:
                 DeckList = new List<GameObject>(StructureList_magic);
                 Debug.Log("StructureList_magicで戦います");
+                break;
+            default:
+                DeckList = new List<GameObject>(StructureList_Debug);
+                Debug.Log("StructureList_Debugで戦います");
                 break;
         }
         //DeckList = new List<GameObject>(StructureList[0]);

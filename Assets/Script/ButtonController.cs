@@ -20,6 +20,8 @@ public class ButtonController : MonoBehaviour
 
     public GameObject AttackButton;
     public AttackButtonController AttackCon;
+
+    public bool Dual;//2枚合体のカードであるかどうか
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,15 @@ public class ButtonController : MonoBehaviour
         int NowMana = PCon.Mana;
         if (NowMana >= MyCost)
         {
+            if(Dual){//Dualカードであるならば
+            string Name = this.gameObject.name;
+            Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
+            string SearchName = Name.Substring(0,Name.Length-1);//この行でButton_LのL部分を削除
+            SearchName +="R";//Rを文字列に追加(相方を探すため)
+            Debug.Log(Name);
+            Debug.Log(SearchName);
+            //GameObject DualObj = GameObject.Find(Name+"R");
+            }
             PCon.PlayerAnimation(0);//魔法を唱えるアニメーションに移行させる
 
             if (!Magic)//モンスターなら
