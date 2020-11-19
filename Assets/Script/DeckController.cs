@@ -28,6 +28,7 @@ public class DeckController : MonoBehaviour
     public List<GameObject> NowHandList = new List<GameObject>();//現在の手札
     public List<string> NowHandNameList = new List<string>();//現在の手札の名前一覧
 
+
     public GameObject DeckCanvas;
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,7 @@ public class DeckController : MonoBehaviour
         if(Input.GetKeyDown("space")){
             HandSort();
         }
+        HandSort();
 
     }
 
@@ -113,6 +115,8 @@ public class DeckController : MonoBehaviour
         GameObject Draw = DeckDraw();
         GameObject Summon = Instantiate(Draw) as GameObject;
         Summon.transform.SetParent(DeckCanvas.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
+
+        //HandSort();
     }
 
     public void DeckAdd(GameObject AddCard)
@@ -140,11 +144,18 @@ public class DeckController : MonoBehaviour
     public void HandSort()
     {//手札の並び替え
         int i = 0;
+        //List<GameObject> NowHandList = new List<GameObject>();//現在の手札
         foreach (Transform child in DeckCanvas.transform)
         {//子オブジェクトをすべて取得
             NowHandList[i] = child.gameObject;
             NowHandNameList[i] = child.gameObject.name;
             i++;
+        }
+        NowHandNameList.Sort();//名前のリストをソート
+        for(int j=0;j<5;j++){//名前リストから1つずつ取ってきて並べなおす
+            string SetObjName = NowHandNameList[j];
+            GameObject SetObj = GameObject.Find("DeckCanvas/Deck/" + SetObjName);
+            SetObj.transform.SetSiblingIndex(j);//自分の名前の場所に移動
         }
     }
 }
