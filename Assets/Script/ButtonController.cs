@@ -57,6 +57,7 @@ public class ButtonController : MonoBehaviour
                 if (DualObj)
                 {
                     Debug.Log(DualObj + "発見!!!");
+                    DCon.DestroyCard(DualObj);
                 }
                 else
                 {
