@@ -66,6 +66,7 @@ public class GManager : MonoBehaviour
     {
         if(Num ==9){//フレイムのLの場合Rを追加
             DCon.DeckAdd(ButtonPairList[0]);//デッキの中に新しいボタンを追加する
+            Debug.Log("フレイムを習得しました");
         }
         DCon.DeckAdd(ButtonList[Num]);//デッキの中に新しいボタンを追加する
         BattleStart();

@@ -42,7 +42,7 @@ public class DeckController : MonoBehaviour
              Draw.transform.SetParent(DeckCanvas.transform);
          }*/
 
-        PlayerPrefs.SetInt("DeckNum", 100);//デバッグ用のデッキを選択(最終的にはコメントアウトする必要あり)
+        //PlayerPrefs.SetInt("DeckNum", 100);//デバッグ用のデッキを選択(最終的にはコメントアウトする必要あり)
         DeckSelect();
         DeckPreparation();
         //HandSort();
