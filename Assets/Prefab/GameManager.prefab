@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Battle: 1
+  WinNum: 0
   DeckCon: {fileID: 0}
   DCon: {fileID: 0}
   ButtonList:
@@ -55,8 +56,15 @@ MonoBehaviour:
   - {fileID: 8409850122532748439, guid: 37508568af8d13c4ab044b5579fc5dab, type: 3}
   - {fileID: 3999146781125628979, guid: cb783373774b75a4282f36371b3ab5cb, type: 3}
   - {fileID: 5159378420589732681, guid: f66770679f366d9418bdf2b9f04557bd, type: 3}
+  - {fileID: 2976636945902439367, guid: 0b24da484571648458361bd2a04727b6, type: 3}
+  - {fileID: 725226828, guid: a6f66591481d8334594a698761b10958, type: 3}
+  - {fileID: 6626407158385171681, guid: a01de4cc9dd3b2c458b3812799a6f5c2, type: 3}
   RewardCon: {fileID: 0}
   RCon: {fileID: 0}
   EnemyM: {fileID: 0}
   EnemyMan: {fileID: 0}
   PlayerM: {fileID: 5442020063730069642, guid: ba439deed2efe874ca1177ced90598c1, type: 3}
+  PCon: {fileID: 0}
+  PMon: {fileID: 0}
+  SceneCon: {fileID: 0}
+  SCon: {fileID: 0}

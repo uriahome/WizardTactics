@@ -12,6 +12,7 @@ public class GManager : MonoBehaviour
     public DeckController DCon;
     public List<GameObject> ButtonList = new List<GameObject>();//全カードリスト的な(実際に使えるボタンの方)
                                                                 // public List<GameObject> WishList = new List<GameObject>();//勝利時に出てくる3枚
+    public List<GameObject> ButtonPairList = new List<GameObject>();//ペアカードの相方用のリスト
 
     public GameObject RewardCon;//RewardCanvas入れる
     public RewardController RCon;//RewardController参照用
@@ -63,6 +64,9 @@ public class GManager : MonoBehaviour
 
     public void BattleReward(int Num)
     {
+        if(Num ==9){//フレイムのLの場合Rを追加
+            DCon.DeckAdd(ButtonPairList[0]);//デッキの中に新しいボタンを追加する
+        }
         DCon.DeckAdd(ButtonList[Num]);//デッキの中に新しいボタンを追加する
         BattleStart();
     }

@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Flame
-  MaxHp: 500
-  Hp: 500
+  MaxHp: 250
+  Hp: 250
   Attack: 40
   Body: {fileID: 0}
   ManaCost: 2
@@ -388,7 +388,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.48836946, y: 0.023331165}
+  m_Offset: {x: 0.22850114, y: 0.023331165}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -399,7 +399,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6098661, y: 2.3998842}
+  m_Size: {x: 2.0901294, y: 2.3998842}
   m_EdgeRadius: 0
 --- !u!114 &6181418214593672647
 MonoBehaviour:

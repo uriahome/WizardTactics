@@ -2455,17 +2455,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4063732095642992696, guid: 43408349cf74e504eb557a60ba857653,
-        type: 3}
-      propertyPath: ButtonList.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063732095642992696, guid: 43408349cf74e504eb557a60ba857653,
-        type: 3}
-      propertyPath: ButtonList.Array.data[8]
-      value: 
-      objectReference: {fileID: 2976636945902439367, guid: 0b24da484571648458361bd2a04727b6,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43408349cf74e504eb557a60ba857653, type: 3}
 --- !u!1001 &4254010469450375930
@@ -2703,24 +2692,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968959745, guid: 8a98c2a091e710a4ab2481b8deb51055, type: 3}
-      propertyPath: CardList.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968959745, guid: 8a98c2a091e710a4ab2481b8deb51055, type: 3}
-      propertyPath: CardListRange
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968959745, guid: 8a98c2a091e710a4ab2481b8deb51055, type: 3}
-      propertyPath: CardList.Array.data[8]
-      value: 
-      objectReference: {fileID: 2925652147081077670, guid: eccaf9616fb0a264bb1986c435813d0c,
-        type: 3}
-    - target: {fileID: 5062823907487164486, guid: 8a98c2a091e710a4ab2481b8deb51055,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a98c2a091e710a4ab2481b8deb51055, type: 3}

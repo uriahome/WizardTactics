@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -219,6 +219,8 @@ MonoBehaviour:
   - {fileID: 3494235924146519878, guid: eaa7df5ae154e3f459374e694bfe5924, type: 3}
   - {fileID: 2229680643268420590, guid: 2995c360968afe242a6525201ed7eae3, type: 3}
   - {fileID: 1167210773181883018, guid: 3209bcbaadd7a41429963cfe93237378, type: 3}
+  - {fileID: 2925652147081077670, guid: eccaf9616fb0a264bb1986c435813d0c, type: 3}
+  - {fileID: 6978235391288580457, guid: 2b9aa0cc5f166724e9e0f8928275b6f8, type: 3}
   RandomNum: 0
-  CardListRange: 7
+  CardListRange: 9
   RewardPanel: {fileID: 5062823908366275169}
