@@ -77,7 +77,9 @@ public class GManager : MonoBehaviour
         Battle = true;
         //DCon.DeckSetting();
         //DCon.DeckShuffle();
+        StartCoroutine("WaitTime");
         //DCon.DeckPreparation();//なぜかここでエラーが出るようになってしまった
+        //DCon.DeckPreparation_Act();
         EnemyMan.EnemyStart();
     }
     public void Win()
@@ -91,5 +93,10 @@ public class GManager : MonoBehaviour
     {//ゲーム敗北時
         SCon.ChangeTitle();//タイトルに戻る
         Destroy(this.gameObject);//ここで消さないとタイトルからリスタートした時に試合開始できなかったため負けたら削除するように変更
+    }
+    public IEnumerator WaitTime()
+    {//0.1秒待機
+        yield return new WaitForSeconds(0.1f);//時間を置くことでDCon.DeckPreparation()のエラーを回避無理やりだがとりあえずこれで
+        DCon.DeckPreparation_Act();
     }
 }

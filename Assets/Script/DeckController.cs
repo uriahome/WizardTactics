@@ -51,10 +51,10 @@ public class DeckController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("space")){
+        if(Input.GetKeyDown("space")){//機能確認用
             HandSort();
         }
-        HandSort();
+        //HandSort();
 
     }
 
@@ -115,7 +115,7 @@ public class DeckController : MonoBehaviour
         GameObject Draw = DeckDraw();
         GameObject Summon = Instantiate(Draw) as GameObject;
         Summon.transform.SetParent(DeckCanvas.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
-
+        StartCoroutine("WaitTime");
         //HandSort();
     }
 
@@ -139,6 +139,7 @@ public class DeckController : MonoBehaviour
             GameObject Summon = Instantiate(Draw) as GameObject;
             Summon.transform.SetParent(DeckCanvas.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
         }
+        StartCoroutine("WaitTime");
     }
 
     public void HandSort()
@@ -157,5 +158,15 @@ public class DeckController : MonoBehaviour
             GameObject SetObj = GameObject.Find("DeckCanvas/Deck/" + SetObjName);
             SetObj.transform.SetSiblingIndex(j);//自分の名前の場所に移動
         }
+    }
+
+    public IEnumerator WaitTime()
+    {//0.1秒待機
+        yield return new WaitForSeconds(0.1f);
+        HandSort();
+    }
+
+    public void DeckPreparation_Act(){
+        DeckPreparation();
     }
 }
