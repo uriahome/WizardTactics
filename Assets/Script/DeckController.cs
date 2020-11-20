@@ -25,8 +25,8 @@ public class DeckController : MonoBehaviour
     public List<GameObject> NowDeckList = new List<GameObject>();//今の戦闘で使用しているデッキリスト
 
 
-    public List<GameObject> NowHandList = new List<GameObject>();//現在の手札
-    public List<string> NowHandNameList = new List<string>();//現在の手札の名前一覧
+    public List<GameObject> HandList = new List<GameObject>();//現在の手札
+    public List<string> HandNameList = new List<string>();//現在の手札の名前一覧
 
 
     public GameObject DeckCanvas;
@@ -45,16 +45,17 @@ public class DeckController : MonoBehaviour
         //PlayerPrefs.SetInt("DeckNum", 100);//デバッグ用のデッキを選択(最終的にはコメントアウトする必要あり)
         DeckSelect();
         DeckPreparation();
-        //HandSort();
+        //SortHandst();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("space")){//機能確認用
-            HandSort();
+        if (Input.GetKeyDown("space"))
+        {//機能確認用
+            SortHands();
         }
-        //HandSort();
+        //SortHands();
 
     }
 
@@ -116,7 +117,7 @@ public class DeckController : MonoBehaviour
         GameObject Summon = Instantiate(Draw) as GameObject;
         Summon.transform.SetParent(DeckCanvas.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
         StartCoroutine("WaitTime");
-        //HandSort();
+        //SortHands();
     }
 
     public void DeckAdd(GameObject AddCard)
@@ -142,31 +143,35 @@ public class DeckController : MonoBehaviour
         StartCoroutine("WaitTime");
     }
 
-    public void HandSort()
+    public void SortHands()
     {//手札の並び替え
         int i = 0;
-        //List<GameObject> NowHandList = new List<GameObject>();//現在の手札
         foreach (Transform child in DeckCanvas.transform)
         {//子オブジェクトをすべて取得
-            NowHandList[i] = child.gameObject;
-            NowHandNameList[i] = child.gameObject.name;
+            HandList[i] = child.gameObject;
+            HandNameList[i] = child.gameObject.name;
             i++;
         }
-        NowHandNameList.Sort();//名前のリストをソート
-        for(int j=0;j<5;j++){//名前リストから1つずつ取ってきて並べなおす
-            string SetObjName = NowHandNameList[j];
-            GameObject SetObj = GameObject.Find("DeckCanvas/Deck/" + SetObjName);
-            SetObj.transform.SetSiblingIndex(j);//自分の名前の場所に移動
+        HandNameList.Sort();//名前のリストをソート
+        for (int j = 0; j < HandNameList.Count; j++)//名前リストを1つずつ取得
+        {
+            foreach (Transform child in DeckCanvas.transform)//子オブジェクト取得
+            {
+                if (child.gameObject.name.Equals(HandNameList[j])){//取得したオブジェクトと名前リストの名前が同じなら場所変更
+                    child.transform.SetSiblingIndex(j);
+                }
+            }
         }
     }
 
     public IEnumerator WaitTime()
     {//0.1秒待機
         yield return new WaitForSeconds(0.1f);
-        HandSort();
+        SortHands();
     }
 
-    public void DeckPreparation_Act(){
+    public void DeckPreparation_Act()
+    {
         DeckPreparation();
     }
 }
