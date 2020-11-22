@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour
 
     public Animator PlayerAnim;//Animator用
 
+    public GameObject BuildObj;//次に建築する建物
+    public bool isBuild;//建物を召喚する予定があるかどうか
+    public Vector3 MousePos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +54,12 @@ public class PlayerController : MonoBehaviour
             }
 
             CostText.text = "Cost:" + Mana + "/" + MaxMana.ToString();
+        }
+
+        if (Input.GetMouseButtonDown(0) && isBuild)
+        {//建築予定の建物がありクリックした時
+            MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            SummonBuild();
         }
 
     }
@@ -83,5 +93,18 @@ public class PlayerController : MonoBehaviour
     {//魔力速度アップと最大マナを拡大
         MaxMana++;
         AddMana *= 1.2f;
+    }
+
+    public void SummonBuild()
+    {
+        GameObject Summon = Instantiate(BuildObj) as GameObject;//生成する
+        Summon.transform.position = new Vector3(MousePos.x, 0.1f, this.transform.position.z);//クリックしたときのマウスのx座標で召喚する
+        isBuild = false;
+    }
+
+    public void SetBuildObj(GameObject GObj)//建物カードからの召喚予定を登録する
+    {
+        BuildObj = GObj;
+        isBuild = true;
     }
 }

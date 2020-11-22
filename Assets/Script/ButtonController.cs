@@ -18,6 +18,8 @@ public class ButtonController : MonoBehaviour
     public bool Magic;//魔法かどうか
     public GameObject Spell;//魔法で出す奴
 
+    public bool Build;//建物かどうか
+
     public GameObject AttackButton;
     public AttackButtonController AttackCon;
 
@@ -67,16 +69,18 @@ public class ButtonController : MonoBehaviour
             }
             PCon.PlayerAnimation(0);//魔法を唱えるアニメーションに移行させる
 
-            if (!Magic)//モンスターなら
+            if (Build)//建物なら
             {
-                GameObject Summon = Instantiate(Card) as GameObject;//生成する
+               // GameObject Summon = Instantiate(Card) as GameObject;//生成する
                                                                     //   Summon.transform.position = Player.transform.position;//Playerの場所に出す
-                Summon.transform.position = new Vector3(Player.transform.position.x, 0.1f, Player.transform.position.z);
+                //Summon.transform.position = new Vector3(Player.transform.position.x, 0.1f, Player.transform.position.z);
+                PCon.SetBuildObj(Card);//召喚予定のカードに追加する
+                
                 DCon.DestroyCard(this.gameObject);
                 PCon.Mana -= MyCost;
                 //Debug.Log("召喚しました！");
             }
-            else
+            else if(Magic)
             {
                 string Name = this.gameObject.name;
                 Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
@@ -86,6 +90,13 @@ public class ButtonController : MonoBehaviour
                 PCon.Mana -= MyCost;
                 //Debug.Log(Name);
                 //Debug.Log("唱えました!");
+            }else{//モンスターなら
+                GameObject Summon = Instantiate(Card) as GameObject;//生成する
+                                                                    //   Summon.transform.position = Player.transform.position;//Playerの場所に出す
+                Summon.transform.position = new Vector3(Player.transform.position.x, 0.1f, Player.transform.position.z);
+                DCon.DestroyCard(this.gameObject);
+                PCon.Mana -= MyCost;
+                //Debug.Log("召喚しました！");
             }
         }
         else

@@ -21,7 +21,8 @@ public class Building : MonoBehaviour
         delta = 0;
         Player = GameObject.Find("PlayerMaster");
         PCon = Player.GetComponent<PlayerController>();
-        this.transform.position = new Vector3(-5.70f, this.transform.position.y, this.transform.position.z);//ちょっと前に出す
+        //this.transform.position = new Vector3(-5.70f, this.transform.position.y, this.transform.position.z);//ちょっと前に出す
+        //設置位置をいじれるようにしたのでコメントアウト
     }
 
     // Update is called once per frame
