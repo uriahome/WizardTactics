@@ -58,8 +58,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && isBuild)
         {//建築予定の建物がありクリックした時
-            MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            SummonBuild();
+            MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);//マウスの座標を獲得
+            SummonBuild();//召喚
         }
 
     }
@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         AddMana *= 1.2f;
     }
 
-    public void SummonBuild()
+    public void SummonBuild()//実際に建築予定の建物をInstantiate処理をする
     {
         GameObject Summon = Instantiate(BuildObj) as GameObject;//生成する
         Summon.transform.position = new Vector3(MousePos.x, 0.1f, this.transform.position.z);//クリックしたときのマウスのx座標で召喚する
