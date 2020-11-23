@@ -107,4 +107,17 @@ public class PlayerController : MonoBehaviour
         BuildObj = GObj;
         isBuild = true;
     }
+
+    public void HealAll(){
+        GameObject Ally;
+        foreach (GameObject obj in UnityEngine.Object.FindObjectsOfType(typeof(GameObject)))//Hierarchy上のオブジェクトをすべて取得
+            {
+                if (obj.gameObject.tag == "PlayerMonster")//tagがPlayerMonsterなら
+                {
+                    Ally = obj.gameObject;
+                    Ally.GetComponent<Monster>().Heal();//回復を実行させていく
+                    
+                }
+            }
+    }
 }

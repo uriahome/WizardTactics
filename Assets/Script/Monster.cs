@@ -295,6 +295,13 @@ public class Monster : MonoBehaviour
         this.Hp = MaxHp;
     }
 
+    public void Heal(){//30%回復
+        this.Hp +=MaxHp*0.3f;
+        if(this.Hp >= MaxHp){
+            this.Hp = MaxHp;
+        } 
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (IsEnemy)//敵かどうか

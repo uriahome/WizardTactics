@@ -125,6 +125,9 @@ public class ButtonController : MonoBehaviour
             case "MagicExpansionButton":
                 PCon.MagicExpansion();
                 break;
+            case "GreenPotionButton":
+                PCon.HealAll();
+                break;
 
         }
     }

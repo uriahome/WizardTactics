@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ice_Castle
-  MaxHp: 0
+  MaxHp: 200
   Hp: 200
   Attack: 1
   Body: {fileID: 0}
