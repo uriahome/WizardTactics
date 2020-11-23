@@ -11,8 +11,12 @@ public class ShockWave : MonoBehaviour
     public bool Rotate;
     public float RotateZ;
     public bool FreezeAttack;//氷攻撃かどうか
- 
+
+    //効果音用の設定
+    public AudioClip sound;
+    public AudioSource audio1;
     // Start is called before the first frame update
+    public bool potion;
     void Start()
     {
         //StartCoroutine("Delete");//勝手に消えるように
@@ -20,6 +24,12 @@ public class ShockWave : MonoBehaviour
         rigid2d = GetComponent<Rigidbody2D>();
         //Rotate = false;
         RotateZ = 0;//生き返れ
+
+        //音を鳴らす
+        if(potion){
+        audio1 = GetComponent<AudioSource>();
+        audio1.PlayOneShot(sound);
+        }
     }
 
     // Update is called once per frame
