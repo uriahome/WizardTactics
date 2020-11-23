@@ -26,7 +26,7 @@ public class EnemyMaster : MonoBehaviour
                 int Num = Random.Range(1, 100);
                 int SummonNum = Num % 3;
                 GameObject Enemy = Instantiate(EnemyList[SummonNum]) as GameObject;
-                Enemy.transform.position = new Vector3(this.transform.position.x, 0.1f, this.transform.position.z);
+                Enemy.transform.position = new Vector3(this.transform.position.x-1.0f, 0.1f, this.transform.position.z);//場所微調整
             }
         }
     }

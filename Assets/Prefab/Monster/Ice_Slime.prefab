@@ -240,9 +240,11 @@ MonoBehaviour:
   MySprite: {fileID: 0}
   Freeze: 0
   Master: 0
+  ChangeBGM: 0
   FreezeAttackM: 1
   PlayerMaster: 0
-  sound: {fileID: 8300000, guid: ae85bb05f75622548988aeb7877b36dc, type: 3}
+  sound1: {fileID: 8300000, guid: 06b761b74d7c4b0428a8b4808b2e5e72, type: 3}
+  sound2: {fileID: 8300000, guid: ae85bb05f75622548988aeb7877b36dc, type: 3}
   audio1: {fileID: 0}
 --- !u!82 &1795496434385409279
 AudioSource:
