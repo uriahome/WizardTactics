@@ -31,6 +31,7 @@ public class Monster : MonoBehaviour
     public bool Freeze;//氷状態
 
     public bool Master;//マスターかどうか(敵)
+    public bool ChangeBGM;
 
     public bool FreezeAttackM;//氷属性の攻撃かどうか
 
@@ -62,6 +63,8 @@ public class Monster : MonoBehaviour
         MyRangePosition = transform.Find("Range").gameObject;//子オブジェクトの取得
         MySprite = GetComponent<SpriteRenderer>();
         audio1 = GetComponent<AudioSource>();
+
+        ChangeBGM = false;
     }
 
     // Update is called once per frame
@@ -260,6 +263,11 @@ public class Monster : MonoBehaviour
 
                 Destroy(this.gameObject);
             }
+        }
+
+        if((Hp <= MaxHp/2)&& Master&& !ChangeBGM){
+            ChangeBGM = true;
+            GManager.instance.BattleChange();//敵を半分まで削ったら曲を変える
         }
     }
 

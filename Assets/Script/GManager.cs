@@ -28,6 +28,14 @@ public class GManager : MonoBehaviour
     public GameObject SceneCon;
     public SceneController SCon;
 
+    public AudioClip BGM_battle1;//戦闘シーンのBGMの管理もここで行う
+    public AudioClip BGM_battle2;//戦闘シーンのBGMの管理もここで行う
+    public AudioClip BGM_battle_change;//戦闘シーンのBGMの管理もここで行う
+    public AudioClip BGM_gameover;//戦闘シーンのBGMの管理もここで行う
+
+    public AudioSource audio1;
+
+
     private void Awake()
     {
         
@@ -58,6 +66,7 @@ public class GManager : MonoBehaviour
         SceneCon = GameObject.Find("SceneController");
         SCon = SceneCon.GetComponent<SceneController>();
 
+        audio1 = GetComponent<AudioSource>();
         BattleStart();
 
     }
@@ -74,6 +83,10 @@ public class GManager : MonoBehaviour
 
     public void BattleStart()
     {
+        audio1.Stop();//今流れているのを止めてから流す
+        audio1.PlayOneShot(BGM_battle1);
+
+
         Debug.Log("戦闘開始!!");
         //GameObject Master = Instantiate(PlayerM) as GameObject;
         //Master.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
@@ -103,5 +116,10 @@ public class GManager : MonoBehaviour
     {//0.1秒待機
         yield return new WaitForSeconds(0.1f);//時間を置くことでDCon.DeckPreparation()のエラーを回避無理やりだがとりあえずこれで
         DCon.DeckPreparation_Act();
+    }
+
+    public void BattleChange(){
+        audio1.Stop();//今流れているのを止めてから流す
+        audio1.PlayOneShot(BGM_battle_change);
     }
 }
