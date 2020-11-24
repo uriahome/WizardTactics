@@ -2510,7 +2510,7 @@ PrefabInstance:
     - target: {fileID: 1968959745, guid: 8a98c2a091e710a4ab2481b8deb51055, type: 3}
       propertyPath: CardList.Array.data[11]
       value: 
-      objectReference: {fileID: 8955013988716110787, guid: 40d3428288def55428c58d4125cbb82a,
+      objectReference: {fileID: 2485068284507214659, guid: 2b8c689379823214ba9505be0157fbc8,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a98c2a091e710a4ab2481b8deb51055, type: 3}

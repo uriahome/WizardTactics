@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: potion_klin
-  MaxHp: 200
+  MaxHp: 50
   Hp: 200
   Attack: 1
   Body: {fileID: 0}
@@ -174,6 +174,7 @@ MonoBehaviour:
   sound1: {fileID: 8300000, guid: 06b761b74d7c4b0428a8b4808b2e5e72, type: 3}
   sound2: {fileID: 8300000, guid: ae85bb05f75622548988aeb7877b36dc, type: 3}
   audio1: {fileID: 0}
+  Death: 0
 --- !u!114 &2285602120655392788
 MonoBehaviour:
   m_ObjectHideFlags: 0
