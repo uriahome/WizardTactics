@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: potion_klin
   MaxHp: 50
-  Hp: 200
+  Hp: 50
   Attack: 1
   Body: {fileID: 0}
   ManaCost: 2
