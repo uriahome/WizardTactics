@@ -30,7 +30,8 @@ public class AttackButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UseAttack && UseAttack)
+        //if (UseAttack && UseAttack)//???なんか意味不明な条件になってる
+        if(UseAttack)
         {
             ButtonColors.disabledColor = new Color(255f, 255f, 255f, AlphaColor);
             AlphaColor += Time.deltaTime * Span;
@@ -75,6 +76,10 @@ public class AttackButtonController : MonoBehaviour
     {
         StartCoroutine("ThreeThrow",Num);
     }
+    public void FeverPotion()
+    {
+        StartCoroutine("FeverThrow");
+    }
     public IEnumerator ThreeThrow(int Num)
     {
         int Count = 0;
@@ -89,6 +94,24 @@ public class AttackButtonController : MonoBehaviour
                 yield break;
             }
            ThrowPotion(Num);
+            yield return new WaitForSeconds(interval);
+        }
+    }
+
+    public IEnumerator FeverThrow()//10回投げる
+    {
+        int Count = 0;
+        float interval = 0.1f;
+        while (true)
+        {
+            //Debug.Log("nyaa");
+            Count++;
+            if (Count > 10)
+            {
+                Debug.Log("oaaa");
+                yield break;
+            }
+           ThrowPotion(1);
             yield return new WaitForSeconds(interval);
         }
     }

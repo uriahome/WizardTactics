@@ -128,6 +128,9 @@ public class ButtonController : MonoBehaviour
             case "GreenPotionButton":
                 PCon.HealAll();
                 break;
+            case "PotionFeverButton_L":
+                AttackCon.FeverPotion();
+                break;
 
         }
     }
