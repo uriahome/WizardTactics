@@ -251,6 +251,7 @@ public class Monster : MonoBehaviour
         //if (!Master)
         //{
             //audio1.PlayOneShot(sound2);//被弾の効果音を再生
+            audio1.volume = 0.5f;
             audio1.clip = sound2;
             audio1.Play();
         //}
