@@ -24,10 +24,10 @@ public class RewardController : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
-        else
+        /*else
         {
             this.gameObject.SetActive(true);
-        }
+        }*/
     }
 
     public void SelectCard()

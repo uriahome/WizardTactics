@@ -42,6 +42,8 @@ public class Monster : MonoBehaviour
     public AudioClip sound2;//被弾の効果音
     public AudioSource audio1;
 
+    public bool Death;
+
 
     public Monster(string Name, float Hp, int Attack, float Speed, float MaxSpeed, GameObject Body, int ManaCost)//生かせてない
     {
@@ -66,6 +68,7 @@ public class Monster : MonoBehaviour
         audio1 = GetComponent<AudioSource>();
         audio1.PlayOneShot(sound1);//召喚の効果音を再生
         ChangeBGM = false;
+        Death = false;
     }
 
     // Update is called once per frame
@@ -120,7 +123,8 @@ public class Monster : MonoBehaviour
             }
             else if (PlayerMaster)
             {//自分がやられたならば
-                StartCoroutine("PlayerMasterDeath");
+                    //Death = true;
+                    StartCoroutine("PlayerMasterDeath");
             }
             else
             {
@@ -257,6 +261,7 @@ public class Monster : MonoBehaviour
             }
             else if (PlayerMaster)
             {
+                //Death = true;
                 StartCoroutine("PlayerMasterDeath");
             }
             else
@@ -266,7 +271,8 @@ public class Monster : MonoBehaviour
             }
         }
 
-        if((Hp <= MaxHp/2)&& Master&& !ChangeBGM){
+        if ((Hp <= MaxHp / 2) && Master && !ChangeBGM)
+        {
             ChangeBGM = true;
             GManager.instance.BattleChange();//敵を半分まで削ったら曲を変える
         }
@@ -285,9 +291,10 @@ public class Monster : MonoBehaviour
     public IEnumerator PlayerMasterDeath()
     {//自分が敗北した時
         yield return new WaitForSeconds(0.1f);
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
         GManager.instance.Battle = false;//戦闘終了
-        GManager.instance.Lose();//勝ち
+        GManager.instance.Lose();//負け
+        Destroy(this.gameObject);
     }
 
     public void Refresh()
@@ -295,11 +302,13 @@ public class Monster : MonoBehaviour
         this.Hp = MaxHp;
     }
 
-    public void Heal(){//30%回復
-        this.Hp +=MaxHp*0.3f;
-        if(this.Hp >= MaxHp){
+    public void Heal()
+    {//30%回復
+        this.Hp += MaxHp * 0.3f;
+        if (this.Hp >= MaxHp)
+        {
             this.Hp = MaxHp;
-        } 
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
