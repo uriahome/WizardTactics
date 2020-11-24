@@ -3025,6 +3025,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RewardCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5062823907487164484, guid: 8a98c2a091e710a4ab2481b8deb51055,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5062823907487164480, guid: 8a98c2a091e710a4ab2481b8deb51055,
         type: 3}
       propertyPath: m_LocalPosition.x
