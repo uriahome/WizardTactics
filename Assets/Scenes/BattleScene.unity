@@ -1922,6 +1922,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeckCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 717173333211140254, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
+        type: 3}
+      propertyPath: m_Text
+      value: "\u30DE\u30CA:x/x"
+      objectReference: {fileID: 0}
     - target: {fileID: 717173332975672901, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
         type: 3}
       propertyPath: m_LocalPosition.x

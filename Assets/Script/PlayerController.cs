@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
                 Mana++;
             }
 
-            CostText.text = "Cost:" + Mana + "/" + MaxMana.ToString();
+            CostText.text = "マナ:" + Mana + "/" + MaxMana.ToString();
         }
 
         if (Input.GetMouseButtonDown(0) && isBuild)
