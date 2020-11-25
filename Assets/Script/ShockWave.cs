@@ -41,6 +41,9 @@ public class ShockWave : MonoBehaviour
             RotateZ %= 360;
             this.transform.Rotate(0, 0, RotateZ);
         }
+        if(!GManager.instance.Battle){
+            Destroy(this.gameObject);
+        }
     }
     IEnumerator Delete()
     {

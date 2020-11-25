@@ -75,6 +75,7 @@ public class GManager : MonoBehaviour
         SCon = SceneCon.GetComponent<SceneController>();
 
         audio1 = GetComponent<AudioSource>();
+        audio1.volume = 0.5f;
         BattleStart();
 
     }

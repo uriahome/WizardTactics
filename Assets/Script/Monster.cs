@@ -66,7 +66,10 @@ public class Monster : MonoBehaviour
         MyRangePosition = transform.Find("Range").gameObject;//子オブジェクトの取得
         MySprite = GetComponent<SpriteRenderer>();
         audio1 = GetComponent<AudioSource>();
-        audio1.PlayOneShot(sound1);//召喚の効果音を再生
+        if (!Master && !PlayerMaster)
+        {
+            audio1.PlayOneShot(sound1);//召喚の効果音を再生
+        }
         ChangeBGM = false;
         Death = false;
     }
@@ -248,12 +251,12 @@ public class Monster : MonoBehaviour
     {
         //Debug.Log("Hit" + this.gameObject);
         StartCoroutine("Blink");//点滅処理そして無敵
-        //if (!Master)
-        //{
-            //audio1.PlayOneShot(sound2);//被弾の効果音を再生
-            audio1.volume = 0.5f;
-            audio1.clip = sound2;
-            audio1.Play();
+                                //if (!Master)
+                                //{
+                                //audio1.PlayOneShot(sound2);//被弾の効果音を再生
+        audio1.volume = 0.25f;
+        audio1.clip = sound2;
+        audio1.Play();
         //}
         this.Hp -= Power;//ダメージを受ける
         if (Hp <= 0)//未満なら破壊される
