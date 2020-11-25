@@ -2389,11 +2389,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RewardCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5062823907487164484, guid: 8a98c2a091e710a4ab2481b8deb51055,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5062823907487164480, guid: 8a98c2a091e710a4ab2481b8deb51055,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2499,24 +2494,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1968959745, guid: 8a98c2a091e710a4ab2481b8deb51055, type: 3}
-      propertyPath: CardList.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968959745, guid: 8a98c2a091e710a4ab2481b8deb51055, type: 3}
-      propertyPath: CardList.Array.data[10]
-      value: 
-      objectReference: {fileID: 8955013988716110787, guid: 40d3428288def55428c58d4125cbb82a,
-        type: 3}
-    - target: {fileID: 1968959745, guid: 8a98c2a091e710a4ab2481b8deb51055, type: 3}
-      propertyPath: CardListRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968959745, guid: 8a98c2a091e710a4ab2481b8deb51055, type: 3}
-      propertyPath: CardList.Array.data[11]
-      value: 
-      objectReference: {fileID: 2485068284507214659, guid: 2b8c689379823214ba9505be0157fbc8,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a98c2a091e710a4ab2481b8deb51055, type: 3}
 --- !u!1001 &5442020064331192181

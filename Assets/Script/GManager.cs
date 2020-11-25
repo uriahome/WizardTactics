@@ -16,6 +16,7 @@ public class GManager : MonoBehaviour
 
     public GameObject RewardCon;//RewardCanvas入れる
     public RewardController RCon;//RewardController参照用
+    public GameObject RewardText;
 
     public GameObject ResultCon;//ResultCanvas入れる
     public ResultController ReCon;//ResultController参照用
@@ -58,6 +59,8 @@ public class GManager : MonoBehaviour
 
         RewardCon = GameObject.Find("RewardCanvas/RewardPanel");
         RCon = RewardCon.GetComponent<RewardController>();
+        RewardText = GameObject.Find("RewardCanvas/SubText");
+        RewardText.gameObject.SetActive(false);
 
         ResultCon = GameObject.Find("ResultCanvas");
         ReCon = ResultCon.GetComponent<ResultController>();
@@ -100,6 +103,7 @@ public class GManager : MonoBehaviour
     {
         audio1.Stop();//今流れているのを止めてから流す
         audio1.PlayOneShot(BGM_battle1);
+        RewardText.gameObject.SetActive(false);
 
 
         Debug.Log("戦闘開始!!");
@@ -119,6 +123,7 @@ public class GManager : MonoBehaviour
     {//ゲーム勝利時
         WinNum++;
         RewardCon.gameObject.SetActive(true);
+        RewardText.gameObject.SetActive(true);
         RCon.SelectCard();//3枚表示して選ぶ奴
     }
 
