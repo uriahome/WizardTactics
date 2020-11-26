@@ -8,9 +8,11 @@ public class EnemyMaster : MonoBehaviour
     public int EnemyCount;
     public float span;
     public float delta = 0;
+    public int BattleCount;
     // Start is called before the first frame update
     void Start()
     {
+        BattleCount = GManager.instance.WinNum / 2;
         delta = 0;
         EnemyCount = EnemyList.Count;//自分の召喚できる種類を数える
     }
@@ -28,6 +30,15 @@ public class EnemyMaster : MonoBehaviour
                 int SummonNum = Num % EnemyCount;
                 GameObject Enemy = Instantiate(EnemyList[SummonNum]) as GameObject;
                 Enemy.transform.position = new Vector3(this.transform.position.x-1.0f, 0.1f, this.transform.position.z);//場所微調整
+            }
+
+            switch(BattleCount){
+                case 0:
+                this.transform.position = new Vector3(7.56f, 0.5f, 0.0f);//敵のマスターならこの座標にいる
+                break;
+                case 1:
+                this.transform.position = new Vector3(7.56f, 1.0f, 0.0f);//敵のマスターならこの座標にいる
+                break;
             }
         }
     }

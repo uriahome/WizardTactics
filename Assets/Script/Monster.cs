@@ -103,10 +103,10 @@ public class Monster : MonoBehaviour
             rigid2d.velocity = new Vector2(0, 0) * 0;
             StartCoroutine("FreezeDelete");
         }
-        if (Master)
+        /*if (Master)
         {
-            this.transform.position = new Vector3(7.56f, 1.0f, 0.0f);//敵のマスターならこの座標にいる
-        }
+            this.transform.position = new Vector3(7.56f, 0.5f, 0.0f);//敵のマスターならこの座標にいる
+        }*/
         if (!GManager.instance.Battle)
         {
             if (!PlayerMaster)

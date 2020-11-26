@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class ButtonController : MonoBehaviour
 {
     public PlayerController PCon;//PlayerController
@@ -23,6 +23,10 @@ public class ButtonController : MonoBehaviour
     public GameObject AttackButton;
     public AttackButtonController AttackCon;
 
+    public Button MyButton;
+    public float span;
+    public float delta;
+
     public bool Dual;//2枚合体のカードであるかどうか
     // Start is called before the first frame update
     void Start()
@@ -35,12 +39,20 @@ public class ButtonController : MonoBehaviour
 
         AttackButton = GameObject.Find("DeckCanvas/Mana/AttackButton");
         AttackCon = AttackButton.GetComponent<AttackButtonController>();
+        MyButton = GetComponent<Button>();//自分のボタンを制御できるようにする
+        MyButton.interactable = false;//一時的に使用不能にする
+        span = 1.5f;
+        delta =0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        delta += Time.deltaTime;
+        if(delta >= span){
+            MyButton.interactable = true;
+        }
     }
     public void OnClick() //ボタンが押されたとき
     {
