@@ -47,7 +47,8 @@ public class GManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            WinNum = 0;//勝利回数を０に設定
+            //WinNum = 0;//勝利回数を０に設定
+            WinNum = -1;
         }
         else
         {
@@ -117,11 +118,13 @@ public class GManager : MonoBehaviour
         StartCoroutine("WaitTime");
         //DCon.DeckPreparation();//なぜかここでエラーが出るようになってしまった
         //DCon.DeckPreparation_Act();
+        WinNum++;
         EnemyMan.EnemyStart();
+        //WinNum++;
     }
     public void Win()
     {//ゲーム勝利時
-        WinNum++;
+        //WinNum++;//ここでWinNumをカウントすると二重に呼び出されていることがあったので変更
         RewardCon.gameObject.SetActive(true);
         RewardText.gameObject.SetActive(true);
         RCon.SelectCard();//3枚表示して選ぶ奴

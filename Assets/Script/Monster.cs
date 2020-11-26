@@ -259,7 +259,7 @@ public class Monster : MonoBehaviour
         audio1.Play();
         //}
         this.Hp -= Power;//ダメージを受ける
-        if (Hp <= 0)//未満なら破壊される
+        /*if (Hp <= 0)//未満なら破壊される
         {
             Debug.Log("やられた" + this.gameObject);
             if (Master)
@@ -278,7 +278,8 @@ public class Monster : MonoBehaviour
 
                 Destroy(this.gameObject);
             }
-        }
+        }*/
+        //バグの温床
 
         if ((Hp <= MaxHp / 2) && Master && !ChangeBGM)
         {

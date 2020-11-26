@@ -43,4 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b168454f8096d418d62bdec751e591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyM: {fileID: 8591054784371441490, guid: 59f198889f93d2f4eb48ab4e27c26290, type: 3}
+  EnemyM:
+  - {fileID: 920567432631113621, guid: 43e3b35fa6eee9c47a20bd11abf5ea09, type: 3}
+  - {fileID: 117, guid: 59f198889f93d2f4eb48ab4e27c26290, type: 3}
+  - {fileID: 117, guid: 59f198889f93d2f4eb48ab4e27c26290, type: 3}
+  - {fileID: 117, guid: 59f198889f93d2f4eb48ab4e27c26290, type: 3}
+  - {fileID: 117, guid: 59f198889f93d2f4eb48ab4e27c26290, type: 3}
+  - {fileID: 117, guid: 59f198889f93d2f4eb48ab4e27c26290, type: 3}
+  - {fileID: 117, guid: 59f198889f93d2f4eb48ab4e27c26290, type: 3}
+  BattleCount: 0

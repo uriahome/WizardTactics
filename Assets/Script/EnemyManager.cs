@@ -21,7 +21,7 @@ public class EnemyManager : MonoBehaviour
 
     public void EnemyStart()
     {//EnemyMasterを設置する
-        BattleCount = GManager.instance.WinNum / 2;
+        BattleCount = GManager.instance.WinNum;
         GameObject Enemy = Instantiate(EnemyM[BattleCount]) as GameObject;
         Enemy.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
     }
