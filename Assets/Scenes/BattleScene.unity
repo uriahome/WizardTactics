@@ -2713,7 +2713,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2759921690005384032, guid: a650f50895dcaa446b28cdcf766c24f9,
         type: 3}
+      propertyPath: EnemyM.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759921690005384032, guid: a650f50895dcaa446b28cdcf766c24f9,
+        type: 3}
       propertyPath: EnemyM
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2759921690005384032, guid: a650f50895dcaa446b28cdcf766c24f9,
+        type: 3}
+      propertyPath: EnemyM.Array.data[0]
+      value: 
+      objectReference: {fileID: 920567432631113621, guid: 43e3b35fa6eee9c47a20bd11abf5ea09,
+        type: 3}
+    - target: {fileID: 2759921690005384032, guid: a650f50895dcaa446b28cdcf766c24f9,
+        type: 3}
+      propertyPath: EnemyM.Array.data[1]
       value: 
       objectReference: {fileID: 117, guid: 59f198889f93d2f4eb48ab4e27c26290, type: 3}
     m_RemovedComponents: []

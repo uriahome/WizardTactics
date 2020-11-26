@@ -6,7 +6,8 @@ public class EnemyManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject EnemyM;
+    public GameObject[] EnemyM;
+    public int BattleCount;//戦闘回数
     void Start()
     {
 
@@ -20,7 +21,8 @@ public class EnemyManager : MonoBehaviour
 
     public void EnemyStart()
     {//EnemyMasterを設置する
-        GameObject Enemy = Instantiate(EnemyM) as GameObject;
+        BattleCount = GManager.instance.WinNum / 2;
+        GameObject Enemy = Instantiate(EnemyM[BattleCount]) as GameObject;
         Enemy.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
     }
 }
