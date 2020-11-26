@@ -125,6 +125,11 @@ public class GManager : MonoBehaviour
     public void Win()
     {//ゲーム勝利時
         //WinNum++;//ここでWinNumをカウントすると二重に呼び出されていることがあったので変更
+        if(WinNum == 6){
+            WinNum++;
+            Lose();//実質7回目勝利でクリア表示
+            return;
+        }
         RewardCon.gameObject.SetActive(true);
         RewardText.gameObject.SetActive(true);
         RCon.SelectCard();//3枚表示して選ぶ奴
