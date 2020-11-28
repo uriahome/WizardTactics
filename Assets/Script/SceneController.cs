@@ -8,15 +8,15 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     public int SelectDeckNum;//ゲーム開始時に選択されたデッキの番号
 
-    public AudioClip BGM_title;//戦闘シーンのBGMの管理もここで行う
+    //public AudioClip BGM_title;//戦闘シーンのBGMの管理もここで行う
 
-    public AudioSource audio1;
+    //public AudioSource audio1;
     void Start()
     {
-        audio1 = GetComponent<AudioSource>();
+        /*audio1 = GetComponent<AudioSource>();
         audio1.volume = 0.5f;
         audio1.Stop();//今流れているのを止めてから流す
-        audio1.PlayOneShot(BGM_title);
+        audio1.PlayOneShot(BGM_title);*/
     }
 
     // Update is called once per frame

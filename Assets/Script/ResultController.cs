@@ -52,7 +52,14 @@ public class ResultController : MonoBehaviour
             ShowDeck();
         }
 
-        ResultText.text = (GManager.instance.WinNum) + "回勝利した！";
+        if (GManager.instance.WinNum != 7)
+        {
+            ResultText.text = (GManager.instance.WinNum) + "回勝利した！";
+        }
+        else
+        {
+            ResultText.text = "ゲームクリア!!!";
+        }
         //WinNumが常に2回カウントされているので半分の数が正しいUpdateとヒット時でDeath判定を取っているのがおそらくダメ
 
     }
