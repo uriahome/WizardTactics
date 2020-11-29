@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject BuildObj;//次に建築する建物
     public bool isBuild;//建物を召喚する予定があるかどうか
+    public GameObject CursorObj;
     public Vector3 MousePos;
 
     // Start is called before the first frame update
@@ -38,6 +39,8 @@ public class PlayerController : MonoBehaviour
         DeltaTime = 0;
         Mana = 0;//初期化
         PlayerAnim = GetComponent<Animator>();//自身のAnimatorの取得
+        CursorObj = GameObject.Find("cursor");
+        CursorObj.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,6 +63,7 @@ public class PlayerController : MonoBehaviour
         {//建築予定の建物がありクリックした時
             MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);//マウスの座標を獲得
             SummonBuild();//召喚
+            CursorObj.gameObject.SetActive(false);
         }
 
     }
@@ -106,6 +110,7 @@ public class PlayerController : MonoBehaviour
     {
         BuildObj = GObj;
         isBuild = true;
+        CursorObj.gameObject.SetActive(true);
     }
 
     public void HealAll(){
