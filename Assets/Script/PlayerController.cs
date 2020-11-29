@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public int MaxMana;//最大マナコスト
 
     public Text CostText;//マナコスト表示用のテキスト
+    public Text PowerText;//マナコスト表示用のテキスト
 
     public int DefaultAttack;//初期攻撃力 
     public int Attack;//攻撃力
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
             }
 
             CostText.text = "マナ:" + Mana + "/" + MaxMana.ToString();
+            PowerText.text = "魔力:" + Attack.ToString();
         }
 
         if (Input.GetMouseButtonDown(0) && isBuild)
