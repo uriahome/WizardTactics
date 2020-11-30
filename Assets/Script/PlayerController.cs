@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     public GameObject CursorObj;
     public Vector3 MousePos;
 
+    public Monster PlayerMon;//自分のMonster.cs
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
         PlayerAnim = GetComponent<Animator>();//自身のAnimatorの取得
         CursorObj = GameObject.Find("cursor");
         CursorObj.gameObject.SetActive(false);
+        PlayerMon = GetComponent<Monster>();
     }
 
     // Update is called once per frame
@@ -126,5 +129,14 @@ public class PlayerController : MonoBehaviour
                     
                 }
             }
+    }
+
+    public void Demonic(){
+        Attack +=5;
+        Mana +=2;
+        if(Mana >= MaxMana){
+            Mana = MaxMana;
+        }
+        PlayerMon.SelfDestruct();
     }
 }

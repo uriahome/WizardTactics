@@ -321,6 +321,13 @@ public class Monster : MonoBehaviour
         }
     }
 
+    public void SelfDestruct()
+    {//自爆
+        int Damage;
+        Damage = (int)(MaxHp * 0.1f);
+        AttackHit(Damage);
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (IsEnemy)//敵かどうか

@@ -42,7 +42,7 @@ public class ButtonController : MonoBehaviour
         MyButton = GetComponent<Button>();//自分のボタンを制御できるようにする
         MyButton.interactable = false;//一時的に使用不能にする
         span = 1.5f;
-        delta =0;
+        delta = 0;
 
     }
 
@@ -50,7 +50,8 @@ public class ButtonController : MonoBehaviour
     void Update()
     {
         delta += Time.deltaTime;
-        if(delta >= span){
+        if (delta >= span)
+        {
             MyButton.interactable = true;
         }
     }
@@ -83,16 +84,16 @@ public class ButtonController : MonoBehaviour
 
             if (Build)//建物なら
             {
-               // GameObject Summon = Instantiate(Card) as GameObject;//生成する
-                                                                    //   Summon.transform.position = Player.transform.position;//Playerの場所に出す
+                // GameObject Summon = Instantiate(Card) as GameObject;//生成する
+                //   Summon.transform.position = Player.transform.position;//Playerの場所に出す
                 //Summon.transform.position = new Vector3(Player.transform.position.x, 0.1f, Player.transform.position.z);
                 PCon.SetBuildObj(Card);//召喚予定のカードに追加する
-                
+
                 DCon.DestroyCard(this.gameObject);
                 PCon.Mana -= MyCost;
                 //Debug.Log("召喚しました！");
             }
-            else if(Magic)
+            else if (Magic)
             {
                 string Name = this.gameObject.name;
                 Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
@@ -102,7 +103,9 @@ public class ButtonController : MonoBehaviour
                 PCon.Mana -= MyCost;
                 //Debug.Log(Name);
                 //Debug.Log("唱えました!");
-            }else{//モンスターなら
+            }
+            else
+            {//モンスターなら
                 GameObject Summon = Instantiate(Card) as GameObject;//生成する
                                                                     //   Summon.transform.position = Player.transform.position;//Playerの場所に出す
                 Summon.transform.position = new Vector3(Player.transform.position.x, 0.1f, Player.transform.position.z);
@@ -142,6 +145,9 @@ public class ButtonController : MonoBehaviour
                 break;
             case "PotionFeverButton_L":
                 AttackCon.FeverPotion();
+                break;
+            case "DemonicPactButton":
+                PCon.Demonic();
                 break;
 
         }
