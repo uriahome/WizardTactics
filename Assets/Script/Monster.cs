@@ -218,7 +218,7 @@ public class Monster : MonoBehaviour
         {
             Count++;
             yield return new WaitForSeconds(interval);
-            if (Count > 10)
+            if (Count > 15)
             {
                 MySprite.color = new Color(255f, 255f, 255f);
                 Freeze = false;
@@ -363,5 +363,9 @@ public class Monster : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Freezing(){
+        MySprite.color = new Color(0, 255f, 255f, 255f);
     }
 }

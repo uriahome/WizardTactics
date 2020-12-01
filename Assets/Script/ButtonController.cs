@@ -149,6 +149,11 @@ public class ButtonController : MonoBehaviour
             case "DemonicPactButton":
                 PCon.Demonic();
                 break;
+            case "SnowstormButton":
+                PCon.Snowstorm();
+                break;
+            
+            
 
         }
     }

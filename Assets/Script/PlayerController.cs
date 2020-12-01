@@ -139,4 +139,23 @@ public class PlayerController : MonoBehaviour
         }
         PlayerMon.SelfDestruct();
     }
+
+    public void Snowstorm(){
+        GameObject Enemy;
+        Monster EnemyMonster;
+        int Damage;
+        foreach (GameObject obj in UnityEngine.Object.FindObjectsOfType(typeof(GameObject)))
+            {
+                if (obj.gameObject.tag == "EnemyMonster")//敵キャラクターの中執
+                {
+                    Enemy = obj.gameObject;
+                    EnemyMonster = Enemy.GetComponent<Monster>();
+                    EnemyMonster.Freeze = true;
+                    EnemyMonster.Freezing();
+                    Damage = (int)(Attack * 0.5f);
+                    EnemyMonster.AttackHit(Damage);//魔力の半分ダメージを与える
+                    
+                }
+            }
+    }
 }
