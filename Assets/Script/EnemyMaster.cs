@@ -33,11 +33,14 @@ public class EnemyMaster : MonoBehaviour
             }
 
             switch(BattleCount){
-                case 0:
+                case 0:case 1:
                 this.transform.position = new Vector3(7.56f, 0.5f, 0.0f);//敵のマスターならこの座標にいる
                 break;
-                case 1:
+                case 2:
                 this.transform.position = new Vector3(7.56f, 1.0f, 0.0f);//敵のマスターならこの座標にいる
+                break;
+                case 6:
+                this.transform.position = new Vector3(7.56f, 1.9f, 0.0f);//敵のマスターならこの座標にいる
                 break;
                 default:
                 this.transform.position = new Vector3(7.56f, 1.0f, 0.0f);//敵のマスターならこの座標にいる
