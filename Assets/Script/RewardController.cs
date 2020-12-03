@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class RewardController : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -12,6 +11,8 @@ public class RewardController : MonoBehaviour
     public int CardListRange;//カードリストの長さ
 
     public GameObject RewardPanel;//キャンバスの下のこのオブジェクトにこのスクリプトをつける。
+
+    public List<int> RandomNumList;// = new List<int>();
     void Start()
     {
         //this.gameObject.SetActive(false);
@@ -39,11 +40,16 @@ public class RewardController : MonoBehaviour
         Random.InitState(System.DateTime.Now.Millisecond);//現在の時間をシード値にする
         //CardListRange = 4;//CardList.Length;//カードリストの長さを代入//とりあえず5にするしかない
         CardListRange = CardList.Count;
+        RandomNumList = new List<int>();
+        for(int j =0;j<CardListRange;j++){
+            RandomNumList.Add(j);
+        }
         for (int i = 0; i < 3; i++)
         {
-            RandomNum = Random.Range(0, CardListRange);//ランダムに1枚選択
+            RandomNum = Random.Range(0, RandomNumList.Count);//ランダムに1枚選択
             GameObject Summon = Instantiate(CardList[RandomNum]) as GameObject;//カードリストの対応した番号から出す
             Summon.transform.SetParent(RewardPanel.transform,false);//RewardPanelの子供にする
+            RandomNumList.RemoveAt(RandomNum);
         }
     }
 }
