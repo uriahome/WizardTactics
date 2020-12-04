@@ -132,12 +132,17 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Demonic(){
-        Attack +=5;
+        //Attack +=5;
+        MagicEnhance();
         Mana +=2;
         if(Mana >= MaxMana){
             Mana = MaxMana;
         }
         PlayerMon.SelfDestruct();
+    }
+
+    public void MagicEnhance(){//魔力を上げる処理
+        Attack+=5;
     }
 
     public void Snowstorm(){
@@ -146,7 +151,7 @@ public class PlayerController : MonoBehaviour
         int Damage;
         foreach (GameObject obj in UnityEngine.Object.FindObjectsOfType(typeof(GameObject)))
             {
-                if (obj.gameObject.tag == "EnemyMonster")//敵キャラクターの中執
+                if (obj.gameObject.tag == "EnemyMonster")//敵キャラクターの抽出
                 {
                     Enemy = obj.gameObject;
                     EnemyMonster = Enemy.GetComponent<Monster>();

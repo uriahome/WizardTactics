@@ -306,6 +306,8 @@ MonoBehaviour:
   - {fileID: 1149823699469457564, guid: 8472c4d031fefa64fb1c20c528444fde, type: 3}
   - {fileID: 7297459264037859898, guid: 3802cf1ccae98d741863ed2d4cbd79a1, type: 3}
   - {fileID: 2980272224970254747, guid: d1d36207abd4e1c42a2691a9cd10ae4c, type: 3}
+  - {fileID: 2741948949360557410, guid: aaa68c396af4e304a85d59960a0ba49e, type: 3}
   RandomNum: 0
   CardListRange: 10
   RewardPanel: {fileID: 5062823908366275169}
+  RandomNumList: 

@@ -160,4 +160,12 @@ public class GManager : MonoBehaviour
         audio1.Stop();//今流れているのを止めてから流す
         audio1.PlayOneShot(BGM_battle_change);
     }
+
+    public void Deathrattle(string Name){
+        switch(Name){
+            case "Gurimo":
+            PCon.MagicEnhance();
+            break;
+        } 
+    }
 }

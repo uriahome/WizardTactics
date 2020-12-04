@@ -42,10 +42,11 @@ public class Monster : MonoBehaviour
     public AudioClip sound2;//被弾の効果音
     public AudioSource audio1;
 
-    public bool Death;
+    //public bool Death;
+    public bool Deathrattle;//やられたときの効果を持っているかどうか
 
 
-    public Monster(string Name, float Hp, int Attack, float Speed, float MaxSpeed, GameObject Body, int ManaCost)//生かせてない
+    /*public Monster(string Name, float Hp, int Attack, float Speed, float MaxSpeed, GameObject Body, int ManaCost)//生かせてない
     {
         this.Name = Name;
         this.Hp = Hp;
@@ -54,7 +55,7 @@ public class Monster : MonoBehaviour
         this.MaxSpeed = MaxSpeed;
         this.Body = Body;
         this.ManaCost = ManaCost;
-    }
+    }*/
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +72,7 @@ public class Monster : MonoBehaviour
             audio1.PlayOneShot(sound1);//召喚の効果音を再生
         }
         ChangeBGM = false;
-        Death = false;
+        //Death = false;
     }
 
     // Update is called once per frame
@@ -131,7 +132,11 @@ public class Monster : MonoBehaviour
             }
             else
             {
-
+                if(Deathrattle){//やられたときの効果を処理する
+                    //string Name = this.gameObject.name;
+                    //Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
+                    GManager.instance.Deathrattle(Name);
+                }
                 Destroy(this.gameObject);
             }
         }
