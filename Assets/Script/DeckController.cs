@@ -174,4 +174,8 @@ public class DeckController : MonoBehaviour
     {
         DeckPreparation();
     }
+
+    public void BattleDeckAdvance(GameObject AddCard){//戦闘中のみのカードを追加する
+        BattleDeckList.Add(AddCard);
+    }
 }

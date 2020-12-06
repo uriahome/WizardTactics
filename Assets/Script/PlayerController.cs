@@ -134,15 +134,23 @@ public class PlayerController : MonoBehaviour
     public void Demonic(){
         //Attack +=5;
         MagicEnhance();
-        Mana +=2;
-        if(Mana >= MaxMana){
-            Mana = MaxMana;
-        }
+        //Mana +=2;
+        //if(Mana >= MaxMana){
+        //    Mana = MaxMana;
+        //}
+        ManaEnhance();
+        ManaEnhance();
         PlayerMon.SelfDestruct();
     }
 
     public void MagicEnhance(){//魔力を上げる処理
         Attack+=5;
+    }
+    public void ManaEnhance(){//魔法の効果などで1マナ増加させる処理
+        Mana++;
+        if(Mana >= MaxMana){
+            Mana = MaxMana;
+        }
     }
 
     public void Snowstorm(){

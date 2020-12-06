@@ -166,6 +166,11 @@ public class GManager : MonoBehaviour
             case "Gurimo":
             PCon.MagicEnhance();
             break;
+            case "Spyder":
+            Debug.Log("増殖増殖!!");
+            DCon.BattleDeckAdvance(ButtonList[16]);//Spyderのカードを戦闘中のデッキに追加する
+            PCon.ManaEnhance();//マナを1つ追加
+            break;
         } 
     }
 }
