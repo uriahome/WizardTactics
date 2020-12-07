@@ -45,6 +45,9 @@ public class Monster : MonoBehaviour
     //public bool Death;
     public bool Deathrattle;//やられたときの効果を持っているかどうか
 
+    public bool AttackAnime;//攻撃用の画像を持っているかどうか//試験的にここで導入する将来的には攻撃アニメーションにして全キャラにつけたい
+    public Sprite[] ChangeSprite;//攻撃用画像と待機画像
+
 
     /*public Monster(string Name, float Hp, int Attack, float Speed, float MaxSpeed, GameObject Body, int ManaCost)//生かせてない
     {
@@ -78,6 +81,8 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         SpeedX = Mathf.Abs(this.rigid2d.velocity.x);//現在の速度を代入
         if (!Freeze)
         {//凍っていないことが前提
@@ -166,6 +171,11 @@ public class Monster : MonoBehaviour
         StartCoroutine("UpDown");//なんとなく上下に動かす
         rigid2d.velocity = new Vector2(0, 0) * 0;//止める
         IsAttack = true;//攻撃中の設定にする
+
+        if(AttackAnime){
+            MySprite.sprite = ChangeSprite[1];//攻撃用画像に変更
+        }
+
         //Debug.Log("AttackMotion");
         //transform.Translate(0, 0.1f, 0);
         GameObject Obj = Instantiate(AttackObj) as GameObject;//攻撃範囲を生成する
@@ -194,6 +204,11 @@ public class Monster : MonoBehaviour
         Destroy(Obj.gameObject);//判定を消す
         //Debug.Log("オワオワリ");
         IsAttack = false;
+        
+        if(AttackAnime){
+            MySprite.sprite = ChangeSprite[0];//待機画像に変更
+        }
+
         StopCoroutine("UpDown");
 
     }
