@@ -322,8 +322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ugokan
-  MaxHp: 120
-  Hp: 120
+  MaxHp: 50
+  Hp: 50
   Attack: 40
   Body: {fileID: 0}
   ManaCost: 2
