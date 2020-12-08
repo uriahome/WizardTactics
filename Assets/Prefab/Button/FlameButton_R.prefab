@@ -136,19 +136,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6626407158385171681}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99810a91dc3d0b14a91dfc217b2843a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PCon: {fileID: 0}
   Player: {fileID: 0}
-  MyCost: 1
-  Card: {fileID: 1337850798, guid: 7929dc0532ff1e44999d01f9410e7c42, type: 3}
+  MyCost: 2
+  Card: {fileID: 6692025568946297643, guid: d980e96cb3067ec40829820967a25e1b, type: 3}
   DCon: {fileID: 0}
   Deck: {fileID: 0}
   Magic: 0
   Spell: {fileID: 0}
+  Build: 0
   AttackButton: {fileID: 0}
   AttackCon: {fileID: 0}
+  MyButton: {fileID: 0}
+  span: 0
+  delta: 0
   Dual: 1

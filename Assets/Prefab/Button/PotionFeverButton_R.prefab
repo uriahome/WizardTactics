@@ -136,7 +136,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5790521629779838364}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99810a91dc3d0b14a91dfc217b2843a9, type: 3}
   m_Name: 
@@ -152,4 +152,7 @@ MonoBehaviour:
   Build: 0
   AttackButton: {fileID: 0}
   AttackCon: {fileID: 0}
+  MyButton: {fileID: 0}
+  span: 0
+  delta: 0
   Dual: 1

@@ -64,10 +64,18 @@ public class ButtonController : MonoBehaviour
             {//Dualカードであるならば
                 string Name = this.gameObject.name;
                 Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
+               
                 string SearchName = Name.Substring(0, Name.Length - 1);//この行でButton_LのL部分を削除
-                SearchName += "R(Clone)";//Rを文字列に追加(相方を探すため)
-                Debug.Log(Name);
-                Debug.Log(SearchName);
+                string PairName = Name.Substring(Name.Length-1,1);//LまたはRの部分を取得
+                //Debug.Log(PairName);
+                if(PairName[0] ==　'L'){//Lの時ときはRをRのときはLを探す
+                    SearchName += "R(Clone)";//Rを文字列に追加(相方を探すため)
+                }else{
+                    SearchName += "L(Clone)";//Rを文字列に追加(相方を探すため)
+                }
+               
+                //Debug.Log(Name);
+                //Debug.Log(SearchName);
                 GameObject DualObj = GameObject.Find("DeckCanvas/Deck/" + SearchName);
                 if (DualObj)
                 {
@@ -143,7 +151,7 @@ public class ButtonController : MonoBehaviour
             case "GreenPotionButton":
                 PCon.HealAll();
                 break;
-            case "PotionFeverButton_L":
+            case "PotionFeverButton_L":case "PotionFeverButton_R"://LでもRでも同じ効果
                 AttackCon.FeverPotion();
                 break;
             case "DemonicPactButton":

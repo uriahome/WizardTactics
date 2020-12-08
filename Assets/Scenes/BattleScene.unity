@@ -2254,13 +2254,13 @@ PrefabInstance:
         type: 3}
       propertyPath: StructureList_Debug.Array.data[0]
       value: 
-      objectReference: {fileID: 3871122710473374535, guid: bb44b0acedb9aa04886523b2a32b130e,
+      objectReference: {fileID: 725226828, guid: a6f66591481d8334594a698761b10958,
         type: 3}
     - target: {fileID: 717173332189928557, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
         type: 3}
       propertyPath: StructureList_Debug.Array.data[1]
       value: 
-      objectReference: {fileID: 3871122710473374535, guid: bb44b0acedb9aa04886523b2a32b130e,
+      objectReference: {fileID: 6626407158385171681, guid: a01de4cc9dd3b2c458b3812799a6f5c2,
         type: 3}
     - target: {fileID: 2344719464300957307, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
         type: 3}
