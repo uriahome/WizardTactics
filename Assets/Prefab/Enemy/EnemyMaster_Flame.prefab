@@ -131,7 +131,7 @@ MonoBehaviour:
   SpeedX: 0
   IsEnemy: 1
   IsAttack: 0
-  AttackSpan: 0
+  AttackSpan: 1000
   MoveDirection: 0
   MyRangePosition: {fileID: 0}
   MyRange: {fileID: 0}
@@ -147,7 +147,9 @@ MonoBehaviour:
   sound1: {fileID: 8300000, guid: 06b761b74d7c4b0428a8b4808b2e5e72, type: 3}
   sound2: {fileID: 8300000, guid: ae85bb05f75622548988aeb7877b36dc, type: 3}
   audio1: {fileID: 0}
-  Death: 0
+  Deathrattle: 0
+  AttackAnime: 0
+  ChangeSprite: []
 --- !u!50 &7354341001035049910
 Rigidbody2D:
   serializedVersion: 4

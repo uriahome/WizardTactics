@@ -19,8 +19,7 @@ public class Monster : MonoBehaviour
     public bool IsEnemy;//敵か自陣か
     public bool IsAttack;//攻撃中かどうか
     public float AttackSpan;
-    public int MoveDirection;
-
+    public int MoveDirection;//進行方向
     public GameObject MyRangePosition;
     [SerializeField] MonsterRange MyRange = default;
     public GameObject AttackObj;//攻撃判定
