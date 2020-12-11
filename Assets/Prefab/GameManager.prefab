@@ -67,9 +67,11 @@ MonoBehaviour:
   - {fileID: 1901792080479529212, guid: e447b2f6ec239694d9590b8ba2f6919a, type: 3}
   - {fileID: 1985067448, guid: 79deb7feb6a1e3942846a8ca29255869, type: 3}
   - {fileID: 3871122710473374535, guid: bb44b0acedb9aa04886523b2a32b130e, type: 3}
+  - {fileID: 4262535252035227655, guid: c64779d5db2c22f43ac82ffed49faeab, type: 3}
   ButtonPairList:
   - {fileID: 6626407158385171681, guid: a01de4cc9dd3b2c458b3812799a6f5c2, type: 3}
   - {fileID: 5790521629779838364, guid: 3c564574ed825f54eb6cb5cd293942cc, type: 3}
+  - {fileID: 8622693992147488925, guid: 5d708ff4c165b7949aadd29f528207bf, type: 3}
   RewardCon: {fileID: 0}
   RCon: {fileID: 0}
   RewardText: {fileID: 0}

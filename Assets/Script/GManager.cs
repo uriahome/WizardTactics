@@ -95,6 +95,9 @@ public class GManager : MonoBehaviour
         {
             DCon.DeckAdd(ButtonPairList[1]);//デッキの中に新しいボタンを追加する
             Debug.Log("ポーションフィーバーを習得しました");
+        }else if(Num ==18){
+            DCon.DeckAdd(ButtonPairList[2]);//デッキの中に新しいボタンを追加する
+            Debug.Log("カクセイを習得しました");
         }
         DCon.DeckAdd(ButtonList[Num]);//デッキの中に新しいボタンを追加する
         BattleStart();

@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
         PlayerMon.SelfDestruct();
     }
 
-    public void MagicEnhance(){//魔力を上げる処理
+    public void MagicEnhance(){//魔力を5上げる処理
         Attack+=5;
     }
     public void ManaEnhance(){//魔法の効果などで1マナ増加させる処理
@@ -170,5 +170,9 @@ public class PlayerController : MonoBehaviour
                     
                 }
             }
+    }
+
+    public void MagicalAwakening(){//魔力を2倍にする
+         Attack =Attack*2;
     }
 }

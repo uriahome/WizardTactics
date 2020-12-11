@@ -160,6 +160,10 @@ public class ButtonController : MonoBehaviour
             case "SnowstormButton":
                 PCon.Snowstorm();
                 break;
+            case "MagicalAwakeningButton_L":case "MagicalAwakeningButton_R"://LでもRでも同じ効果
+                //Debug.Log("Awakening!!");
+                PCon.MagicalAwakening();
+                break;
             
             
 
