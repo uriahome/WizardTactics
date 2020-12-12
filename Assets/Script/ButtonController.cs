@@ -163,6 +163,10 @@ public class ButtonController : MonoBehaviour
             case "MagicalAwakeningButton_L":case "MagicalAwakeningButton_R"://LでもRでも同じ効果
                 //Debug.Log("Awakening!!");
                 PCon.MagicalAwakening();
+                DCon.AddMiss();
+                break;
+            case "MissButton"://ミスボタン
+                Debug.Log("Miss!");
                 break;
             
             

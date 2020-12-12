@@ -30,6 +30,8 @@ public class DeckController : MonoBehaviour
 
 
     public GameObject DeckCanvas;
+
+    public GameObject MissButton;//戦闘中に追加するミスボタンを宣言
     // Start is called before the first frame update
     void Start()
     {
@@ -177,5 +179,9 @@ public class DeckController : MonoBehaviour
 
     public void BattleDeckAdvance(GameObject AddCard){//戦闘中のみのカードを追加する
         BattleDeckList.Add(AddCard);
+    }
+
+    public void AddMiss(){
+        NowDeckList.Add(MissButton);//一度だけ使用可能なミスボタンを追加する
     }
 }

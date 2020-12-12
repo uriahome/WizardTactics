@@ -39,7 +39,7 @@ public class GManager : MonoBehaviour
 
     public AudioSource audio1;
 
-
+    //public GameObject MissButton;//戦闘中に追加するミスボタンを宣言
     private void Awake()
     {
 
@@ -176,4 +176,8 @@ public class GManager : MonoBehaviour
             break;
         } 
     }
+
+    //public void AddMiss(){
+    //    DCon.NowDeckList.Add(MissButton);//ミスボタンを戦闘に使用中のリストに追加
+    //}
 }
