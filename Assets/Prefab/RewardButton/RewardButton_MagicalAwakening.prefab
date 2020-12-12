@@ -237,7 +237,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "[\u30DA\u30A2]\n\u9B54\u529B\u3092\n2\u500D\u306B\u3059\u308B"
+  m_Text: "[\u30DA\u30A2]\n\u9B54\u529B\u304C2\u500D\n\u300C\u30DF\u30B9\u300D\u8FFD\u52A0"
 --- !u!1 &5618090195664732746
 GameObject:
   m_ObjectHideFlags: 0
