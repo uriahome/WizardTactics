@@ -168,6 +168,10 @@ public class ButtonController : MonoBehaviour
             case "MissButton"://ミスボタン
                 Debug.Log("Miss!");
                 break;
+            case "OverClockButton":
+                PCon.OverClock();
+                DCon.AddMiss();
+                break;
             
             
 

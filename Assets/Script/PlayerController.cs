@@ -175,4 +175,9 @@ public class PlayerController : MonoBehaviour
     public void MagicalAwakening(){//魔力を2倍にする
          Attack =Attack*2;
     }
+
+    public void OverClock(){//マナ回復速度を2回上昇させる(1.44倍)
+        AddMana *= 1.2f;
+        AddMana *= 1.2f;
+    }
 }
