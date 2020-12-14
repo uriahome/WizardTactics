@@ -88,6 +88,7 @@ MonoBehaviour:
   HandList: []
   HandNameList: []
   DeckCanvas: {fileID: 8567619374339603609}
+  MissButton: {fileID: 0}
 --- !u!1001 &2645187385889622684
 PrefabInstance:
   m_ObjectHideFlags: 0
