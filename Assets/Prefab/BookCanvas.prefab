@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9142124265536951289}
   - component: {fileID: 9142124265536951294}
   - component: {fileID: 9142124265536951295}
+  - component: {fileID: 9142124265369335023}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -126,8 +127,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9142124265369335023}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &9142124265369335023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9142124265536951293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bec415ea1a2c3f4ab517c92b26c68c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BookImage: {fileID: 0}
+  BookSprite:
+  - {fileID: 21300000, guid: 0a2a3369bd533a14eaedbed7d07bab94, type: 3}
+  - {fileID: 21300000, guid: e1a04d2471567b34f804b1e2488632f6, type: 3}
+  ViewFlag: 0
 --- !u!1 &9142124265734270907
 GameObject:
   m_ObjectHideFlags: 0

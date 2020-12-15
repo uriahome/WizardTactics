@@ -9,10 +9,17 @@ public class ReviewButton : MonoBehaviour
     public GameObject DeckCancas;
     public GameObject TitleCanvas;
     public bool ViewFlag;
+
+    /*public GameObject BookButton;
+    public Image BookImage;
+    public Sprite[] BookSprite;*/
     // Start is called before the first frame update
     void Start()
     {
         ViewFlag = false;
+
+        /*BookButton = transform.GetChild(0).gameObject.
+        BookImage = BookButton.GetComponent<Image>();*/
 
     }
 
@@ -23,10 +30,12 @@ public class ReviewButton : MonoBehaviour
             ButtonListCanvas.SetActive(true);
             DeckCancas.SetActive(false);
             TitleCanvas.SetActive(false);
+            //BookImage.image = BookSprite[0];
         }else{
             ButtonListCanvas.SetActive(false);
             DeckCancas.SetActive(true);
             TitleCanvas.SetActive(true);
+            //BookImage.image = BookSprite[1];
         }
     }
 
