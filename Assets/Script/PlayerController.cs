@@ -101,7 +101,8 @@ public class PlayerController : MonoBehaviour
     public void MagicExpansion()
     {//魔力速度アップと最大マナを拡大
         MaxMana++;
-        AddMana *= 1.2f;
+        //AddMana *= 1.2f;
+        ClockUp();
     }
 
     public void SummonBuild()//実際に建築予定の建物をInstantiate処理をする
@@ -177,7 +178,13 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OverClock(){//マナ回復速度を2回上昇させる(1.44倍)
-        AddMana *= 1.2f;
-        AddMana *= 1.2f;
+        //AddMana *= 1.2f;
+        //AddMana *= 1.2f;
+        ClockUp();//1.2上げる処理を2回
+        ClockUp();//今度魔法呼び出しの段階でClockUp()を2回呼ぶように変更したい
+    }
+    public void ClockUp(){//汎用的にマナ回復速度を上げるようにこれで統一したい
+        AddMana *=1.2f;
+        Debug.Log("ClockUp!!!");
     }
 }

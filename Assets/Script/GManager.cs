@@ -174,6 +174,9 @@ public class GManager : MonoBehaviour
             DCon.BattleDeckAdvance(ButtonList[16]);//Spyderのカードを戦闘中のデッキに追加する
             PCon.ManaEnhance();//マナを1つ追加
             break;
+            case "Senpun":
+            PCon.ClockUp();//マナ回復速度が1.2倍
+            break;
         } 
     }
 
