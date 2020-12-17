@@ -177,6 +177,9 @@ public class GManager : MonoBehaviour
             case "Senpun":
             PCon.ClockUp();//マナ回復速度が1.2倍
             break;
+            case "Green"://やられたらグリーンポーションの回復効果
+            PCon.HealAll();
+            break;
         } 
     }
 

@@ -70,6 +70,7 @@ MonoBehaviour:
   - {fileID: 4262535252035227655, guid: c64779d5db2c22f43ac82ffed49faeab, type: 3}
   - {fileID: 7240902109004075580, guid: 9c42dba0459bf3a44b4445d630baa3b7, type: 3}
   - {fileID: 4876275493766009864, guid: f40e33129855b9b49a1dd47c43cb3227, type: 3}
+  - {fileID: 4040939537779403001, guid: d3883174d52ff2d4ab1f20a0a4c6e987, type: 3}
   ButtonPairList:
   - {fileID: 6626407158385171681, guid: a01de4cc9dd3b2c458b3812799a6f5c2, type: 3}
   - {fileID: 5790521629779838364, guid: 3c564574ed825f54eb6cb5cd293942cc, type: 3}
