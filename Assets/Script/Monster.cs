@@ -313,6 +313,7 @@ public class Monster : MonoBehaviour
         //Destroy(this.gameObject);
         GManager.instance.Battle = false;//戦闘終了
         GManager.instance.Win();//勝ち
+        yield return new WaitForSeconds(0.1f);//報酬画面に映るように少し待機
         Destroy(this.gameObject);
         //yield break;
     }
