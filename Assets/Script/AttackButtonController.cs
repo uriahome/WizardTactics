@@ -59,7 +59,27 @@ public class AttackButtonController : MonoBehaviour
         ShockWave SObj = Fire.GetComponent<ShockWave>();
         SObj.Power = PCon.Attack;//攻撃力の代入
         SObj.Move();*/
-        ThrowPotion(0);
+        //Debug.Log(PCon.ThrowPotionCount);
+        //for(int i =0;i<PCon.ThrowPotionCount;i++){
+        //    ThrowPotion(0);
+        //}
+        StartCoroutine("AttackThrow",PCon.ThrowPotionCount);
+    }
+    public IEnumerator AttackThrow(int Num){//通常攻撃で投げるポーションの数を代入する
+        int Count = 0;
+        float interval = 0.1f;
+        while (true)
+        {
+            //Debug.Log("nyaa");
+            Count++;
+            if (Count >Num)
+            {
+                Debug.Log("oaaa");
+                yield break;
+            }
+           ThrowPotion(0);
+            yield return new WaitForSeconds(interval);
+        }
     }
 
     public void ThrowPotion(int Num)

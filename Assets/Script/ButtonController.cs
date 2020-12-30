@@ -172,6 +172,9 @@ public class ButtonController : MonoBehaviour
                 PCon.OverClock();
                 DCon.AddMiss();
                 break;
+            case "PotionExpansionButton":
+                PCon.ThrowPotionCountUp();
+                break;
             
             
 

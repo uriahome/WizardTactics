@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
     public Monster PlayerMon;//自分のMonster.cs
 
+    public int ThrowPotionCount;//通常攻撃で投げるポーションの数
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,6 +98,7 @@ public class PlayerController : MonoBehaviour
         Mana = DefaultMana;//マナもリセット
         AddMana = DefaultAddMana;
         MaxMana = DefaultMaxMana;//全部リセットしような...
+        ThrowPotionCount = 1;
     }
 
     public void MagicExpansion()
@@ -186,5 +189,9 @@ public class PlayerController : MonoBehaviour
     public void ClockUp(){//汎用的にマナ回復速度を上げるようにこれで統一したい
         AddMana *=1.2f;
         Debug.Log("ClockUp!!!");
+    }
+
+    public void ThrowPotionCountUp(){//通常攻撃で投げるポーションの数を増やす
+        ThrowPotionCount++;
     }
 }
