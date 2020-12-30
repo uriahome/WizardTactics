@@ -313,6 +313,7 @@ MonoBehaviour:
   - {fileID: 1903819944902410633, guid: e09940bbee374d5478fd3fd8a0af012c, type: 3}
   - {fileID: 1408287621480880581, guid: 887849a2d0e1b24449b1acf511ddf4be, type: 3}
   - {fileID: 8567172902583498721, guid: de8af7a2a0c4a414fb0e98604b0bc632, type: 3}
+  - {fileID: 47561588984666108, guid: 3d95dbea33ce76c4f8054c04ba3de7d3, type: 3}
   RandomNum: 0
   CardListRange: 10
   RewardPanel: {fileID: 5062823908366275169}

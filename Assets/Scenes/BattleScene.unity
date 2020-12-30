@@ -2292,7 +2292,7 @@ PrefabInstance:
         type: 3}
       propertyPath: StructureList_Debug.Array.data[1]
       value: 
-      objectReference: {fileID: 4040939537779403001, guid: d3883174d52ff2d4ab1f20a0a4c6e987,
+      objectReference: {fileID: 2706674631640391059, guid: d3f16b9c9b8e7ca4d9b94688eea64fb1,
         type: 3}
     - target: {fileID: 7779530094513817248, guid: d4ba7c96d879e5c4aa8b6f62aaf66f5e,
         type: 3}
