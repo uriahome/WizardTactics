@@ -4025,6 +4025,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8140201406057360496, guid: 3d95dbea33ce76c4f8054c04ba3de7d3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6035623597686220918, guid: 3d95dbea33ce76c4f8054c04ba3de7d3,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -4044,7 +4049,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 4007404081045102228}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99810a91dc3d0b14a91dfc217b2843a9, type: 3}
   m_Name: 

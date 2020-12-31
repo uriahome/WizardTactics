@@ -63,9 +63,9 @@ public class AttackButtonController : MonoBehaviour
         //for(int i =0;i<PCon.ThrowPotionCount;i++){
         //    ThrowPotion(0);
         //}
-        StartCoroutine("AttackThrow",PCon.ThrowPotionCount);
+        StartCoroutine(AttackThrow(0,PCon.ThrowPotionCount));//2つ以上の引数を渡すにはコルーチンの関数名を文字列で指定しないこの方法を用いる必要がある
     }
-    public IEnumerator AttackThrow(int Num){//通常攻撃で投げるポーションの数を代入する
+    public IEnumerator AttackThrow(int PotionNum,int Num){//通常攻撃で投げるポーションの数を代入する//PotionNum:0で赤:1で青
         int Count = 0;
         float interval = 0.1f;
         while (true)
@@ -77,7 +77,7 @@ public class AttackButtonController : MonoBehaviour
                 Debug.Log("oaaa");
                 yield break;
             }
-           ThrowPotion(0);
+           ThrowPotion(PotionNum);
             yield return new WaitForSeconds(interval);
         }
     }
@@ -94,13 +94,15 @@ public class AttackButtonController : MonoBehaviour
 
     public void ThreePotion(int Num)
     {
-        StartCoroutine("ThreeThrow",Num);
+        //StartCoroutine("ThreeThrow",Num);
+        StartCoroutine(AttackThrow(Num,3));
     }
     public void FeverPotion()
     {
-        StartCoroutine("FeverThrow");
+        //StartCoroutine("FeverThrow");
+        StartCoroutine(AttackThrow(1,10));
     }
-    public IEnumerator ThreeThrow(int Num)
+    /*public IEnumerator ThreeThrow(int Num)
     {
         int Count = 0;
         float interval = 0.1f;
@@ -116,9 +118,9 @@ public class AttackButtonController : MonoBehaviour
            ThrowPotion(Num);
             yield return new WaitForSeconds(interval);
         }
-    }
+    }*/
 
-    public IEnumerator FeverThrow()//10回投げる
+    /*public IEnumerator FeverThrow()//10回投げる
     {
         int Count = 0;
         float interval = 0.1f;
@@ -134,5 +136,5 @@ public class AttackButtonController : MonoBehaviour
            ThrowPotion(1);
             yield return new WaitForSeconds(interval);
         }
-    }
+    }*/
 }
