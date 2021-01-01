@@ -8,9 +8,12 @@ public class SelectController : MonoBehaviour
     public GameObject MagicDeck;
     public GameObject MonsterDeck;
     public string SelectText;
+
+    public AudioClip sound;
+    public AudioSource audio;
     void Start()
     {
-
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,6 +24,7 @@ public class SelectController : MonoBehaviour
 
     public void ChangeShow(int num)
     {
+        audio.PlayOneShot(sound);//効果音を再生(カチッ)
         switch (num)
         {
             case 0:

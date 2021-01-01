@@ -9,9 +9,12 @@ public class ReviewImage : MonoBehaviour
     public Image BookImage;
     public Sprite[] BookSprite;
     public bool ViewFlag;
+    public AudioClip sound;
+    public AudioSource audio;
     void Start()
     {
         BookImage = GetComponent<Image>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,6 +23,7 @@ public class ReviewImage : MonoBehaviour
         
     }
     public void OnClick(){
+        audio.PlayOneShot(sound);//効果音を再生(カチッ)
         ViewFlag = !ViewFlag;
         if(ViewFlag){
             BookImage.sprite = BookSprite[1];
