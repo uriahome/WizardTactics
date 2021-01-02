@@ -9,10 +9,11 @@ public class SceneController : MonoBehaviour
     public int SelectDeckNum;//ゲーム開始時に選択されたデッキの番号
 
     //public AudioClip BGM_title;//戦闘シーンのBGMの管理もここで行う
-
-    //public AudioSource audio1;
+    public AudioClip sound;
+    public AudioSource audio;
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         /*audio1 = GetComponent<AudioSource>();
         audio1.volume = 0.5f;
         audio1.Stop();//今流れているのを止めてから流す
@@ -26,6 +27,7 @@ public class SceneController : MonoBehaviour
 
     public void ChangeScene()
     {
+        audio.PlayOneShot(sound);//効果音を再生する
         // SceneManager.LoadScene("BattleSceme",LoadSceneMode,Single);//メインの戦闘シーンを読み込む
         Debug.Log("SceneLoad");//シーンの読み込み(非同期)
 
@@ -37,6 +39,7 @@ public class SceneController : MonoBehaviour
 
     public void ChangeTitle()
     {//タイトルに戻ってくるとき
+        audio.PlayOneShot(sound);//効果音を再生する
         Debug.Log("SceneLoad");//シーンの読み込み(非同期)
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Title");
     }
