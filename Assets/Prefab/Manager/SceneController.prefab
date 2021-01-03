@@ -47,6 +47,14 @@ MonoBehaviour:
   SelectDeckNum: 0
   sound: {fileID: 8300000, guid: 1c7129a27e81d3341a11ba26e95f09d3, type: 3}
   audio: {fileID: 0}
+  FadeObject: {fileID: 0}
+  FadeImage: {fileID: 0}
+  IsFadeOut: 0
+  red: 0
+  green: 0
+  blue: 0
+  alpha: 0
+  FadeSpeed: 0.002
 --- !u!82 &1046486991
 AudioSource:
   m_ObjectHideFlags: 0
