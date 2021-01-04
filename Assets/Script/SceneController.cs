@@ -74,7 +74,14 @@ public class SceneController : MonoBehaviour
         PlayerPrefs.SetInt("DeckNum", SelectDeckNum);//デッキを選択してそれをPlayerPrefsに保存
         PlayerPrefs.Save();
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("BattleScene");
+        StartCoroutine(LoadScene("BattleScene"));
+    }
+    IEnumerator LoadScene(string SceneName)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneName);
+        asyncLoad.allowSceneActivation = false;
+        yield return new WaitForSeconds(1);
+        asyncLoad.allowSceneActivation = true;
     }
 
     public void ChangeTitle()
@@ -82,7 +89,7 @@ public class SceneController : MonoBehaviour
         IsFadeOut = true;
         audio.PlayOneShot(sound);//効果音を再生する
         Debug.Log("SceneLoad");//シーンの読み込み(非同期)
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Title");
+        StartCoroutine(LoadScene("Title"));
     }
 
     public void SelectDeck(int num)
