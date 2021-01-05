@@ -175,6 +175,12 @@ public class ButtonController : MonoBehaviour
             case "PotionExpansionButton":
                 PCon.ThrowPotionCountUp();
                 break;
+            case "KnightDualButton"://ナイト2体召喚するがミスを3枚追加する
+                PCon.DualSummon(Card);
+                DCon.AddMiss();
+                DCon.AddMiss();
+                DCon.AddMiss();
+                break;
             
             
 

@@ -194,4 +194,17 @@ public class PlayerController : MonoBehaviour
     public void ThrowPotionCountUp(){//通常攻撃で投げるポーションの数を増やす
         ThrowPotionCount++;
     }
+
+    public void DualSummon(GameObject Card){//2回同じモンスターを召喚する
+       StartCoroutine(SummonDelay(Card));
+    }
+
+    IEnumerator SummonDelay(GameObject Card)
+    {
+        GameObject Summon = Instantiate(Card) as GameObject;//生成する
+        Summon.transform.position = new Vector3(this.transform.position.x, 0.1f, this.transform.position.z);
+        yield return new WaitForSeconds(0.5f);
+        Summon = Instantiate(Card) as GameObject;//生成する
+        Summon.transform.position = new Vector3(this.transform.position.x, 0.1f, this.transform.position.z);
+    }
 }
