@@ -32,7 +32,7 @@ public class EnemyMaster : MonoBehaviour
                 Enemy.transform.position = new Vector3(this.transform.position.x-1.0f, 0.1f, this.transform.position.z);//場所微調整
             }
 
-            switch(BattleCount){
+            switch(BattleCount){//勝利回数で現れる敵を変更する
                 case 0:case 1:
                 this.transform.position = new Vector3(7.56f, 0.5f, 0.0f);//敵のマスターならこの座標にいる
                 break;

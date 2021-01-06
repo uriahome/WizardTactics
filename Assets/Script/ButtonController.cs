@@ -77,7 +77,7 @@ public class ButtonController : MonoBehaviour
                 //Debug.Log(Name);
                 //Debug.Log(SearchName);
                 GameObject DualObj = GameObject.Find("DeckCanvas/Deck/" + SearchName);
-                if (DualObj)
+                if (DualObj)//相方がある場合のみ使用できる
                 {
                     Debug.Log(DualObj + "発見!!!");
                     DCon.DestroyCard(DualObj);
@@ -101,7 +101,7 @@ public class ButtonController : MonoBehaviour
                 PCon.Mana -= MyCost;
                 //Debug.Log("召喚しました！");
             }
-            else if (Magic)
+            else if (Magic)//魔法なら
             {
                 string Name = this.gameObject.name;
                 Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す

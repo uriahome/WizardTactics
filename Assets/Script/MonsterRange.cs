@@ -45,25 +45,4 @@ public class MonsterRange : MonoBehaviour
             }
         }
     }
-
-    /*void OnTriggerExit2D(Collider2D collision)//射程外に行ったとき
-    {
-        Debug.Log("射程外");
-        if (ParentM.IsEnemy)//これが敵キャラなら
-        {
-            if (collision.gameObject.tag == "PlayerMonster")
-            {
-                DetectTarget = false;
-                LookTarget = null;
-            }
-        }
-        else
-        {
-            if (collision.gameObject.tag == "EnemyMonster")
-            {
-                DetectTarget = false;
-                LookTarget = null;
-            }
-        }
-    }*/
 }

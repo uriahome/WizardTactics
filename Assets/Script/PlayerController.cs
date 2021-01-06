@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
             }
     }
 
-    public void Demonic(){
+    public void Demonic(){//魔力上昇1かいと2マナ回復とプレイヤーへのダメージ
         //Attack +=5;
         MagicEnhance();
         //Mana +=2;
@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
        StartCoroutine(SummonDelay(Card));
     }
 
-    IEnumerator SummonDelay(GameObject Card)
+    IEnumerator SummonDelay(GameObject Card)//0.5秒の間隔を置いて召喚する
     {
         GameObject Summon = Instantiate(Card) as GameObject;//生成する
         Summon.transform.position = new Vector3(this.transform.position.x, 0.1f, this.transform.position.z);

@@ -5,17 +5,6 @@ using UnityEngine.UI;
 
 public class DeckController : MonoBehaviour
 {
-    //[System.SerializableAttribute]
-    /*public class StructureDeckList
-    {
-        public List<GameObject> List = new List<GameObject>();//デッキリスト
-        public StructureDeckList(List<GameObject> list)
-        {
-            List = list;
-        }
-    }
-    public List<StructureDeckList> StructureList = new List<StructureDeckList>();
-    */
 
     public List<GameObject> StructureList_monster = new List<GameObject>();//デッキリスト 
     public List<GameObject> StructureList_magic = new List<GameObject>();//デッキリスト 
@@ -35,15 +24,6 @@ public class DeckController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        //DeckSetting();//この戦闘で使用するデッキをセットする
-        //DeckShuffle();//デッキを混ぜる
-        /* for(int i =0; i < 3; i++)
-         {
-             Button Draw = DeckDraw();
-             Draw.transform.SetParent(DeckCanvas.transform);
-         }*/
-
         //PlayerPrefs.SetInt("DeckNum", 100);//デバッグ用のデッキを選択(最終的にはコメントアウトする必要あり)
         DeckSelect();
         DeckPreparation();
@@ -53,12 +33,6 @@ public class DeckController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {//機能確認用
-            SortHands();
-        }
-        //SortHands();
-
     }
 
     public void DeckSelect()//ゲーム開始時のデッキを設定する
@@ -87,7 +61,7 @@ public class DeckController : MonoBehaviour
         BattleDeckList = new List<GameObject>(DeckList);//デッキリストの設定
     }
 
-    public void DeckShuffle()
+    public void DeckShuffle()//デッキの中身をシャッフルする
     {
         for (int i = 0; i < BattleDeckList.Count; i++)
         {
@@ -142,7 +116,7 @@ public class DeckController : MonoBehaviour
             GameObject Summon = Instantiate(Draw) as GameObject;
             Summon.transform.SetParent(DeckCanvas.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
         }
-        StartCoroutine("WaitTime");
+        StartCoroutine("WaitTime");//手札のソート
     }
 
     public void SortHands()
@@ -167,12 +141,12 @@ public class DeckController : MonoBehaviour
     }
 
     public IEnumerator WaitTime()
-    {//0.1秒待機
+    {//0.1秒待機してからソートする
         yield return new WaitForSeconds(0.1f);
         SortHands();
     }
 
-    public void DeckPreparation_Act()
+    public void DeckPreparation_Act()//GManagerから読み込むときにエラーが出たためこの方式、いつか調整したい
     {
         DeckPreparation();
     }

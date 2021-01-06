@@ -84,7 +84,7 @@ public class GManager : MonoBehaviour
 
     }
 
-    public void BattleReward(int Num)
+    public void BattleReward(int Num)//デュアル魔法の場合似合い方を追加する処理、かなり無理やりなので調整したい
     {
         if (Num == 9)
         {//フレイムのLの場合Rを追加

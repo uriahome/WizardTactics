@@ -8,7 +8,7 @@ public class AttackButtonController : MonoBehaviour
     public float AlphaColor;
     public bool UseAttack;//使用したかどうか
     public float Span;//再使用までの時間
-    public Button AButton;
+    public Button AButton;//通常攻撃のボタン
     public ColorBlock ButtonColors;
 
     public GameObject Player;
@@ -52,17 +52,6 @@ public class AttackButtonController : MonoBehaviour
         UseAttack = true;
         AlphaColor = 0;
         AButton.interactable = false;//使用不可に
-
-        /*GameObject Fire = Instantiate(PlayerFire) as GameObject;//炎の生成
-        Fire.gameObject.tag = "PlayerAttack";
-        Fire.transform.position = Player.transform.position;//プレイヤーの場所に出す
-        ShockWave SObj = Fire.GetComponent<ShockWave>();
-        SObj.Power = PCon.Attack;//攻撃力の代入
-        SObj.Move();*/
-        //Debug.Log(PCon.ThrowPotionCount);
-        //for(int i =0;i<PCon.ThrowPotionCount;i++){
-        //    ThrowPotion(0);
-        //}
         StartCoroutine(AttackThrow(0,PCon.ThrowPotionCount));//2つ以上の引数を渡すにはコルーチンの関数名を文字列で指定しないこの方法を用いる必要がある
     }
     public IEnumerator AttackThrow(int PotionNum,int Num){//通常攻撃で投げるポーションの数を代入する//PotionNum:0で赤:1で青
@@ -102,39 +91,5 @@ public class AttackButtonController : MonoBehaviour
         //StartCoroutine("FeverThrow");
         StartCoroutine(AttackThrow(1,10));
     }
-    /*public IEnumerator ThreeThrow(int Num)
-    {
-        int Count = 0;
-        float interval = 0.1f;
-        while (true)
-        {
-            //Debug.Log("nyaa");
-            Count++;
-            if (Count > 3)
-            {
-                Debug.Log("oaaa");
-                yield break;
-            }
-           ThrowPotion(Num);
-            yield return new WaitForSeconds(interval);
-        }
-    }*/
-
-    /*public IEnumerator FeverThrow()//10回投げる
-    {
-        int Count = 0;
-        float interval = 0.1f;
-        while (true)
-        {
-            //Debug.Log("nyaa");
-            Count++;
-            if (Count > 10)
-            {
-                Debug.Log("oaaa");
-                yield break;
-            }
-           ThrowPotion(1);
-            yield return new WaitForSeconds(interval);
-        }
-    }*/
+    
 }

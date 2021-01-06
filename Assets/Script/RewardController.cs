@@ -25,10 +25,6 @@ public class RewardController : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
-        /*else
-        {
-            this.gameObject.SetActive(true);
-        }*/
     }
 
     public void SelectCard()
@@ -38,7 +34,6 @@ public class RewardController : MonoBehaviour
             Destroy(child.gameObject);
         }
         Random.InitState(System.DateTime.Now.Millisecond);//現在の時間をシード値にする
-        //CardListRange = 4;//CardList.Length;//カードリストの長さを代入//とりあえず5にするしかない
         CardListRange = CardList.Count;
         RandomNumList = new List<int>();
         for(int j =0;j<CardListRange;j++){
