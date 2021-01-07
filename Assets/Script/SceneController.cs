@@ -36,11 +36,6 @@ public class SceneController : MonoBehaviour
         FadeImage.color = new Color(red,green,blue,0);
         alpha = FadeImage.color.a;
         FadeImage.enabled = false;
-
-        /*audio1 = GetComponent<AudioSource>();
-        audio1.volume = 0.5f;
-        audio1.Stop();//今流れているのを止めてから流す
-        audio1.PlayOneShot(BGM_title);*/
     }
 
     // Update is called once per frame

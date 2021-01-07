@@ -26,15 +26,6 @@ public class Read_csv : MonoBehaviour
         Debug.Log(csvData[0][0]);//Name
         Debug.Log(csvData[0][1]);//Hp
         //Debug.Log(csvData[1]);
-
-        /*for(int x = 0; x < csvData.Count;x++){
-            //string CharacterData ="";
-            for(int y = 0; y <csvData[x].Length;y++){
-                //CharacterData+=csvData[x][y];
-                //Debug.Log(csvData[x][y]);
-            }
-            //Debug.Log(CharacterData);
-        }*/
         Parameters = MonsterStatus(1);
         //MonsterStatus(2);
     }
