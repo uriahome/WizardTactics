@@ -38,8 +38,6 @@ public class GManager : MonoBehaviour
     public AudioClip BGM_gameover;//戦闘シーンのBGMの管理もここで行う
 
     public AudioSource audio1;
-
-    //public GameObject MissButton;//戦闘中に追加するミスボタンを宣言
     private void Awake()
     {
 
@@ -111,23 +109,15 @@ public class GManager : MonoBehaviour
 
 
         Debug.Log("戦闘開始!!");
-        //GameObject Master = Instantiate(PlayerM) as GameObject;
-        //Master.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         PCon.SetUp();//プレイヤーマスターの攻撃力等をデフォルトに再設定する
         PMon.Refresh();//全回復させる
         Battle = true;
-        //DCon.DeckSetting();
-        //DCon.DeckShuffle();
         StartCoroutine("WaitTime");
-        //DCon.DeckPreparation();//なぜかここでエラーが出るようになってしまった
-        //DCon.DeckPreparation_Act();
         WinNum++;
         EnemyMan.EnemyStart();
-        //WinNum++;
     }
     public void Win()
     {//ゲーム勝利時
-        //WinNum++;//ここでWinNumをカウントすると二重に呼び出されていることがあったので変更
         if(WinNum == 6){
             WinNum++;
             Lose();//実質7回目勝利でクリア表示
@@ -142,9 +132,6 @@ public class GManager : MonoBehaviour
     {//ゲーム敗北時
         ResultCon.gameObject.SetActive(true);
         ReCon.Finish();
-
-        //SCon.ChangeTitle();//タイトルに戻る
-        //Destroy(this.gameObject);//ここで消さないとタイトルからリスタートした時に試合開始できなかったため負けたら削除するように変更
     }
 
 
@@ -182,8 +169,4 @@ public class GManager : MonoBehaviour
             break;
         } 
     }
-
-    //public void AddMiss(){
-    //    DCon.NowDeckList.Add(MissButton);//ミスボタンを戦闘に使用中のリストに追加
-    //}
 }

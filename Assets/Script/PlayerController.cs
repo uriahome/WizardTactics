@@ -74,16 +74,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    /*public void Summon()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            ClickPosition = Input.mousePosition;
-            ClickPosition.z = 10f;
-            Instantiate(Prefab, Camera.main.ScreenToWorldPoint(ClickPosition), Prefab.transform.rotation);
-
-        }
-    }*/
     public void PlayerAnimation(int Num)//Playerのアニメーション変更する
     {
         if (Num == 0)
@@ -104,7 +94,6 @@ public class PlayerController : MonoBehaviour
     public void MagicExpansion()
     {//魔力速度アップと最大マナを拡大
         MaxMana++;
-        //AddMana *= 1.2f;
         ClockUp();
     }
 
@@ -136,12 +125,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Demonic(){//魔力上昇1かいと2マナ回復とプレイヤーへのダメージ
-        //Attack +=5;
         MagicEnhance();
-        //Mana +=2;
-        //if(Mana >= MaxMana){
-        //    Mana = MaxMana;
-        //}
         ManaEnhance();
         ManaEnhance();
         PlayerMon.SelfDestruct();
@@ -181,8 +165,6 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OverClock(){//マナ回復速度を2回上昇させる(1.44倍)
-        //AddMana *= 1.2f;
-        //AddMana *= 1.2f;
         ClockUp();//1.2上げる処理を2回
         ClockUp();//今度魔法呼び出しの段階でClockUp()を2回呼ぶように変更したい
     }

@@ -74,8 +74,7 @@ public class ButtonController : MonoBehaviour
                     SearchName += "L(Clone)";//Rを文字列に追加(相方を探すため)
                 }
                
-                //Debug.Log(Name);
-                //Debug.Log(SearchName);
+
                 GameObject DualObj = GameObject.Find("DeckCanvas/Deck/" + SearchName);
                 if (DualObj)//相方がある場合のみ使用できる
                 {
@@ -92,9 +91,6 @@ public class ButtonController : MonoBehaviour
 
             if (Build)//建物なら
             {
-                // GameObject Summon = Instantiate(Card) as GameObject;//生成する
-                //   Summon.transform.position = Player.transform.position;//Playerの場所に出す
-                //Summon.transform.position = new Vector3(Player.transform.position.x, 0.1f, Player.transform.position.z);
                 PCon.SetBuildObj(Card);//召喚予定のカードに追加する
 
                 DCon.DestroyCard(this.gameObject);
@@ -186,25 +182,6 @@ public class ButtonController : MonoBehaviour
 
         }
     }
-
-    /*public IEnumerator ThreePotion()
-    {
-        int Count = 0;
-        float interval = 0.05f;
-        while (true)
-        {
-            //Debug.Log("nyaa");
-            Count++;
-            if (Count >= 3)
-            {
-                Debug.Log("oaaa");
-                yield break;
-            }
-            AttackCon.ThrowPotion();
-            yield return new WaitForSeconds(interval);
-        }
-    }*/
-
     public void RewardOnClick(int Num)
     {//報酬画面でのクリック時
         GManager.instance.BattleReward(Num);//自分の番号を送る

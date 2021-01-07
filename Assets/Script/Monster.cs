@@ -48,17 +48,6 @@ public class Monster : MonoBehaviour
     public Sprite[] ChangeSprite;//攻撃用画像と待機画像
 
 
-    /*public Monster(string Name, float Hp, int Attack, float Speed, float MaxSpeed, GameObject Body, int ManaCost)//生かせてない
-    {
-        this.Name = Name;
-        this.Hp = Hp;
-        this.Attack = Attack;
-        this.Speed = Speed;
-        this.MaxSpeed = MaxSpeed;
-        this.Body = Body;
-        this.ManaCost = ManaCost;
-    }*/
-
     // Start is called before the first frame update
     void Start()
     {
@@ -108,10 +97,6 @@ public class Monster : MonoBehaviour
             rigid2d.velocity = new Vector2(0, 0) * 0;
             StartCoroutine("FreezeDelete");
         }
-        /*if (Master)
-        {
-            this.transform.position = new Vector3(7.56f, 0.5f, 0.0f);//敵のマスターならこの座標にいる
-        }*/
         if (!GManager.instance.Battle)
         {
             if (!PlayerMaster)
@@ -125,8 +110,6 @@ public class Monster : MonoBehaviour
             Debug.Log("やられた" + this.gameObject);
             if (Master)
             {//マスターがやられたなら
-                //GManager.instance.Battle = false;//戦闘終了
-                //GManager.instance.Win();//勝ち
                 StartCoroutine("MasterDeath");
             }
             else if (PlayerMaster)
@@ -137,8 +120,6 @@ public class Monster : MonoBehaviour
             else
             {
                 if(Deathrattle){//やられたときの効果を処理する
-                    //string Name = this.gameObject.name;
-                    //Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
                     GManager.instance.Deathrattle(Name);
                 }
                 Destroy(this.gameObject);
@@ -148,14 +129,6 @@ public class Monster : MonoBehaviour
 
     public void Move()
     {
-        /*if (IsEnemy)
-        {
-            this.rigid2d.AddForce(transform.right * -1*this.Speed);
-        }
-        else
-        {
-            this.rigid2d.AddForce(transform.right * this.Speed);
-        }*/
         this.rigid2d.AddForce(transform.right * this.Speed * MoveDirection);
     }
     public void AttackMove()
@@ -270,35 +243,10 @@ public class Monster : MonoBehaviour
     {
         //Debug.Log("Hit" + this.gameObject);
         StartCoroutine("Blink");//点滅処理そして無敵
-                                //if (!Master)
-                                //{
-                                //audio1.PlayOneShot(sound2);//被弾の効果音を再生
         audio1.volume = 0.25f;
         audio1.clip = sound2;
         audio1.Play();
-        //}
         this.Hp -= Power;//ダメージを受ける
-        /*if (Hp <= 0)//未満なら破壊される
-        {
-            Debug.Log("やられた" + this.gameObject);
-            if (Master)
-            {//マスターがやられたなら
-                //GManager.instance.Battle = false;//戦闘終了
-                //GManager.instance.Win();//勝ち
-                StartCoroutine("MasterDeath");
-            }
-            else if (PlayerMaster)
-            {
-                //Death = true;
-                StartCoroutine("PlayerMasterDeath");
-            }
-            else
-            {
-
-                Destroy(this.gameObject);
-            }
-        }*/
-        //バグの温床
 
         if ((Hp <= MaxHp / 2) && Master && !ChangeBGM)
         {
@@ -310,7 +258,6 @@ public class Monster : MonoBehaviour
     public IEnumerator MasterDeath()//敵マスターの撃破時
     {
         yield return new WaitForSeconds(0.1f);
-        //Destroy(this.gameObject);
         GManager.instance.Battle = false;//戦闘終了
         GManager.instance.Win();//勝ち
         yield return new WaitForSeconds(0.1f);//報酬画面に映るように少し待機
@@ -321,7 +268,6 @@ public class Monster : MonoBehaviour
     public IEnumerator PlayerMasterDeath()
     {//自分が敗北した時
         yield return new WaitForSeconds(0.1f);
-        //Destroy(this.gameObject);
         GManager.instance.Battle = false;//戦闘終了
         GManager.instance.Lose();//負け
         Destroy(this.gameObject);

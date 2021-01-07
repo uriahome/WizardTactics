@@ -23,7 +23,6 @@ public class ResultController : MonoBehaviour
         Deck = GameObject.Find("Deck");
         DCon = Deck.gameObject.GetComponent<DeckController>();
         isFinish = false;
-        //ResultDeck = DCon.DeckList;//デッキリストの中身をコピーする
 
     }
 
@@ -35,16 +34,6 @@ public class ResultController : MonoBehaviour
 
     public void Finish()
     {
-        /*Deck = GameObject.Find("Deck");
-        DCon = Deck.gameObject.GetComponent<DeckController>();
-        ResultDeck = new List<GameObject>(DCon.DeckList);
-        Debug.Log(ResultDeck.Count);
-        for (int j = 0; j < ResultDeck.Count; j++)//全部引く
-        {
-            Debug.Log("負けてしまった");
-            GameObject Summon = Instantiate(ResultDeck[j]) as GameObject;
-            Summon.transform.SetParent(ResultPanel.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
-        }//1枚ずつデッキを表示していく*/
         Debug.Log("Finish!!!");
         if (!isFinish)
         {
@@ -60,7 +49,6 @@ public class ResultController : MonoBehaviour
         {
             ResultText.text = "ゲームクリア!!!";
         }
-        //WinNumが常に2回カウントされているので半分の数が正しいUpdateとヒット時でDeath判定を取っているのがおそらくダメ
 
     }
 
