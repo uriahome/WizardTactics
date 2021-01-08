@@ -172,6 +172,11 @@ MonoBehaviour:
   sound1: {fileID: 8300000, guid: 06b761b74d7c4b0428a8b4808b2e5e72, type: 3}
   sound2: {fileID: 8300000, guid: ae85bb05f75622548988aeb7877b36dc, type: 3}
   audio1: {fileID: 0}
+  Deathrattle: 0
+  AttackAnime: 1
+  ChangeSprite:
+  - {fileID: 21300000, guid: a658589c8848967458541c62d7298397, type: 3}
+  - {fileID: 21300000, guid: b505dc18ed6db6d49b58844c3a5e20ba, type: 3}
 --- !u!82 &3438825283636689206
 AudioSource:
   m_ObjectHideFlags: 0
