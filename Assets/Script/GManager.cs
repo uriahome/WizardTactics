@@ -45,7 +45,6 @@ public class GManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            //WinNum = 0;//勝利回数を０に設定
             WinNum = -1;
         }
         else

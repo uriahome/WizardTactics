@@ -31,7 +31,6 @@ public class ButtonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //this.GameObject.transform.localscale = new Vector3(1.0f,1.0f,1.0f);
         Player = GameObject.Find("PlayerMaster");
         PCon = Player.gameObject.GetComponent<PlayerController>();
         Deck = GameObject.Find("Deck");
@@ -67,7 +66,6 @@ public class ButtonController : MonoBehaviour
                
                 string SearchName = Name.Substring(0, Name.Length - 1);//この行でButton_LのL部分を削除
                 string PairName = Name.Substring(Name.Length-1,1);//LまたはRの部分を取得
-                //Debug.Log(PairName);
                 if(PairName[0] ==　'L'){//Lの時ときはRをRのときはLを探す
                     SearchName += "R(Clone)";//Rを文字列に追加(相方を探すため)
                 }else{
@@ -95,18 +93,16 @@ public class ButtonController : MonoBehaviour
 
                 DCon.DestroyCard(this.gameObject);
                 PCon.Mana -= MyCost;
-                //Debug.Log("召喚しました！");
             }
             else if (Magic)//魔法なら
             {
                 string Name = this.gameObject.name;
                 Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
-                //Debug.Log(Name);
+
                 OnMagic(Name);
                 DCon.DestroyCard(this.gameObject);
                 PCon.Mana -= MyCost;
-                //Debug.Log(Name);
-                //Debug.Log("唱えました!");
+
             }
             else
             {//モンスターなら
@@ -115,23 +111,19 @@ public class ButtonController : MonoBehaviour
                 Summon.transform.position = new Vector3(Player.transform.position.x, 0.1f, Player.transform.position.z);
                 DCon.DestroyCard(this.gameObject);
                 PCon.Mana -= MyCost;
-                //Debug.Log("召喚しました！");
             }
         }
-        else
+        else//コストを払えなかったときの処理を今後ついかするかも？
         {
             //Debug.Log("コストを払えませんでした");
         }
     }
     public void OnMagic(string Name)//名前によって処理を変える
     {
-        //Debug.Log("Magic!!");
-        //Debug.Log(Name);
+
         switch (Name)
         {
             case "ThreeRedPotionButton":
-                //Debug.Log("aaa");
-                //StartCoroutine("ThreePotion");
                 AttackCon.ThreePotion(0);
                 break;
             case "ThreePotionButton":

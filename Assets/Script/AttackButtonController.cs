@@ -30,7 +30,6 @@ public class AttackButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (UseAttack && UseAttack)//???なんか意味不明な条件になってる
         if(UseAttack)
         {
             ButtonColors.disabledColor = new Color(255f, 255f, 255f, AlphaColor);
@@ -41,7 +40,6 @@ public class AttackButtonController : MonoBehaviour
                 UseAttack = false;
                 AButton.interactable = true;
             }
-            //Debug.Log(AlphaColor);
             AButton.colors = ButtonColors;
 
         }
@@ -59,7 +57,6 @@ public class AttackButtonController : MonoBehaviour
         float interval = 0.1f;
         while (true)
         {
-            //Debug.Log("nyaa");
             Count++;
             if (Count >Num)
             {
@@ -83,12 +80,10 @@ public class AttackButtonController : MonoBehaviour
 
     public void ThreePotion(int Num)//対応した番号のポーションを3回投げる
     {
-        //StartCoroutine("ThreeThrow",Num);
         StartCoroutine(AttackThrow(Num,3));
     }
     public void FeverPotion()//ブルーポーションを10回投げる
     {
-        //StartCoroutine("FeverThrow");
         StartCoroutine(AttackThrow(1,10));
     }
     

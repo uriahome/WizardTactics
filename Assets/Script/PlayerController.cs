@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
     {
         if (GManager.instance.Battle)//戦闘中なら
         {
-            //Summon();
             DeltaTime += AddMana * Time.deltaTime;
             if (DeltaTime >= SpanTime && Mana != MaxMana)//一定時間貯まったらマナが1つ増える
             {

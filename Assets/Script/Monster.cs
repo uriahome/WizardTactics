@@ -63,7 +63,6 @@ public class Monster : MonoBehaviour
             audio1.PlayOneShot(sound1);//召喚の効果音を再生
         }
         ChangeBGM = false;
-        //Death = false;
     }
 
     // Update is called once per frame
@@ -76,13 +75,11 @@ public class Monster : MonoBehaviour
         {//凍っていないことが前提
             if (MyRange.DetectTarget)
             {
-                //Debug.Log("nyaa");
                 rigid2d.velocity = new Vector2(0, 0) * 0;//止める
                                                          //AttackMove();
                 if (IsAttack == false)
                 {
                     IsAttack = true;
-                    //Debug.Log("Attack開始");
                     StartCoroutine("AttackMotion");
                 }
             }
@@ -114,7 +111,6 @@ public class Monster : MonoBehaviour
             }
             else if (PlayerMaster)
             {//自分がやられたならば
-             //Death = true;
                 StartCoroutine("PlayerMasterDeath");
             }
             else
@@ -133,7 +129,6 @@ public class Monster : MonoBehaviour
     }
     public void AttackMove()
     {
-        //Debug.Log("AttackMove");
         IsAttack = true;
         StartCoroutine("AttackMotion");//攻撃モーションの開始
     }
@@ -148,22 +143,17 @@ public class Monster : MonoBehaviour
             MySprite.sprite = ChangeSprite[1];//攻撃用画像に変更
         }
 
-        //Debug.Log("AttackMotion");
-        //transform.Translate(0, 0.1f, 0);
         GameObject Obj = Instantiate(AttackObj) as GameObject;//攻撃範囲を生成する
         if (IsEnemy)//敵キャラの時の処理
         {
             Obj.gameObject.tag = "EnemyAttack";
-            //Obj.transform.position = MyRangePosition.transform.position;//射程の範囲に出す
             Obj.transform.position = new Vector3(MyRangePosition.transform.position.x - 1, MyRangePosition.transform.position.y, MyRangePosition.transform.position.z);
         }
         else//自キャラの時の処理
         {
             Obj.gameObject.tag = "PlayerAttack";
-            //Obj.transform.position = MyRangePosition.transform.position;//射程の範囲に出す
             Obj.transform.position = new Vector3(MyRangePosition.transform.position.x + 1, MyRangePosition.transform.position.y, MyRangePosition.transform.position.z);
         }
-        //Obj.transform.position = MyRangePosition.transform.position;//射程の範囲に出す
         ShockWave SObj = Obj.GetComponent<ShockWave>();
         SObj.Power = this.Attack;//攻撃力の代入
         if (FreezeAttackM)
@@ -172,9 +162,7 @@ public class Monster : MonoBehaviour
             Destroy(this.gameObject);//氷属性攻撃は一度使用したらやられるようにする（バランス調整のため)
         }
         yield return new WaitForSeconds(AttackSpan);
-        //transform.Translate(0, -0.1f, 0);
         Destroy(Obj.gameObject);//判定を消す
-        //Debug.Log("オワオワリ");
         IsAttack = false;
         
         if(AttackAnime){
@@ -221,7 +209,6 @@ public class Monster : MonoBehaviour
 
     public IEnumerator Blink()//点滅
     {
-        //this.GetComponent<BoxCollider2D>().enabled = false;
         int BlinkCount = 0;
         float interval = 0.1f;
         while (true)
@@ -231,7 +218,6 @@ public class Monster : MonoBehaviour
             if (BlinkCount >= 8)
             {
                 renderComponent.enabled = true;
-                //this.GetComponent<BoxCollider2D>().enabled = true;
                 yield break;
             }
             renderComponent.enabled = !renderComponent.enabled;
@@ -241,7 +227,6 @@ public class Monster : MonoBehaviour
 
     public void AttackHit(int Power)//攻撃がヒットしたときの処理
     {
-        //Debug.Log("Hit" + this.gameObject);
         StartCoroutine("Blink");//点滅処理そして無敵
         audio1.volume = 0.25f;
         audio1.clip = sound2;
@@ -302,7 +287,6 @@ public class Monster : MonoBehaviour
             {
                 if (!collision.GetComponent<ShockWave>().IsHit)//まだその攻撃に誰も当たっていないか
                 {
-                    //Debug.Log(collision.GetComponent<ShockWave>().IsHit);
                     if (collision.GetComponent<ShockWave>().FreezeAttack && (!Freeze))
                     {
                         Freeze = true;

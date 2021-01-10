@@ -21,8 +21,6 @@ public class Building : MonoBehaviour
         delta = 0;
         Player = GameObject.Find("PlayerMaster");
         PCon = Player.GetComponent<PlayerController>();
-        //this.transform.position = new Vector3(-5.70f, this.transform.position.y, this.transform.position.z);//ちょっと前に出す
-        //設置位置をいじれるようにしたのでコメントアウト
     }
 
     // Update is called once per frame
@@ -44,7 +42,6 @@ public class Building : MonoBehaviour
     {//ポーションとかを出す
         GameObject Fire = Instantiate(ShotObject) as GameObject;//炎の生成
         Fire.gameObject.tag = "PlayerAttack";
-        //Fire.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);//自分の場所に出す
         Fire.transform.position = new Vector3(this.transform.position.x, 0.1f, this.transform.position.z);//自分の場所に出す
         if (MakeFire)//ポーションとかの場合は攻撃力を代入
         {
