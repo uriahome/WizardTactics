@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 3549433291030828909}
   - component: {fileID: 5835012142405347047}
   - component: {fileID: 7936942720523492830}
+  - component: {fileID: 1667403170}
   m_Layer: 11
   m_Name: Lancer
   m_TagString: PlayerMonster
@@ -348,6 +349,9 @@ MonoBehaviour:
   sound1: {fileID: 8300000, guid: 06b761b74d7c4b0428a8b4808b2e5e72, type: 3}
   sound2: {fileID: 8300000, guid: ae85bb05f75622548988aeb7877b36dc, type: 3}
   audio1: {fileID: 0}
+  Deathrattle: 0
+  AttackAnime: 0
+  ChangeSprite: []
 --- !u!82 &7936942720523492830
 AudioSource:
   m_ObjectHideFlags: 0
@@ -444,6 +448,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1667403170
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6905407183432952393}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e3df0e851f7dbe4da973da5309d2a09, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8736137825875157668
 GameObject:
   m_ObjectHideFlags: 0
