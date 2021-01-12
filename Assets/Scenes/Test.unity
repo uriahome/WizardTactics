@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 1837875565}
   - component: {fileID: 1837875564}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: CSV_Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,6 +289,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90dd21a56c5814b4d82f3d6c53eb14ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
+  Hp: 0
+  Attack: 0
+  Speed: 0
+  MaxSpeed: 0
+  AttackSpan: 0
+  MonsterNumber: 2
   csvFile: {fileID: 0}
   Parameters: []
 --- !u!4 &1837875565
@@ -940,6 +947,21 @@ PrefabInstance:
     - target: {fileID: 7524071314359888532, guid: b345b5dda420b934fbfa54e04c499289,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467970686096144797, guid: b345b5dda420b934fbfa54e04c499289,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467970686096144797, guid: b345b5dda420b934fbfa54e04c499289,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467970686096144797, guid: b345b5dda420b934fbfa54e04c499289,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
