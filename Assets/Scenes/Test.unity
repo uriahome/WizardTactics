@@ -295,7 +295,7 @@ MonoBehaviour:
   Speed: 0
   MaxSpeed: 0
   AttackSpan: 0
-  MonsterNumber: 2
+  MonsterNumber: 3
   csvFile: {fileID: 0}
   Parameters: []
 --- !u!4 &1837875565
