@@ -200,8 +200,10 @@ MonoBehaviour:
   - {fileID: 407444071, guid: feeb1674981eb394c8ebb599ffb95342, type: 3}
   - {fileID: 6829478240434471785, guid: 9c20fd642a2dbca4ba48e2b18b1fbe12, type: 3}
   - {fileID: 983478005507316424, guid: 1131aa2ea67c75c45bddc2bff036c96b, type: 3}
+  EnemyCount: 0
   span: 3
   delta: 0
+  BattleCount: 0
 --- !u!114 &419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +243,12 @@ MonoBehaviour:
   sound1: {fileID: 8300000, guid: 06b761b74d7c4b0428a8b4808b2e5e72, type: 3}
   sound2: {fileID: 8300000, guid: ae85bb05f75622548988aeb7877b36dc, type: 3}
   audio1: {fileID: 0}
-  Death: 0
+  Deathrattle: 0
+  AttackAnime: 0
+  ChangeSprite: []
+  DamageText: {fileID: 6278938880528054111, guid: 09791a27444274a488daaa557e5072fd,
+    type: 3}
+  DamageCanvas: {fileID: 0}
 --- !u!50 &157
 Rigidbody2D:
   serializedVersion: 4

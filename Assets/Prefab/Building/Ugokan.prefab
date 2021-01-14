@@ -353,6 +353,9 @@ MonoBehaviour:
   ChangeSprite:
   - {fileID: 21300000, guid: cbcc72e9c769a8f4094f4d7f93811d0d, type: 3}
   - {fileID: 21300000, guid: 3352711afac18ff4d84f2e1e310f60b7, type: 3}
+  DamageText: {fileID: 6278938880528054111, guid: 09791a27444274a488daaa557e5072fd,
+    type: 3}
+  DamageCanvas: {fileID: 0}
 --- !u!82 &4192437965717546490
 AudioSource:
   m_ObjectHideFlags: 0

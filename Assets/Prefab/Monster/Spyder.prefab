@@ -344,6 +344,11 @@ MonoBehaviour:
   sound2: {fileID: 8300000, guid: ae85bb05f75622548988aeb7877b36dc, type: 3}
   audio1: {fileID: 0}
   Deathrattle: 1
+  AttackAnime: 0
+  ChangeSprite: []
+  DamageText: {fileID: 6278938880528054111, guid: 09791a27444274a488daaa557e5072fd,
+    type: 3}
+  DamageCanvas: {fileID: 0}
 --- !u!82 &1500967442950916471
 AudioSource:
   m_ObjectHideFlags: 0

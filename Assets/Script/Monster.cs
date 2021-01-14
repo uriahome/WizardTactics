@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
@@ -47,6 +48,8 @@ public class Monster : MonoBehaviour
     public bool AttackAnime;//攻撃用の画像を持っているかどうか//試験的にここで導入する将来的には攻撃アニメーションにして全キャラにつけたい
     public Sprite[] ChangeSprite;//攻撃用画像と待機画像
 
+    public GameObject DamageText;
+    public GameObject DamageCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +66,8 @@ public class Monster : MonoBehaviour
             audio1.PlayOneShot(sound1);//召喚の効果音を再生
         }
         ChangeBGM = false;
+
+        DamageCanvas = GameObject.Find("DamageCanvas");
     }
 
     // Update is called once per frame
@@ -227,6 +232,14 @@ public class Monster : MonoBehaviour
 
     public void AttackHit(int Power)//攻撃がヒットしたときの処理
     {
+        GameObject DamageObj;
+        Text Damage;
+        DamageObj = Instantiate(DamageText, new Vector3(0,0,0),Quaternion.identity);
+        Damage = DamageObj.GetComponent<Text>();
+        Damage.text = Power.ToString();
+        DamageObj.transform.SetParent(DamageCanvas.transform,false);
+        DamageObj.transform.position = this.transform.position;
+
         StartCoroutine("Blink");//点滅処理そして無敵
         audio1.volume = 0.25f;
         audio1.clip = sound2;
