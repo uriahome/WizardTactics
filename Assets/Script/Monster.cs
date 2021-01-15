@@ -283,6 +283,17 @@ public class Monster : MonoBehaviour
         {
             this.Hp = MaxHp;
         }
+        //回復した量もダメージと同じように表示する
+        //色は緑色にする
+        int HealPoint = Mathf.RoundToInt(MaxHp*0.3f);
+        GameObject DamageObj;
+        Text Damage;
+        DamageObj = Instantiate(DamageText, new Vector3(0,0,0),Quaternion.identity);
+        Damage = DamageObj.GetComponent<Text>();
+        Damage.text = HealPoint.ToString();
+        Damage.color = new Color(0.0f,1.0f,0.0f,1.0f);
+        DamageObj.transform.SetParent(DamageCanvas.transform,false);
+        DamageObj.transform.position = this.transform.position;
     }
 
     public void SelfDestruct()
