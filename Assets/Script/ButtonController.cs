@@ -66,7 +66,7 @@ public class ButtonController : MonoBehaviour
                
                 string SearchName = Name.Substring(0, Name.Length - 1);//この行でButton_LのL部分を削除
                 string PairName = Name.Substring(Name.Length-1,1);//LまたはRの部分を取得
-                if(PairName[0] ==　'L'){//Lの時ときはRをRのときはLを探す
+                if(PairName[0] =='L'){//Lの時ときはRをRのときはLを探す
                     SearchName += "R(Clone)";//Rを文字列に追加(相方を探すため)
                 }else{
                     SearchName += "L(Clone)";//Rを文字列に追加(相方を探すため)
@@ -177,5 +177,10 @@ public class ButtonController : MonoBehaviour
     public void RewardOnClick(int Num)
     {//報酬画面でのクリック時
         GManager.instance.BattleReward(Num);//自分の番号を送る
+    }
+
+    public void SkipReward(){
+        Debug.Log("Skip!!");
+        GManager.instance.BattleStart();
     }
 }
