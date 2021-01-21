@@ -21,6 +21,8 @@ public class EnemyManager : MonoBehaviour
 
     public void EnemyStart()
     {//EnemyMasterを設置する
+    //現状は勝利数＝配列の番号の順番に呼び出すしかない
+    //今後、敵のボスの種類を増やして戦う敵キャラを分岐させたい
         BattleCount = GManager.instance.WinNum;
         GameObject Enemy = Instantiate(EnemyM[BattleCount]) as GameObject;
         Enemy.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
