@@ -64,7 +64,7 @@ public class SceneController : MonoBehaviour
         IsFadeOut = true;
         audio.PlayOneShot(sound);//効果音を再生する
         // SceneManager.LoadScene("BattleSceme",LoadSceneMode,Single);//メインの戦闘シーンを読み込む
-        Debug.Log("SceneLoad");//シーンの読み込み(非同期)
+        DebugLogger.Log("SceneLoad");//シーンの読み込み(非同期)
 
         PlayerPrefs.SetInt("DeckNum", SelectDeckNum);//デッキを選択してそれをPlayerPrefsに保存
         PlayerPrefs.Save();
@@ -83,7 +83,7 @@ public class SceneController : MonoBehaviour
     {//タイトルに戻ってくるとき
         IsFadeOut = true;
         audio.PlayOneShot(sound);//効果音を再生する
-        Debug.Log("SceneLoad");//シーンの読み込み(非同期)
+        DebugLogger.Log("SceneLoad");//シーンの読み込み(非同期)
         StartCoroutine(LoadScene("Title"));
     }
 

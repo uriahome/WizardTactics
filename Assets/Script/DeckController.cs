@@ -42,15 +42,15 @@ public class DeckController : MonoBehaviour
         {
             case 0:
                 DeckList = new List<GameObject>(StructureList_monster);
-                Debug.Log("StructureList_monsterで戦います");
+                DebugLogger.Log("StructureList_monsterで戦います");
                 break;
             case 1:
                 DeckList = new List<GameObject>(StructureList_magic);
-                Debug.Log("StructureList_magicで戦います");
+                DebugLogger.Log("StructureList_magicで戦います");
                 break;
             default:
                 DeckList = new List<GameObject>(StructureList_Debug);
-                Debug.Log("StructureList_Debugで戦います");
+                DebugLogger.Log("StructureList_Debugで戦います");
                 break;
         }
         //DeckList = new List<GameObject>(StructureList[0]);

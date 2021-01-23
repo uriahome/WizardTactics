@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
     }
     public void ClockUp(){//汎用的にマナ回復速度を上げるようにこれで統一したい
         AddMana *=1.2f;
-        Debug.Log("ClockUp!!!");
+        DebugLogger.Log("ClockUp!!!");
     }
 
     public void ThrowPotionCountUp(){//通常攻撃で投げるポーションの数を増やす

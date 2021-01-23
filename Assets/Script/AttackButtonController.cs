@@ -60,7 +60,7 @@ public class AttackButtonController : MonoBehaviour
             Count++;
             if (Count >Num)
             {
-                Debug.Log("oaaa");
+                //Debug.Log("oaaa");
                 yield break;
             }
            ThrowPotion(PotionNum);

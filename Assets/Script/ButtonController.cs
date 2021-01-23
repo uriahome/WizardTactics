@@ -76,12 +76,12 @@ public class ButtonController : MonoBehaviour
                 GameObject DualObj = GameObject.Find("DeckCanvas/Deck/" + SearchName);
                 if (DualObj)//相方がある場合のみ使用できる
                 {
-                    Debug.Log(DualObj + "発見!!!");
+                    DebugLogger.Log(DualObj + "発見!!!");
                     DCon.DestroyCard(DualObj);
                 }
                 else
                 {
-                    Debug.Log("発見できませんでした...");
+                    DebugLogger.Log("発見できませんでした...");
                     return;//発見できない場合はここで終了する
                 }
             }
@@ -180,7 +180,7 @@ public class ButtonController : MonoBehaviour
     }
 
     public void SkipReward(){
-        Debug.Log("Skip!!");
+        DebugLogger.Log("Skip!!");
         GManager.instance.BattleStart();
     }
 }

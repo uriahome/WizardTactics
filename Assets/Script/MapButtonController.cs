@@ -18,6 +18,7 @@ public class MapButtonController : MonoBehaviour
 
     public void Onclick(int SelectNum)
     {//押したボタンに対応する
-        Debug.Log(SelectNum + "を押しました");
+        //Debug.Log(SelectNum + "を押しました");
+        DebugLogger.Log(SelectNum + "を押しました");
     }
 }

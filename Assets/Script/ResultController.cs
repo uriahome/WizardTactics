@@ -34,7 +34,7 @@ public class ResultController : MonoBehaviour
 
     public void Finish()
     {
-        Debug.Log("Finish!!!");
+        DebugLogger.Log("Finish!!!");
         if (!isFinish)
         {
             isFinish = true;
@@ -57,10 +57,10 @@ public class ResultController : MonoBehaviour
         Deck = GameObject.Find("Deck");
         DCon = Deck.gameObject.GetComponent<DeckController>();
         ResultDeck = new List<GameObject>(DCon.DeckList);
-        Debug.Log(ResultDeck.Count);
+        DebugLogger.Log(ResultDeck.Count);
         for (int j = 0; j < ResultDeck.Count; j++)//全部引く
         {
-            Debug.Log("負けてしまった");
+            DebugLogger.Log("負けてしまった");
             GameObject Summon = Instantiate(ResultDeck[j]) as GameObject;
             Summon.transform.SetParent(ResultPanel.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
         }//1枚ずつデッキを表示していく

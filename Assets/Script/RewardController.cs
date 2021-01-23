@@ -46,7 +46,7 @@ public class RewardController : MonoBehaviour
             GameObject Summon = Instantiate(CardList[SelectNum]) as GameObject;//カードリストの対応した番号から出す
             Summon.transform.SetParent(RewardPanel.transform,false);//RewardPanelの子供にする
             RandomNumList.RemoveAt(RandomNum);
-            Debug.Log("選ばれたのは"+SelectNum);
+            DebugLogger.Log("選ばれたのは"+SelectNum);
         }
     }
 }
