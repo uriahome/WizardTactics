@@ -19,6 +19,8 @@ public class GManager : MonoBehaviour
     public GameObject RewardText;
     public GameObject SkipButton;//スキップボタン
 
+    public GameObject MapCanvas;
+
     public GameObject ResultCon;//ResultCanvas入れる
     public ResultController ReCon;//ResultController参照用
 
@@ -63,6 +65,9 @@ public class GManager : MonoBehaviour
         SkipButton = GameObject.Find("RewardCanvas/SkipButton");
         SkipButton.gameObject.SetActive(false);
 
+        MapCanvas = GameObject.Find("MapCanvas");
+        MapCanvas.gameObject.SetActive(false);
+
         ResultCon = GameObject.Find("ResultCanvas");
         ReCon = ResultCon.GetComponent<ResultController>();
         ResultCon.gameObject.SetActive(false);
@@ -100,7 +105,32 @@ public class GManager : MonoBehaviour
             Debug.Log("カクセイを習得しました");
         }
         DCon.DeckAdd(ButtonList[Num]);//デッキの中に新しいボタンを追加する
-        BattleStart();
+        //BattleStart();
+        NextMapSelect();//次に戦う相手を選択するために表示する
+    }
+
+    public void NextMapSelect(){
+        RewardCon.gameObject.SetActive(false);
+        RewardText.gameObject.SetActive(false);
+        SkipButton.gameObject.SetActive(false);
+        MapCanvas.gameObject.SetActive(true);
+    }
+    public void SelectNextEnemy(int SelectNum){
+        audio1.Stop();//今流れているのを止めてから流す
+        audio1.PlayOneShot(BGM_battle1);
+        RewardText.gameObject.SetActive(false);
+        SkipButton.gameObject.SetActive(false);
+        MapCanvas.gameObject.SetActive(false);
+
+
+        Debug.Log("戦闘開始!!");
+        PCon.SetUp();//プレイヤーマスターの攻撃力等をデフォルトに再設定する
+        PMon.Refresh();//全回復させる
+        Battle = true;
+        StartCoroutine("WaitTime");
+        WinNum++;
+        //EnemyMan.EnemyStart();
+        EnemyMan.SelectEnemyStart(SelectNum);
     }
 
     public void BattleStart()
@@ -109,6 +139,7 @@ public class GManager : MonoBehaviour
         audio1.PlayOneShot(BGM_battle1);
         RewardText.gameObject.SetActive(false);
         SkipButton.gameObject.SetActive(false);
+        MapCanvas.gameObject.SetActive(false);
 
 
         Debug.Log("戦闘開始!!");

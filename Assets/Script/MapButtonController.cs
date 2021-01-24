@@ -20,5 +20,6 @@ public class MapButtonController : MonoBehaviour
     {//押したボタンに対応する
         //Debug.Log(SelectNum + "を押しました");
         DebugLogger.Log(SelectNum + "を押しました");
+        GManager.instance.SelectNextEnemy(SelectNum);
     }
 }

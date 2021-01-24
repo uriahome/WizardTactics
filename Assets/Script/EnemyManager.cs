@@ -27,4 +27,10 @@ public class EnemyManager : MonoBehaviour
         GameObject Enemy = Instantiate(EnemyM[BattleCount]) as GameObject;
         Enemy.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
     }
+
+    public void SelectEnemyStart(int num){
+        BattleCount = GManager.instance.WinNum;
+        GameObject Enemy = Instantiate(EnemyM[num]) as GameObject;
+        Enemy.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+    }
 }
