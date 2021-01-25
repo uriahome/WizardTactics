@@ -41,7 +41,7 @@ public class ResultController : MonoBehaviour
             ShowDeck();
         }
 
-        if (GManager.instance.WinNum != 7)
+        if (GManager.instance.WinNum != 7)//7回連続勝利以外なら勝利数を表示する
         {
             ResultText.text = (GManager.instance.WinNum) + "回勝利した！";
         }
@@ -52,7 +52,7 @@ public class ResultController : MonoBehaviour
 
     }
 
-    public void ShowDeck()
+    public void ShowDeck()//デッキの中身を表示する
     {
         Deck = GameObject.Find("Deck");
         DCon = Deck.gameObject.GetComponent<DeckController>();

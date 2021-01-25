@@ -109,13 +109,13 @@ public class GManager : MonoBehaviour
         NextMapSelect();//次に戦う相手を選択するために表示する
     }
 
-    public void NextMapSelect(){
+    public void NextMapSelect(){//次に戦うキャラクターを選択できるボタンを表示する
         RewardCon.gameObject.SetActive(false);
         RewardText.gameObject.SetActive(false);
         SkipButton.gameObject.SetActive(false);
         MapCanvas.gameObject.SetActive(true);
     }
-    public void SelectNextEnemy(int SelectNum){
+    public void SelectNextEnemy(int SelectNum){//選択された番号に応じた敵を出して戦闘を始める
         audio1.Stop();//今流れているのを止めてから流す
         audio1.PlayOneShot(BGM_battle1);
         RewardText.gameObject.SetActive(false);
@@ -186,7 +186,7 @@ public class GManager : MonoBehaviour
         audio1.PlayOneShot(BGM_battle_change);
     }
 
-    public void Deathrattle(string Name){
+    public void Deathrattle(string Name){//やられたときに発動する効果一覧
         switch(Name){
             case "Gurimo":
             PCon.MagicEnhance();
