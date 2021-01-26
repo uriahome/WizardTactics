@@ -20,6 +20,8 @@ public class GManager : MonoBehaviour
     public GameObject SkipButton;//スキップボタン
 
     public GameObject MapCanvas;
+    public GameObject MapPanel;
+    public MapSelectController MapSelect;
 
     public GameObject ResultCon;//ResultCanvas入れる
     public ResultController ReCon;//ResultController参照用
@@ -66,6 +68,8 @@ public class GManager : MonoBehaviour
         SkipButton.gameObject.SetActive(false);
 
         MapCanvas = GameObject.Find("MapCanvas");
+        MapPanel = GameObject.Find("MapCanvas/MapButtonPanel");
+        MapSelect = MapPanel.GetComponent<MapSelectController>();
         MapCanvas.gameObject.SetActive(false);
 
         ResultCon = GameObject.Find("ResultCanvas");
@@ -114,6 +118,7 @@ public class GManager : MonoBehaviour
         RewardText.gameObject.SetActive(false);
         SkipButton.gameObject.SetActive(false);
         MapCanvas.gameObject.SetActive(true);
+        MapSelect.SelectMap();
     }
     public void SelectNextEnemy(int SelectNum){//選択された番号に応じた敵を出して戦闘を始める
         audio1.Stop();//今流れているのを止めてから流す
