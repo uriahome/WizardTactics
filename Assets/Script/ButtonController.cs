@@ -179,8 +179,9 @@ public class ButtonController : MonoBehaviour
         GManager.instance.BattleReward(Num);//自分の番号を送る
     }
 
-    public void SkipReward(){
+    public void SkipReward(){//報酬をスキップする
         DebugLogger.Log("Skip!!");
-        GManager.instance.BattleStart();
+        //GManager.instance.BattleStart();
+        GManager.instance.NextMapSelect();//マップ選択が追加されたのでそっちに移行する
     }
 }

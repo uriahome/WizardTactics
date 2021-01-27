@@ -128,7 +128,6 @@ public class GManager : MonoBehaviour
         MapCanvas.gameObject.SetActive(false);
 
 
-        Debug.Log("戦闘開始!!");
         PCon.SetUp();//プレイヤーマスターの攻撃力等をデフォルトに再設定する
         PMon.Refresh();//全回復させる
         Battle = true;
@@ -145,9 +144,6 @@ public class GManager : MonoBehaviour
         RewardText.gameObject.SetActive(false);
         SkipButton.gameObject.SetActive(false);
         MapCanvas.gameObject.SetActive(false);
-
-
-        Debug.Log("戦闘開始!!");
         PCon.SetUp();//プレイヤーマスターの攻撃力等をデフォルトに再設定する
         PMon.Refresh();//全回復させる
         Battle = true;
