@@ -21,4 +21,11 @@ public class MapButtonController : MonoBehaviour
         DebugLogger.Log(SelectNum + "を押しました");
         GManager.instance.SelectNextEnemy(SelectNum);
     }
+
+    public void CheckDeck()
+    {//デッキの中身を表示するボタンを押されたとき
+        GameObject MapButtonPanel = transform.parent.gameObject;
+        MapSelectController MapCon = MapButtonPanel.GetComponent<MapSelectController>();
+        MapCon.ShowDeck();
+    }
 }

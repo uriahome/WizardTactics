@@ -1302,10 +1302,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1230044951, guid: e99ae04f889d9dd4bac42aa5a2818d59, type: 3}
-      propertyPath: MapPanel
-      value: 
-      objectReference: {fileID: 1230044950}
     - target: {fileID: 8066079238330366792, guid: e99ae04f889d9dd4bac42aa5a2818d59,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1362,18 +1358,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2503766011220386407, guid: e99ae04f889d9dd4bac42aa5a2818d59,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315858080134229462, guid: e99ae04f889d9dd4bac42aa5a2818d59,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315858080134229462, guid: e99ae04f889d9dd4bac42aa5a2818d59,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315858080134229462, guid: e99ae04f889d9dd4bac42aa5a2818d59,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315858080134229462, guid: e99ae04f889d9dd4bac42aa5a2818d59,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e99ae04f889d9dd4bac42aa5a2818d59, type: 3}
---- !u!1 &1230044950 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4357815942039787191, guid: e99ae04f889d9dd4bac42aa5a2818d59,
-    type: 3}
-  m_PrefabInstance: {fileID: 1230044948}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1262963751
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,13 @@ public class MapSelectController : MonoBehaviour
     public GameObject MapPanel;//キャンバスの下のこのオブジェクトにこのスクリプトをつける。
 
     public List<int> RandomNumList;// = new List<int>();
+
+    
+    public List<GameObject> ResultDeck = new List<GameObject>();//最終デッキリスト
+    public DeckController DCon;
+    public GameObject Deck;
+
+    public GameObject ShowDeckPanel;
     void Start()
     {
         
@@ -44,5 +51,24 @@ public class MapSelectController : MonoBehaviour
             RandomNumList.RemoveAt(RandomNum);
             DebugLogger.Log("選ばれたのは"+SelectNum);
         }
+    }
+
+    public void ShowDeck()//デッキの中身を表示する
+    {
+        foreach (Transform child in gameObject.transform)//子オブジェクト全削除
+        {
+            Destroy(child.gameObject);
+        }
+        Deck = GameObject.Find("Deck");
+        DCon = Deck.gameObject.GetComponent<DeckController>();
+        ResultDeck = new List<GameObject>(DCon.DeckList);
+        DebugLogger.Log(ResultDeck.Count);
+        for (int j = 0; j < ResultDeck.Count; j++)//全部引く
+        {
+            GameObject Summon = Instantiate(ResultDeck[j]) as GameObject;
+            Summon.transform.SetParent(ShowDeckPanel.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
+        }//1枚ずつデッキを表示していく
+
+        this.gameObject.SetActive(false);//自分を非アクティブにする
     }
 }
