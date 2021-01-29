@@ -22,6 +22,8 @@ public class GManager : MonoBehaviour
     public GameObject MapCanvas;
     public GameObject MapPanel;
     public MapSelectController MapSelect;
+    public GameObject MapText;
+    public GameObject MapShowDeckPanel;
 
     public GameObject ResultCon;//ResultCanvas入れる
     public ResultController ReCon;//ResultController参照用
@@ -69,6 +71,8 @@ public class GManager : MonoBehaviour
 
         MapCanvas = GameObject.Find("MapCanvas");
         MapPanel = GameObject.Find("MapCanvas/MapButtonPanel");
+        MapText = GameObject.Find("MapCanvas/SubText");
+        MapShowDeckPanel = GameObject.Find("MapCanvas/ShowDeck");
         MapSelect = MapPanel.GetComponent<MapSelectController>();
         MapCanvas.gameObject.SetActive(false);
 
@@ -113,14 +117,26 @@ public class GManager : MonoBehaviour
         NextMapSelect();//次に戦う相手を選択するために表示する
     }
 
-    public void NextMapSelect(){//次に戦うキャラクターを選択できるボタンを表示する
+    public void NextMapSelect()
+    {
+        //次に戦うキャラクターを選択できるボタンを表示する
         RewardCon.gameObject.SetActive(false);
         RewardText.gameObject.SetActive(false);
         SkipButton.gameObject.SetActive(false);
         MapCanvas.gameObject.SetActive(true);
+        MapPanel.gameObject.SetActive(true);
+        MapText.gameObject.SetActive(true);
+        MapShowDeckPanel.gameObject.SetActive(false);
         MapSelect.SelectMap();
     }
-    public void SelectNextEnemy(int SelectNum){//選択された番号に応じた敵を出して戦闘を始める
+    public void SelectShowDeck()
+    {
+        MapText.gameObject.SetActive(false);
+        MapShowDeckPanel.gameObject.SetActive(true);
+    }
+    public void SelectNextEnemy(int SelectNum)
+    {
+        //選択された番号に応じた敵を出して戦闘を始める
         audio1.Stop();//今流れているのを止めてから流す
         audio1.PlayOneShot(BGM_battle1);
         RewardText.gameObject.SetActive(false);

@@ -55,7 +55,7 @@ public class MapSelectController : MonoBehaviour
 
     public void ShowDeck()//デッキの中身を表示する
     {
-        foreach (Transform child in gameObject.transform)//子オブジェクト全削除
+        foreach (Transform child in ShowDeckPanel.transform)//子オブジェクト全削除
         {
             Destroy(child.gameObject);
         }

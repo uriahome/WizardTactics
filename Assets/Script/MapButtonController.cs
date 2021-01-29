@@ -24,6 +24,7 @@ public class MapButtonController : MonoBehaviour
 
     public void CheckDeck()
     {//デッキの中身を表示するボタンを押されたとき
+        GManager.instance.SelectShowDeck();
         GameObject MapButtonPanel = transform.parent.gameObject;
         MapSelectController MapCon = MapButtonPanel.GetComponent<MapSelectController>();
         MapCon.ShowDeck();
