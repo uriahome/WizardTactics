@@ -56,6 +56,11 @@ public class ButtonController : MonoBehaviour
     }
     public void OnClick() //ボタンが押されたとき
     {
+        if (!GManager.instance.Battle)//戦闘中以外
+        {
+            DeleteMagic();
+            return;
+        }
         int NowMana = PCon.Mana;
         if (NowMana >= MyCost)
         {
@@ -183,5 +188,9 @@ public class ButtonController : MonoBehaviour
         DebugLogger.Log("Skip!!");
         //GManager.instance.BattleStart();
         GManager.instance.NextMapSelect();//マップ選択が追加されたのでそっちに移行する
+    }
+
+    public void DeleteMagic(){
+        DebugLogger.Log("ここでデッキから削除する処理をしたい");
     }
 }
