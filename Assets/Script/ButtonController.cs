@@ -192,5 +192,20 @@ public class ButtonController : MonoBehaviour
 
     public void DeleteMagic(){
         DebugLogger.Log("ここでデッキから削除する処理をしたい");
+        string Name = this.gameObject.name;
+        Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
+        DebugLogger.Log(Name);
+        DebugLogger.Log(DCon.DeckList[0].name);
+        for (int j = 0; j < DCon.DeckList.Count; j++)//デッキリストを1枚ずつ参照
+        {
+            DebugLogger.Log(DCon.DeckList[j]);
+            if(DCon.DeckList[j].name == Name){
+                DCon.DeckList.Remove(DCon.DeckList[j]);
+                //同盟カードを複数枚削除しないように一度やったら抜ける
+                break;
+            }          
+        }
+        Destroy(this.gameObject);//一覧表示からも削除
+
     }
 }
