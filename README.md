@@ -1,2 +1,2 @@
 # WizardTactics
-Unity 2D TowerDefenseGame
+Unity 2D Tower Defense Game
