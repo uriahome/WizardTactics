@@ -45,6 +45,8 @@ public class GManager : MonoBehaviour
     public AudioClip BGM_gameover;//戦闘シーンのBGMの管理もここで行う
 
     public AudioSource audio1;
+
+    public bool DeleteMagicCheck;//魔法の削除をしたかどうか/trueで削除を行った、falseでまだ削除を行っていない
     private void Awake()
     {
 

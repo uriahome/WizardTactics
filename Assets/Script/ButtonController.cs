@@ -191,6 +191,9 @@ public class ButtonController : MonoBehaviour
     }
 
     public void DeleteMagic(){
+        if(GManager.instance.DeleteMagicCheck){
+            return;//削除をすでに行っていたら処理をここで抜ける
+        }
         DebugLogger.Log("ここでデッキから削除する処理をしたい");
         string Name = this.gameObject.name;
         Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
@@ -201,7 +204,8 @@ public class ButtonController : MonoBehaviour
             DebugLogger.Log(DCon.DeckList[j]);
             if(DCon.DeckList[j].name == Name){
                 DCon.DeckList.Remove(DCon.DeckList[j]);
-                //同盟カードを複数枚削除しないように一度やったら抜ける
+                //同名カードを複数枚削除しないように一度やったら抜ける
+                GManager.instance.DeleteMagicCheck = true;//削除を行ったことを記録する
                 break;
             }          
         }
