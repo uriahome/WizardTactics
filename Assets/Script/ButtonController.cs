@@ -206,6 +206,7 @@ public class ButtonController : MonoBehaviour
                 DCon.DeckList.Remove(DCon.DeckList[j]);
                 //同名カードを複数枚削除しないように一度やったら抜ける
                 GManager.instance.DeleteMagicCheck = true;//削除を行ったことを記録する
+                PCon.DefaultAttackUp();//プレイヤーの基本攻撃力を上げる
                 break;
             }          
         }

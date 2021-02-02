@@ -188,4 +188,8 @@ public class PlayerController : MonoBehaviour
         Summon = Instantiate(Card) as GameObject;//生成する
         Summon.transform.position = new Vector3(this.transform.position.x, 0.1f, this.transform.position.z);
     }
+
+    public void DefaultAttackUp(){//基本攻撃力を上昇させるイベント
+        DefaultAttack +=5;
+    }
 }
