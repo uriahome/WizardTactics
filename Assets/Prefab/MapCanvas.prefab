@@ -330,6 +330,10 @@ MonoBehaviour:
   - {fileID: 3439654325196632328, guid: 2f61776fb9b0c1344ac8957f595e5a9b, type: 3}
   - {fileID: 124422836096838821, guid: 8cc8ac9fd4879124d8358e2879c75b24, type: 3}
   - {fileID: 4893386136003380882, guid: 9b90dcb5fc25fff4fb217cbadaff172e, type: 3}
+  BattleMapList:
+  - {fileID: 850650656821027215, guid: 4f149a721fac2f64a8e2f67aa1805d81, type: 3}
+  - {fileID: 8066079237385367634, guid: 8a641e946579fda4487016fabc2e1fab, type: 3}
+  - {fileID: 3439654325196632328, guid: 2f61776fb9b0c1344ac8957f595e5a9b, type: 3}
   RandomNum: 0
   MapListRange: 0
   MapPanel: {fileID: 4357815942039787191}

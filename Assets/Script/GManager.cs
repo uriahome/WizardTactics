@@ -47,6 +47,7 @@ public class GManager : MonoBehaviour
     public AudioSource audio1;
 
     public bool DeleteMagicCheck;//魔法の削除をしたかどうか/trueで削除を行った、falseでまだ削除を行っていない
+    public bool MapBattleCheck;//trueのときは戦闘マップのみのリストを呼び出す
     private void Awake()
     {
 
@@ -55,6 +56,7 @@ public class GManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
             WinNum = -1;
+            MapBattleCheck = false;//最初はfalseにしておく
         }
         else
         {
@@ -129,7 +131,12 @@ public class GManager : MonoBehaviour
         MapPanel.gameObject.SetActive(true);
         MapText.gameObject.SetActive(true);
         MapShowDeckPanel.gameObject.SetActive(false);
-        MapSelect.SelectMap();
+        if(MapBattleCheck){
+            MapSelect.SelectMap_Battle();
+        }else{
+            MapSelect.SelectMap();
+        }
+        MapBattleCheck = !MapBattleCheck;//trueとfalseを反転させる
     }
     public void SelectShowDeck()
     {
