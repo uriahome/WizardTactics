@@ -218,17 +218,32 @@ public class ButtonController : MonoBehaviour
             }else{
                 SearchName += "L";//Lを文字列に追加(相方を探すため)
             }
+            DebugLogger.Log(Name);
+            DebugLogger.Log(SearchName);
              for (int j = 0; j < DCon.DeckList.Count; j++)//デッキリストを1枚ずつ参照
              {
                  DebugLogger.Log(DCon.DeckList[j]);
                  if(DCon.DeckList[j].name == SearchName){
+                     DebugLogger.Log("削除しました");
                      DCon.DeckList.Remove(DCon.DeckList[j]);
                      //同名カードを複数枚削除しないように一度やったら抜ける
                      GManager.instance.DeleteMagicCheck = true;//削除を行ったことを記録する
                      //PCon.DefaultAttackUp();//プレイヤーの基本攻撃力を上げる
                      break;
-            }          
-        }
+                     }
+             }
+            //表示の上でのペア魔法のもう片方を削除する処理
+            SearchName += "(Clone)";
+            GameObject ShowDeckPanel;
+            ShowDeckPanel = transform.parent.gameObject;//親オブジェクトを取得
+            foreach (Transform child in ShowDeckPanel.transform)//子オブジェクト取得
+            {
+                if (child.gameObject.name.Equals(SearchName)){//取得したオブジェクトのペアになるオブジェクトなら削除する
+                    Destroy(child.gameObject);
+                    break;
+                }
+            }
+
 
         }
         Destroy(this.gameObject);//一覧表示からも削除
