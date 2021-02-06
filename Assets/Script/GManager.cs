@@ -48,6 +48,8 @@ public class GManager : MonoBehaviour
 
     public bool DeleteMagicCheck;//魔法の削除をしたかどうか/trueで削除を行った、falseでまだ削除を行っていない
     public bool MapBattleCheck;//trueのときは戦闘マップのみのリストを呼び出す
+
+    public bool EventBattle;
     private void Awake()
     {
 
@@ -57,6 +59,7 @@ public class GManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             WinNum = -1;
             MapBattleCheck = false;//最初はfalseにしておく
+            EventBattle = false;
         }
         else
         {
@@ -186,7 +189,12 @@ public class GManager : MonoBehaviour
         RewardCon.gameObject.SetActive(true);
         RewardText.gameObject.SetActive(true);
         SkipButton.gameObject.SetActive(true);
-        RCon.SelectCard();//3枚表示して選ぶ奴
+        if(EventBattle){
+            RCon.EventSelectCard();
+            EventBattle = false;
+        }else{
+            RCon.SelectCard();//3枚表示して選ぶ奴
+        }
     }
 
     public void Lose()

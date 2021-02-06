@@ -30,4 +30,9 @@ public class MapButtonController : MonoBehaviour
         MapSelectController MapCon = MapButtonPanel.GetComponent<MapSelectController>();
         MapCon.ShowDeck();
     }
+
+    public void EventBattleCheck()
+    {
+        GManager.instance.EventBattle = true;
+    }
 }

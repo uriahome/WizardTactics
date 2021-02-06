@@ -6,6 +6,8 @@ public class RewardController : MonoBehaviour
     // Start is called before the first frame update
 
     public List<GameObject> CardList = new List<GameObject>();//全カードリスト的な
+
+    public List<GameObject> PairCardList = new List<GameObject>();//ペア魔法のみのリスト
     //public List<GameObject> WishList = new List<GameObject>();//勝利時に出てくる3枚
     public int RandomNum;
     public int CardListRange;//カードリストの長さ
@@ -48,5 +50,25 @@ public class RewardController : MonoBehaviour
             RandomNumList.RemoveAt(RandomNum);
             DebugLogger.Log("選ばれたのは"+SelectNum);
         }
+    }
+
+    public void EventSelectCard(){
+        foreach(Transform child in gameObject.transform){
+            Destroy(child.gameObject);
+        }
+        Random.InitState(System.DateTime.Now.Millisecond);
+        CardListRange = PairCardList.Count;
+        RandomNumList = new List<int>();
+        for(int j = 0; j < CardListRange; j++){
+            RandomNumList.Add(j);
+        }
+        for(int i = 0; i < 3 ; i++){
+            RandomNum = Random.Range(0,RandomNumList.Count);
+            int SelectNum = RandomNumList[RandomNum];
+            GameObject Summon = Instantiate(CardList[SelectNum]) as GameObject;
+            Summon.transform.SetParent(RewardPanel.transform,false);
+            RandomNumList.RemoveAt(RandomNum);
+        }
+
     }
 }

@@ -472,6 +472,10 @@ MonoBehaviour:
   - {fileID: 8567172902583498721, guid: de8af7a2a0c4a414fb0e98604b0bc632, type: 3}
   - {fileID: 47561588984666108, guid: 3d95dbea33ce76c4f8054c04ba3de7d3, type: 3}
   - {fileID: 7453733408037822865, guid: 0cea1a4ee415fc6468996c06457bb5e7, type: 3}
+  PairCardList:
+  - {fileID: 2485068284507214659, guid: 2b8c689379823214ba9505be0157fbc8, type: 3}
+  - {fileID: 6978235391288580457, guid: 2b9aa0cc5f166724e9e0f8928275b6f8, type: 3}
+  - {fileID: 4650210626410204625, guid: 25030937239b08649aba5d4c8be86d0a, type: 3}
   RandomNum: 0
   CardListRange: 10
   RewardPanel: {fileID: 5062823908366275169}
