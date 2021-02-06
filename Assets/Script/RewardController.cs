@@ -15,6 +15,8 @@ public class RewardController : MonoBehaviour
     public GameObject RewardPanel;//キャンバスの下のこのオブジェクトにこのスクリプトをつける。
 
     public List<int> RandomNumList;// = new List<int>();
+
+    
     void Start()
     {
         //this.gameObject.SetActive(false);
@@ -53,6 +55,7 @@ public class RewardController : MonoBehaviour
     }
 
     public void EventSelectCard(){
+        //DebugLogger.Log("イベント戦勝利！");
         foreach(Transform child in gameObject.transform){
             Destroy(child.gameObject);
         }
@@ -65,7 +68,7 @@ public class RewardController : MonoBehaviour
         for(int i = 0; i < 3 ; i++){
             RandomNum = Random.Range(0,RandomNumList.Count);
             int SelectNum = RandomNumList[RandomNum];
-            GameObject Summon = Instantiate(CardList[SelectNum]) as GameObject;
+            GameObject Summon = Instantiate(PairCardList[SelectNum]) as GameObject;
             Summon.transform.SetParent(RewardPanel.transform,false);
             RandomNumList.RemoveAt(RandomNum);
         }

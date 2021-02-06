@@ -337,6 +337,7 @@ MonoBehaviour:
   - {fileID: 850650656821027215, guid: 4f149a721fac2f64a8e2f67aa1805d81, type: 3}
   - {fileID: 8066079237385367634, guid: 8a641e946579fda4487016fabc2e1fab, type: 3}
   - {fileID: 3439654325196632328, guid: 2f61776fb9b0c1344ac8957f595e5a9b, type: 3}
+  - {fileID: 5899402675753452080, guid: 1f163b3f52b85944d8f0f5adde7e5ccd, type: 3}
   RandomNum: 0
   MapListRange: 0
   MapPanel: {fileID: 4357815942039787191}
@@ -1560,6 +1561,11 @@ PrefabInstance:
     - target: {fileID: 8804723247200949228, guid: 1f163b3f52b85944d8f0f5adde7e5ccd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5027473449368057361}
+    - target: {fileID: 8804723247200949228, guid: 1f163b3f52b85944d8f0f5adde7e5ccd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 5027473449368057361}
     m_RemovedComponents: []

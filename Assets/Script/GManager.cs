@@ -189,11 +189,14 @@ public class GManager : MonoBehaviour
         RewardCon.gameObject.SetActive(true);
         RewardText.gameObject.SetActive(true);
         SkipButton.gameObject.SetActive(true);
-        if(EventBattle){
+        if(!EventBattle){
+            DebugLogger.Log("通常戦勝利！");
+            RCon.SelectCard();//3枚表示して選ぶ奴
+            //EventBattle = false;
+        }else{
+            DebugLogger.Log("イベント戦勝利！");
             RCon.EventSelectCard();
             EventBattle = false;
-        }else{
-            RCon.SelectCard();//3枚表示して選ぶ奴
         }
     }
 
