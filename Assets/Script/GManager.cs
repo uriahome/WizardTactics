@@ -148,6 +148,7 @@ public class GManager : MonoBehaviour
     }
     public void SelectNextEnemy(int SelectNum)
     {
+        RCon.Refresh();//報酬を呼び出していないとチェックする
         //選択された番号に応じた敵を出して戦闘を始める
         audio1.Stop();//今流れているのを止めてから流す
         audio1.PlayOneShot(BGM_battle1);
@@ -168,7 +169,7 @@ public class GManager : MonoBehaviour
     public void BattleStart()
     {
         DebugLogger.Log("戦闘開始");
-        RCon.RewardCheck = false;//報酬を呼び出していないとチェックする
+        //RCon.Refresh();//報酬を呼び出していないとチェックする
         audio1.Stop();//今流れているのを止めてから流す
         audio1.PlayOneShot(BGM_battle1);
         RewardText.gameObject.SetActive(false);
