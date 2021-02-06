@@ -16,10 +16,12 @@ public class RewardController : MonoBehaviour
 
     public List<int> RandomNumList;// = new List<int>();
 
+    public bool RewardCheck;//報酬を呼び出したかどうか判定する
     
     void Start()
     {
         //this.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -33,6 +35,12 @@ public class RewardController : MonoBehaviour
 
     public void SelectCard()
     {//報酬のカードを3枚表示する
+        if(RewardCheck){
+            DebugLogger.Log("お返ししますー");
+            return;
+        }else{
+            RewardCheck = true;
+        }
         foreach (Transform child in gameObject.transform)//子オブジェクト全削除
         {
             Destroy(child.gameObject);
@@ -55,6 +63,12 @@ public class RewardController : MonoBehaviour
     }
 
     public void EventSelectCard(){
+        if(RewardCheck){
+            DebugLogger.Log("お返ししますー");
+            return;
+        }else{
+            RewardCheck = true;
+        }
         //DebugLogger.Log("イベント戦勝利！");
         foreach(Transform child in gameObject.transform){
             Destroy(child.gameObject);
@@ -73,5 +87,10 @@ public class RewardController : MonoBehaviour
             RandomNumList.RemoveAt(RandomNum);
         }
 
+    }
+
+    public void Refresh(){
+        DebugLogger.Log("Refresh");
+        RewardCheck = false;
     }
 }

@@ -167,6 +167,8 @@ public class GManager : MonoBehaviour
 
     public void BattleStart()
     {
+        DebugLogger.Log("戦闘開始");
+        RCon.RewardCheck = false;//報酬を呼び出していないとチェックする
         audio1.Stop();//今流れているのを止めてから流す
         audio1.PlayOneShot(BGM_battle1);
         RewardText.gameObject.SetActive(false);
