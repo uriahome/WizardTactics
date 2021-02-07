@@ -276,7 +276,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\u30BD\u30FC\u30C9\u3092\n2\u4F53\u53EC\u559A\n\u300C\u30DF\u30B9\u300D\u30923\u679A\u8FFD\u52A0"
+  m_Text: "\n\u30BD\u30FC\u30C9\u3092\n2\u4F53\u53EC\u559A\n<color=#ff00ffff>\u300C\u30DF\u30B9\u300D</color>\u30923\u679A\u8FFD\u52A0"
 --- !u!223 &4481694525547024516
 Canvas:
   m_ObjectHideFlags: 0

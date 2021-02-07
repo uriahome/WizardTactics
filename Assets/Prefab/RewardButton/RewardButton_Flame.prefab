@@ -276,7 +276,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "[\u30DA\u30A2]\n\u653B\u6483\u529B\u306E\u9AD8\u3044\n\u30E2\u30F3\u30B9\u30BF\u30FC"
+  m_Text: "<color=#00ffffff>[\u30DA\u30A2] </color>\n\u653B\u6483\u529B\u306E\u9AD8\u3044\n\u30E2\u30F3\u30B9\u30BF\u30FC"
 --- !u!223 &5079348555804625343
 Canvas:
   m_ObjectHideFlags: 0
@@ -453,4 +453,7 @@ MonoBehaviour:
   Build: 0
   AttackButton: {fileID: 0}
   AttackCon: {fileID: 0}
+  MyButton: {fileID: 0}
+  span: 0
+  delta: 0
   Dual: 0

@@ -333,7 +333,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30DE\u30CA\u56DE\u5FA9\u901F\u5EA6\n2\u56DE\u4E0A\u6607\n\u300C\u30DF\u30B9\u300D\u8FFD\u52A0"
+  m_Text: "\u30DE\u30CA\u56DE\u5FA9\u901F\u5EA6\n2\u56DE\u4E0A\u6607\n<color=#ff00ffff>\u300C\u30DF\u30B9\u300D</color>\u8FFD\u52A0"
 --- !u!1 &7575061154184569484
 GameObject:
   m_ObjectHideFlags: 0
