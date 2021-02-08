@@ -95,6 +95,6 @@ public class MapSelectController : MonoBehaviour
             Summon.transform.SetParent(ShowDeckPanel.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
         }//1枚ずつデッキを表示していく
 
-        this.gameObject.SetActive(false);//自分を非アクティブにする
+        //this.gameObject.SetActive(false);//自分を非アクティブにする
     }
 }
