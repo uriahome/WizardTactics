@@ -47,6 +47,7 @@ public class GManager : MonoBehaviour
     public AudioSource audio1;
 
     public bool DeleteMagicCheck;//魔法の削除をしたかどうか/trueで削除を行った、falseでまだ削除を行っていない
+    public bool CloneMagicCheck;//魔法の複製を行ったかどうか
     public bool MapBattleCheck;//trueのときは戦闘マップのみのリストを呼び出す
 
     public bool EventBattle;

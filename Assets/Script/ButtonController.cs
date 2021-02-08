@@ -58,7 +58,11 @@ public class ButtonController : MonoBehaviour
     {
         if (!GManager.instance.Battle)//戦闘中以外
         {
-            DeleteMagic();
+            if(!GManager.instance.DeleteMagicCheck){
+                DeleteMagic();
+            }else if(!GManager.instance.CloneMagicCheck){
+                CloneMagic();
+            }
             return;
         }
         int NowMana = PCon.Mana;
@@ -248,5 +252,10 @@ public class ButtonController : MonoBehaviour
         }
         Destroy(this.gameObject);//一覧表示からも削除
 
+    }
+
+    public void CloneMagic(){
+        DebugLogger.Log("ここで魔法を複製する処理を実行する");
+        DCon.DeckAdd(this.gameObject);
     }
 }
