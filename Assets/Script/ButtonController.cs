@@ -256,6 +256,40 @@ public class ButtonController : MonoBehaviour
 
     public void CloneMagic(){
         DebugLogger.Log("ここで魔法を複製する処理を実行する");
-        DCon.DeckAdd(this.gameObject);
+        string Name = this.gameObject.name;
+        Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
+        //DebugLogger.Log(Name);
+        //DebugLogger.Log(DCon.DeckList[0].name);
+        for (int j = 0; j < DCon.DeckList.Count; j++)//デッキリストを1枚ずつ参照
+        {
+            if(DCon.DeckList[j].name == Name){
+                DCon.DeckAdd(DCon.DeckList[j]);
+                GManager.instance.CloneMagicCheck = true;//複製を行ったことを記録する
+                //PCon.DefaultAttackUp();//プレイヤーの基本攻撃力を上げる
+                break;
+            }          
+        }
+        if(Dual){//ペア魔法ならどちらも消したい
+            string SearchName = Name.Substring(0, Name.Length - 1);//この行でButton_LのL部分を削除
+            string PairName = Name.Substring(Name.Length-1,1);//LまたはRの部分を取得
+            if(PairName[0] =='L'){//Lの時ときはRをRのときはLを探す
+                SearchName += "R";//Rを文字列に追加(相方を探すため)
+            }else{
+                SearchName += "L";//Lを文字列に追加(相方を探すため)
+            }
+             for (int j = 0; j < DCon.DeckList.Count; j++)//デッキリストを1枚ずつ参照
+             {
+                 DebugLogger.Log(DCon.DeckList[j]);
+                 if(DCon.DeckList[j].name == SearchName){
+                     DebugLogger.Log("削除しました");
+                     DCon.DeckAdd(DCon.DeckList[j]);
+                     //同名カードを複数枚削除しないように一度やったら抜ける
+                     GManager.instance.DeleteMagicCheck = true;//削除を行ったことを記録する
+                     //PCon.DefaultAttackUp();//プレイヤーの基本攻撃力を上げる
+                     break;
+                     }
+             }
+        }
+        //Destroy(this.gameObject);//一覧表示からも削除
     }
 }

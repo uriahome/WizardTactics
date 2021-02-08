@@ -1425,7 +1425,7 @@ PrefabInstance:
     - target: {fileID: 1633856417598949655, guid: e99ae04f889d9dd4bac42aa5a2818d59,
         type: 3}
       propertyPath: m_ConstraintCount
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 479910930230745586, guid: e99ae04f889d9dd4bac42aa5a2818d59,
         type: 3}
