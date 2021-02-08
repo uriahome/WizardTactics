@@ -349,6 +349,7 @@ MonoBehaviour:
   DCon: {fileID: 0}
   Deck: {fileID: 0}
   ShowDeckPanel: {fileID: 124550509431247087}
+  ExplanatoryText: {fileID: 7787207609931253936}
 --- !u!1 &4378914253250783951
 GameObject:
   m_ObjectHideFlags: 0

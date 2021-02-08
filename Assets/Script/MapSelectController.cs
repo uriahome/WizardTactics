@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MapSelectController : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class MapSelectController : MonoBehaviour
     public GameObject Deck;
 
     public GameObject ShowDeckPanel;
+
+    public Text ExplanatoryText;//説明文表示用のテキスト
+
+    
     void Start()
     {
         
@@ -95,6 +100,11 @@ public class MapSelectController : MonoBehaviour
             Summon.transform.SetParent(ShowDeckPanel.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
         }//1枚ずつデッキを表示していく
 
+        if(!GManager.instance.DeleteMagicCheck){
+            ExplanatoryText.text = "削除する魔法を選択".ToString();
+        }else{
+            ExplanatoryText.text = "複製する魔法を選択".ToString();
+        }
         //this.gameObject.SetActive(false);//自分を非アクティブにする
     }
 }
