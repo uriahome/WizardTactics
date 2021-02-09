@@ -245,4 +245,8 @@ public class GManager : MonoBehaviour
             break;
         } 
     }
+
+    public void MaxManaUp(){//プレイヤーの最大マナを上げるコマンドを実行する
+        PCon. DefaultMaxManaUp();
+    }
 }

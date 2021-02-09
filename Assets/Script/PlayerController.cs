@@ -192,4 +192,8 @@ public class PlayerController : MonoBehaviour
     public void DefaultAttackUp(){//基本攻撃力を上昇させるイベント
         DefaultAttack +=5;
     }
+
+    public void DefaultMaxManaUp(){//最大マナを上昇させるイベント
+        DefaultMaxMana++;
+    }
 }
