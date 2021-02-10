@@ -249,4 +249,8 @@ public class GManager : MonoBehaviour
     public void MaxManaUp(){//プレイヤーの最大マナを上げるコマンドを実行する
         PCon. DefaultMaxManaUp();
     }
+
+    public void ManaUp(){//戦闘開始時のマナを増やすコマンドを実行する
+        PCon.DefaultManaUp();
+    }
 }

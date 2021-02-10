@@ -196,4 +196,11 @@ public class PlayerController : MonoBehaviour
     public void DefaultMaxManaUp(){//最大マナを上昇させるイベント
         DefaultMaxMana++;
     }
+
+    public void DefaultManaUp(){//戦闘開始時のマナを上昇させるイベント
+        DefaultMana++;
+        if(DefaultMana >= DefaultMaxMana){
+            DefaultMana = DefaultMaxMana;
+        }
+    }
 }

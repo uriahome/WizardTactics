@@ -51,6 +51,10 @@ public class MapButtonController : MonoBehaviour
         GManager.instance.MaxManaUp();
     }
 
+    public void EventManaUp(){//戦闘開始時のマナを上げるイベントを実行する
+        GManager.instance.ManaUp();
+    }
+
     public void SkipReward(){//報酬をスキップする
         DebugLogger.Log("Skip!!");
         //GManager.instance.BattleStart();
