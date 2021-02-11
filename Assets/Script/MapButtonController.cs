@@ -55,9 +55,14 @@ public class MapButtonController : MonoBehaviour
         GManager.instance.ManaUp();
     }
 
+    public void EventThrowPotionCountUp(){//戦闘開始時の通常攻撃で投げるポーションの数増やすイベントを実行する
+        GManager.instance.ThrowPotionCountUp();
+    }
+
     public void SkipReward(){//報酬をスキップする
         DebugLogger.Log("Skip!!");
         //GManager.instance.BattleStart();
         GManager.instance.NextMapSelect();//マップ選択が追加されたのでそっちに移行する
     }
+    
 }

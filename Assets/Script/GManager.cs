@@ -253,4 +253,8 @@ public class GManager : MonoBehaviour
     public void ManaUp(){//戦闘開始時のマナを増やすコマンドを実行する
         PCon.DefaultManaUp();
     }
+
+    public void ThrowPotionCountUp(){//戦闘開始時の通常攻撃で投げるポーションの数を増やすイベントを実行する
+        PCon.DefaultThrowPotionCountUp();
+    }
 }

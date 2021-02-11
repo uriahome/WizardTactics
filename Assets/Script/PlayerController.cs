@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     public Monster PlayerMon;//自分のMonster.cs
 
+    public int DefaultThrowPotionCount;//初期に通常攻撃で投げるポーションの数
     public int ThrowPotionCount;//通常攻撃で投げるポーションの数
 
     // Start is called before the first frame update
@@ -81,13 +82,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetUp()
+    public void SetUp()//戦闘準備でプレイヤーの設定されたパラメータを初期値に戻す
     {
         Attack = DefaultAttack;//攻撃力をリセット
         Mana = DefaultMana;//マナもリセット
         AddMana = DefaultAddMana;
         MaxMana = DefaultMaxMana;//全部リセットしような...
-        ThrowPotionCount = 1;
+        ThrowPotionCount = DefaultThrowPotionCount;//ポーションを投げる数もリセットする
     }
 
     public void MagicExpansion()
@@ -172,7 +173,7 @@ public class PlayerController : MonoBehaviour
         DebugLogger.Log("ClockUp!!!");
     }
 
-    public void ThrowPotionCountUp(){//通常攻撃で投げるポーションの数を増やす
+    public void ThrowPotionCountUp(){//通常攻撃で投げるポーションの数を増やす(戦闘時)
         ThrowPotionCount++;
     }
 
@@ -202,5 +203,9 @@ public class PlayerController : MonoBehaviour
         if(DefaultMana >= DefaultMaxMana){
             DefaultMana = DefaultMaxMana;
         }
+    }
+
+    public void DefaultThrowPotionCountUp(){//戦闘開始時の通常攻撃でポーションを投げる数を上昇させるイベント
+        DefaultThrowPotionCount++;
     }
 }

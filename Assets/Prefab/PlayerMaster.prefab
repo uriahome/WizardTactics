@@ -369,6 +369,7 @@ MonoBehaviour:
   CursorObj: {fileID: 0}
   MousePos: {x: 0, y: 0, z: 0}
   PlayerMon: {fileID: 0}
+  DefaultThrowPotionCount: 1
   ThrowPotionCount: 0
 --- !u!50 &1262705661
 Rigidbody2D:
