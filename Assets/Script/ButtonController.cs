@@ -27,7 +27,7 @@ public class ButtonController : MonoBehaviour
     public float span;
     public float delta;
 
-    public bool Dual;//2枚合体のカードであるかどうか
+    public bool Dual;//2枚合体のカードであるかどうか[ペア]
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +56,7 @@ public class ButtonController : MonoBehaviour
     }
     public void OnClick() //ボタンが押されたとき
     {
-        if (!GManager.instance.Battle)//戦闘中以外
+        if (!GManager.instance.Battle)//戦闘中以外は削除か複製の処理に移行する
         {
             if(!GManager.instance.DeleteMagicCheck){
                 DeleteMagic();
@@ -127,6 +127,7 @@ public class ButtonController : MonoBehaviour
             //Debug.Log("コストを払えませんでした");
         }
     }
+
     public void OnMagic(string Name)//名前によって処理を変える
     {
 
@@ -183,6 +184,7 @@ public class ButtonController : MonoBehaviour
 
         }
     }
+
     public void RewardOnClick(int Num)
     {//報酬画面でのクリック時
         GManager.instance.BattleReward(Num);//自分の番号を送る
@@ -194,7 +196,7 @@ public class ButtonController : MonoBehaviour
         GManager.instance.NextMapSelect();//マップ選択が追加されたのでそっちに移行する
     }
 
-    public void DeleteMagic(){
+    public void DeleteMagic(){//デッキリストから選択されたカードを削除する処理
         if(GManager.instance.DeleteMagicCheck){
             return;//削除をすでに行っていたら処理をここで抜ける
         }
@@ -256,7 +258,7 @@ public class ButtonController : MonoBehaviour
 
     }
 
-    public void CloneMagic(){
+    public void CloneMagic(){//デッキリストから選択されたカードを複製する処理
         DebugLogger.Log("ここで魔法を複製する処理を実行する");
         string Name = this.gameObject.name;
         Name = Name.Replace("(Clone)", "");//名前を参照するためcloneの部分を消す
@@ -290,6 +292,7 @@ public class ButtonController : MonoBehaviour
              }
         }
 
+        //複製後の一覧を表示する
         GManager.instance.SelectShowDeck();
         GameObject MapButtonPanel = GameObject.Find("MapCanvas/MapButtonPanel");
         MapSelectController MapCon = MapButtonPanel.GetComponent<MapSelectController>();
