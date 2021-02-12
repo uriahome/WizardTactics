@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         CursorObj.gameObject.SetActive(true);
     }
 
-    public void HealAll(){
+    public void HealAll(){//戦闘中のプレイヤー側のキャラクターを全て回復させる
         GameObject Ally;
         foreach (GameObject obj in UnityEngine.Object.FindObjectsOfType(typeof(GameObject)))//Hierarchy上のオブジェクトをすべて取得
             {
@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
             }
     }
 
-    public void Demonic(){//魔力上昇1かいと2マナ回復とプレイヤーへのダメージ
+    public void Demonic(){//魔力上昇1回と2マナ回復とプレイヤーへのダメージ
         MagicEnhance();
         ManaEnhance();
         ManaEnhance();

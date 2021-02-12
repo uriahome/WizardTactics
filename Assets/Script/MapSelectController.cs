@@ -100,7 +100,7 @@ public class MapSelectController : MonoBehaviour
             Summon.transform.SetParent(ShowDeckPanel.transform, false);//falseにすることでローカル座標での位置サイズに対応してくれる
         }//1枚ずつデッキを表示していく
 
-        if(!GManager.instance.DeleteMagicCheck){
+        if(!GManager.instance.DeleteMagicCheck){//状況に応じてテキストを変更する
             ExplanatoryText.text = "削除する魔法を選択".ToString();
         }else{
             ExplanatoryText.text = "複製する魔法を選択".ToString();
