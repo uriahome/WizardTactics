@@ -297,13 +297,13 @@ public class Monster : MonoBehaviour
     }
 
     public void SelfDestruct()
-    {//自爆
+    {//自爆(自身の体力の10%ダメージを受ける)
         int Damage;
         Damage = (int)(MaxHp * 0.1f);
         AttackHit(Damage);
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)//接触判定
     {
         if (IsEnemy)//敵かどうか
         {

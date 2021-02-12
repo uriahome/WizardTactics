@@ -52,6 +52,7 @@ public class AttackButtonController : MonoBehaviour
         AButton.interactable = false;//使用不可に
         StartCoroutine(AttackThrow(0,PCon.ThrowPotionCount));//2つ以上の引数を渡すにはコルーチンの関数名を文字列で指定しないこの方法を用いる必要がある
     }
+    
     public IEnumerator AttackThrow(int PotionNum,int Num){//投げるポーションの数を代入する//PotionNum:0で赤:1で青
         int Count = 0;
         float interval = 0.1f;

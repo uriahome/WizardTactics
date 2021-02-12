@@ -22,7 +22,7 @@ public class ReviewImage : MonoBehaviour
     {
         
     }
-    public void OnClick(){
+    public void OnClick(){//本のイラストを開いたり閉じたりする
         audio.PlayOneShot(sound);//効果音を再生(カチッ)
         ViewFlag = !ViewFlag;
         if(ViewFlag){
