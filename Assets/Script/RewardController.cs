@@ -62,7 +62,7 @@ public class RewardController : MonoBehaviour
         }
     }
 
-    public void EventSelectCard(){
+    public void EventSelectCard(){//イベント戦勝利時のペアカードのみのリスト
         if(RewardCheck){
             DebugLogger.Log("お返ししますー");
             return;
