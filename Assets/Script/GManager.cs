@@ -127,7 +127,7 @@ public class GManager : MonoBehaviour
 
     public void NextMapSelect()
     {
-        //次に戦うキャラクターを選択できるボタンを表示する
+        //次に戦うキャラクターを選択できるボタンを表示する。イベントもここで表示される
         RewardCon.gameObject.SetActive(false);
         RewardText.gameObject.SetActive(false);
         SkipButton.gameObject.SetActive(false);
@@ -167,7 +167,7 @@ public class GManager : MonoBehaviour
         EnemyMan.SelectEnemyStart(SelectNum);
     }
 
-    public void BattleStart()
+    public void BattleStart()//戦闘開始時に各オブジェクトの表示を非表示にしたりする
     {
         DebugLogger.Log("戦闘開始");
         //RCon.Refresh();//報酬を呼び出していないとチェックする
@@ -215,14 +215,14 @@ public class GManager : MonoBehaviour
         SCon.ChangeTitle();//タイトルに戻る
         Destroy(this.gameObject);//ここで消さないとタイトルからリスタートした時に試合開始できなかったため負けたら削除するように変更
     }
-    
+
     public IEnumerator WaitTime()
     {//0.1秒待機
         yield return new WaitForSeconds(0.1f);//時間を置くことでDCon.DeckPreparation()のエラーを回避無理やりだがとりあえずこれで
         DCon.DeckPreparation_Act();
     }
 
-    public void BattleChange()
+    public void BattleChange()//BGMを変える
     {
         audio1.Stop();//今流れているのを止めてから流す
         audio1.PlayOneShot(BGM_battle_change);

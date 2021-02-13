@@ -36,7 +36,7 @@ public class ResultController : MonoBehaviour
     {
         DebugLogger.Log("Finish!!!");
         if (!isFinish)
-        {
+        {//一度だけShowDeck()を実行するようにisFinishで制御している
             isFinish = true;
             ShowDeck();
         }
