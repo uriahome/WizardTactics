@@ -135,11 +135,13 @@ public class GManager : MonoBehaviour
         MapPanel.gameObject.SetActive(true);
         MapText.gameObject.SetActive(true);
         MapShowDeckPanel.gameObject.SetActive(false);
+
         if(MapBattleCheck){
             MapSelect.SelectMap_Battle();//戦闘のみのマップを呼び出す
         }else{
             MapSelect.SelectMap();//イベント込みのマップを呼び出す
         }
+        
         MapBattleCheck = !MapBattleCheck;//trueとfalseを反転させる
     }
     public void SelectShowDeck()
