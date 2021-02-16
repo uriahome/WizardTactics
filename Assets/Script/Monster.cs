@@ -10,16 +10,16 @@ public class Monster : MonoBehaviour
     public string Name;
 
     public float MaxHp;//最大体力
-    public float Hp;
-    public int Attack;
+    public float Hp;//現在の体力
+    public int Attack;//攻撃力
     public GameObject Body;
-    public int ManaCost;
-    public float Speed;
-    public float MaxSpeed;
+    public int ManaCost;//召喚に必要だったコスト(有効活用できていない)
+    public float Speed;//一度の時間で加速する値
+    public float MaxSpeed;//最大速度
     public float SpeedX;//現在の速度
     public bool IsEnemy;//敵か自陣か
     public bool IsAttack;//攻撃中かどうか
-    public float AttackSpan;
+    public float AttackSpan;//次の攻撃までの間隔
     public int MoveDirection;//進行方向
     public GameObject MyRangePosition;
     [SerializeField] MonsterRange MyRange = default;
@@ -294,6 +294,10 @@ public class Monster : MonoBehaviour
         Damage.color = new Color(0.0f,1.0f,0.0f,1.0f);
         DamageObj.transform.SetParent(DamageCanvas.transform,false);
         DamageObj.transform.position = this.transform.position;
+    }
+
+    public void AttackUp(){//攻撃力を10上昇させる。魔法などで呼び出す
+        this.Attack += 10;
     }
 
     public void SelfDestruct()

@@ -124,6 +124,19 @@ public class PlayerController : MonoBehaviour
             }
     }
 
+    public void AttackUpAll(){//戦闘中のプレイヤー側のキャラクターの攻撃力を上昇させる
+        GameObject Ally;
+        foreach (GameObject obj in UnityEngine.Object.FindObjectsOfType(typeof(GameObject)))//Hierarchy上のオブジェクトをすべて取得
+            {
+                if (obj.gameObject.tag == "PlayerMonster")//tagがPlayerMonsterなら
+                {
+                    Ally = obj.gameObject;
+                    Ally.GetComponent<Monster>().AttackUp();//攻撃力を上昇させる関数を実行する
+                    
+                }
+            }
+    }
+
     public void Demonic(){//魔力上昇1回と2マナ回復とプレイヤーへのダメージ
         MagicEnhance();
         ManaEnhance();
