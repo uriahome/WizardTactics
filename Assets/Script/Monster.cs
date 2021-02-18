@@ -297,7 +297,9 @@ public class Monster : MonoBehaviour
     }
 
     public void AttackUp(){//攻撃力を10上昇させる。魔法などで呼び出す
-        this.Attack += 10;
+        if(!PlayerMaster){//プレイヤーマスター以外なら実行する
+            this.Attack += 10;
+        }
     }
 
     public void SelfDestruct()

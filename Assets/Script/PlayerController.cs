@@ -133,9 +133,9 @@ public class PlayerController : MonoBehaviour
                 {
                     Ally = obj.gameObject;
                     AllyMonster = Ally.GetComponent<Monster>();
-                    if(!AllyMonster.PlayerMaster){//プレイヤーマスターの攻撃力は0にしたいのでここで上昇させない。そのためにBool型のPlayerMasterがfalseであるかチェックする      
-                        AllyMonster.AttackUp();//攻撃力を上昇させる関数を実行する
-                    }
+                    //if(!AllyMonster.PlayerMaster){//プレイヤーマスターの攻撃力は0にしたいのでここで上昇させない。そのためにBool型のPlayerMasterがfalseであるかチェックする      
+                    AllyMonster.AttackUp();//攻撃力を上昇させる関数を実行する
+                    //}
                     
                 }
             }
