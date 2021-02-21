@@ -73,13 +73,21 @@ MonoBehaviour:
   - {fileID: 4040939537779403001, guid: d3883174d52ff2d4ab1f20a0a4c6e987, type: 3}
   - {fileID: 2706674631640391059, guid: d3f16b9c9b8e7ca4d9b94688eea64fb1, type: 3}
   - {fileID: 5560098037049084441, guid: 201e71fb30ae138469496f83aded9809, type: 3}
+  - {fileID: 6627618597663445874, guid: deec4e6474a9a9240928f02daaa90da2, type: 3}
   ButtonPairList:
   - {fileID: 6626407158385171681, guid: a01de4cc9dd3b2c458b3812799a6f5c2, type: 3}
   - {fileID: 5790521629779838364, guid: 3c564574ed825f54eb6cb5cd293942cc, type: 3}
   - {fileID: 8622693992147488925, guid: 5d708ff4c165b7949aadd29f528207bf, type: 3}
+  - {fileID: 7024271542574423163, guid: 7d3c085f03ef8014cbee6d7736f4c280, type: 3}
   RewardCon: {fileID: 0}
   RCon: {fileID: 0}
   RewardText: {fileID: 0}
+  SkipButton: {fileID: 0}
+  MapCanvas: {fileID: 0}
+  MapPanel: {fileID: 0}
+  MapSelect: {fileID: 0}
+  MapText: {fileID: 0}
+  MapShowDeckPanel: {fileID: 0}
   ResultCon: {fileID: 0}
   ReCon: {fileID: 0}
   EnemyM: {fileID: 0}
@@ -94,6 +102,10 @@ MonoBehaviour:
   BGM_battle_change: {fileID: 8300000, guid: b44ad47324985224582fabc1dc0e4867, type: 3}
   BGM_gameover: {fileID: 8300000, guid: 2e08a3af2e5440f448f378a2421f5cc1, type: 3}
   audio1: {fileID: 0}
+  DeleteMagicCheck: 0
+  CloneMagicCheck: 0
+  MapBattleCheck: 0
+  EventBattle: 0
 --- !u!82 &4063732095437440095
 AudioSource:
   m_ObjectHideFlags: 0

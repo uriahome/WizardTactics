@@ -105,8 +105,9 @@ public class GManager : MonoBehaviour
 
     }
 
-    public void BattleReward(int Num)//デュアル魔法の場合似合い方を追加する処理、かなり無理やりなので調整したい
+    public void BattleReward(int Num)//デュアル魔法の場合に合い方を追加する処理、かなり無理やりなので調整したい
     {
+        //ここまできたらswitch文にしたほうがいいかも
         if (Num == 9)
         {//フレイムのLの場合Rを追加
             DCon.DeckAdd(ButtonPairList[0]);//デッキの中に新しいボタンを追加する
@@ -116,9 +117,14 @@ public class GManager : MonoBehaviour
         {
             DCon.DeckAdd(ButtonPairList[1]);//デッキの中に新しいボタンを追加する
             Debug.Log("ポーションフィーバーを習得しました");
-        }else if(Num ==18){
+        }else if(Num == 18)
+        {
             DCon.DeckAdd(ButtonPairList[2]);//デッキの中に新しいボタンを追加する
             Debug.Log("カクセイを習得しました");
+        }else if(Num == 24)
+        {
+            DCon.DeckAdd(ButtonPairList[3]);//デッキの中に新しいボタンを追加する
+            Debug.Log("クモノスを習得しました");
         }
         DCon.DeckAdd(ButtonList[Num]);//デッキの中に新しいボタンを追加する
         //BattleStart();
