@@ -41,10 +41,11 @@ public class Building : MonoBehaviour
     void MakeObj()
     {//ポーションとかを出す
         GameObject Fire = Instantiate(ShotObject) as GameObject;//炎の生成
-        Fire.gameObject.tag = "PlayerAttack";
+        //Fire.gameObject.tag = "PlayerAttack";
         Fire.transform.position = new Vector3(this.transform.position.x, 0.1f, this.transform.position.z);//自分の場所に出す
         if (MakeFire)//ポーションとかの場合は攻撃力を代入
         {
+            Fire.gameObject.tag = "PlayerAttack";//ポーションなどを作るときのみtagを変更する
             ShockWave SObj = Fire.GetComponent<ShockWave>();
             SObj.Power = PCon.Attack;//攻撃力の代入
             SObj.Move();

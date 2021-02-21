@@ -149,7 +149,7 @@ MonoBehaviour:
   Deck: {fileID: 0}
   Magic: 0
   Spell: {fileID: 0}
-  Build: 0
+  Build: 1
   AttackButton: {fileID: 0}
   AttackCon: {fileID: 0}
   MyButton: {fileID: 0}
