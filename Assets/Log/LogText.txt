@@ -6,3 +6,12 @@ LancerButton
 ThreeRedPotionButton
 ThreeRedPotionButton
 -----ここまで-----
+-----ここから-----
+23:14:59
+勝利数0
+GuardianButton
+KnightButton
+LancerButton
+ThreeRedPotionButton
+ThreeRedPotionButton
+-----ここまで-----
