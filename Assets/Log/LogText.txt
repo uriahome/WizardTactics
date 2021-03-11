@@ -1,3 +1,8 @@
 ここに使用したデッキ一覧を表示したい
-ここから
-ここまで
+-----ここから-----
+GuardianButton
+KnightButton
+LancerButton
+ThreeRedPotionButton
+ThreeRedPotionButton
+-----ここまで-----

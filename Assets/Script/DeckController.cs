@@ -162,10 +162,12 @@ public class DeckController : MonoBehaviour
 
     public void WriteText(){//テキストファイルにデッキの内容を書き込む
         string path = Application.dataPath +"/Log/LogText.txt";//保存先のパス
-        int i = 0;
-        List<string> DeckNameList = new List<string>();//現在のデッキの名前一覧
         DebugLogger.Log("LogTextに書き込みます");
-        File.AppendAllText(path,"ここから\n");
-        File.AppendAllText(path,"ここまで\n");
+        File.AppendAllText(path,"-----ここから-----\n");
+        for(int i=0;i<DeckList.Count;i++){
+            DebugLogger.Log(DeckList[i].gameObject.name);
+            File.AppendAllText(path,DeckList[i].gameObject.name + "\n");
+        }
+        File.AppendAllText(path,"-----ここまで-----\n");
     }
 }
