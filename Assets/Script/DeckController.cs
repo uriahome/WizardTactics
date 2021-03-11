@@ -164,7 +164,7 @@ public class DeckController : MonoBehaviour
         string path = Application.dataPath +"/Log/LogText.txt";//保存先のパス
         DebugLogger.Log("LogTextに書き込みます");
         File.AppendAllText(path,"-----ここから-----\n");
-        File.AppendAllText(path,System.DateTime.Now.ToLongTimeString() + "\n");
+        File.AppendAllText(path,System.DateTime.Now.Year.ToString() + "年" + System.DateTime.Now.Month.ToString() + "月" + System.DateTime.Now.Day.ToString() + "日" + System.DateTime.Now.ToLongTimeString() + "\n");
         File.AppendAllText(path,"勝利数" + GManager.instance.WinNum + "\n");
         for(int i=0;i<DeckList.Count;i++){
             DebugLogger.Log(DeckList[i].gameObject.name);

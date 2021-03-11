@@ -15,3 +15,17 @@ LancerButton
 ThreeRedPotionButton
 ThreeRedPotionButton
 -----ここまで-----
+-----ここから-----
+2021年3月11日23:20:46
+勝利数3
+GuardianButton
+KnightButton
+LancerButton
+ThreeRedPotionButton
+ThreeRedPotionButton
+PotionFeverButton_R
+PotionFeverButton_L
+KnightDualButton
+PotionFeverButton_L
+PotionFeverButton_R
+-----ここまで-----
