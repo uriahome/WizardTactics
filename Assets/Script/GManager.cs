@@ -213,9 +213,10 @@ public class GManager : MonoBehaviour
     }
 
     public void Lose()
-    {//ゲーム敗北時
+    {//ゲーム敗北時//7回目勝利時にも呼び出される終了処理
         ResultCon.gameObject.SetActive(true);
         ReCon.Finish();
+        DCon.WriteText();//ログファイルに書き込む
     }
 
 

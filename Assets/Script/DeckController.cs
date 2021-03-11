@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;//テキストの書き込みを行うために
 
 public class DeckController : MonoBehaviour
 {
@@ -157,5 +158,14 @@ public class DeckController : MonoBehaviour
 
     public void AddMiss(){
         NowDeckList.Add(MissButton);//一度だけ使用可能なミスボタンを追加する
+    }
+
+    public void WriteText(){//テキストファイルにデッキの内容を書き込む
+        string path = Application.dataPath +"/Log/LogText.txt";//保存先のパス
+        int i = 0;
+        List<string> DeckNameList = new List<string>();//現在のデッキの名前一覧
+        DebugLogger.Log("LogTextに書き込みます");
+        File.AppendAllText(path,"ここから\n");
+        File.AppendAllText(path,"ここまで\n");
     }
 }
