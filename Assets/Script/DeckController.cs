@@ -62,7 +62,7 @@ public class DeckController : MonoBehaviour
         BattleDeckList = new List<GameObject>(DeckList);//デッキリストの設定
     }
 
-    public void DeckShuffle()//デッキの中身をシャッフルする
+    public void DeckShuffle()//デッキの中身をシャッフルする(ランダムに並び替えてセットする)
     {
         for (int i = 0; i < BattleDeckList.Count; i++)
         {
@@ -80,7 +80,7 @@ public class DeckController : MonoBehaviour
         Draw = NowDeckList[NowDeckList.Count - 1];
         NowDeckList.RemoveAt(NowDeckList.Count - 1);
         //Debug.Log(Draw + "を引きました");
-        if (NowDeckList.Count == 0)
+        if (NowDeckList.Count == 0)//デッキの中身が0ならシャッフルを先に行う
         {
             DeckShuffle();
         }

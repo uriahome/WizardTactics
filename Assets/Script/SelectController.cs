@@ -22,7 +22,7 @@ public class SelectController : MonoBehaviour
 
     }
 
-    public void ChangeShow(int num)
+    public void ChangeShow(int num)//タイトル画面でのデッキ表示を切り替える
     {
         audio.PlayOneShot(sound);//効果音を再生(カチッ)
         switch (num)

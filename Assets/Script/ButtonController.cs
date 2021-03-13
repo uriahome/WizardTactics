@@ -49,7 +49,7 @@ public class ButtonController : MonoBehaviour
     void Update()
     {
         delta += Time.deltaTime;
-        if (delta >= span)
+        if (delta >= span)//登場後すぐには押せないように時間を計っている
         {
             MyButton.interactable = true;
         }
@@ -133,32 +133,32 @@ public class ButtonController : MonoBehaviour
 
         switch (Name)
         {
-            case "ThreeRedPotionButton":
+            case "ThreeRedPotionButton"://レッドポーション
                 AttackCon.ThreePotion(0);
                 break;
-            case "ThreePotionButton":
+            case "ThreePotionButton"://ブルーポーション
                 AttackCon.ThreePotion(1);
                 break;
-            case "MagicEnhanceButton":
+            case "MagicEnhanceButton"://ヒラメキ
                 Debug.Log("魔力アップ！！");
                 PCon.Attack += 10;//プレイヤー自身の攻撃力を上げる(ポーションとかの威力が上がる)
                 break;
-            case "MagicExpansionButton":
+            case "MagicExpansionButton"://キュウケイ
                 PCon.MagicExpansion();
                 break;
-            case "GreenPotionButton":
+            case "GreenPotionButton"://グリーンポーション
                 PCon.HealAll();
                 break;
-            case "PotionFeverButton_L":case "PotionFeverButton_R"://LでもRでも同じ効果
+            case "PotionFeverButton_L":case "PotionFeverButton_R"://LでもRでも同じ効果//ポーションフィーバー
                 AttackCon.FeverPotion();
                 break;
-            case "DemonicPactButton":
+            case "DemonicPactButton"://ケイヤク
                 PCon.Demonic();
                 break;
-            case "SnowstormButton":
+            case "SnowstormButton"://フブキ
                 PCon.Snowstorm();
                 break;
-            case "MagicalAwakeningButton_L":case "MagicalAwakeningButton_R"://LでもRでも同じ効果
+            case "MagicalAwakeningButton_L":case "MagicalAwakeningButton_R"://LでもRでも同じ効果//カクセイ
                 //Debug.Log("Awakening!!");
                 PCon.MagicalAwakening();
                 DCon.AddMiss();
@@ -166,14 +166,14 @@ public class ButtonController : MonoBehaviour
             case "MissButton"://ミスボタン
                 Debug.Log("Miss!");
                 break;
-            case "OverClockButton":
+            case "OverClockButton"://カソク
                 PCon.OverClock();
                 DCon.AddMiss();
                 break;
-            case "PotionExpansionButton":
+            case "PotionExpansionButton"://ゾウリョウ
                 PCon.ThrowPotionCountUp();
                 break;
-            case "KnightDualButton"://ソードを2体召喚するがミスを3枚追加する
+            case "KnightDualButton"://ソードを2体召喚するがミスを3枚追加する//ツインソード
                 PCon.DualSummon(Card);
                 DCon.AddMiss();
                 DCon.AddMiss();

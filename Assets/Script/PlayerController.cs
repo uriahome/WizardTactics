@@ -158,7 +158,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Snowstorm(){
+    public void Snowstorm(){//「フブキ」の処理
         GameObject Enemy;
         Monster EnemyMonster;
         int Damage;
