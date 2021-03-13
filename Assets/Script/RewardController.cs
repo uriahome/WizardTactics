@@ -29,7 +29,7 @@ public class RewardController : MonoBehaviour
     {
         if (GManager.instance.Battle)//戦闘中ならば
         {
-            this.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);//隠す
         }
     }
 
@@ -46,10 +46,10 @@ public class RewardController : MonoBehaviour
             Destroy(child.gameObject);
         }
         Random.InitState(System.DateTime.Now.Millisecond);//現在の時間をシード値にする
-        CardListRange = CardList.Count;
-        RandomNumList = new List<int>();
+        CardListRange = CardList.Count;//カードリストの長さを代入
+        RandomNumList = new List<int>();//番号リストを作る
         for(int j =0;j<CardListRange;j++){
-            RandomNumList.Add(j);
+            RandomNumList.Add(j);//0空数字を割り振っていく
         }
         for (int i = 0; i < 3; i++)
         {
@@ -57,12 +57,12 @@ public class RewardController : MonoBehaviour
             int SelectNum =RandomNumList[RandomNum];
             GameObject Summon = Instantiate(CardList[SelectNum]) as GameObject;//カードリストの対応した番号から出す
             Summon.transform.SetParent(RewardPanel.transform,false);//RewardPanelの子供にする
-            RandomNumList.RemoveAt(RandomNum);
+            RandomNumList.RemoveAt(RandomNum);//既に選ばれた番号を削除する
             DebugLogger.Log("選ばれたのは"+SelectNum);
         }
     }
 
-    public void EventSelectCard(){//イベント戦勝利時のペアカードのみのリスト
+    public void EventSelectCard(){//イベント戦勝利時のペアカードのみのリスト//番号の抽選などは報酬カードと同じ処理
         if(RewardCheck){
             DebugLogger.Log("お返ししますー");
             return;
