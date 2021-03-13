@@ -23,11 +23,11 @@ public class EnemyMaster : MonoBehaviour
         if (GManager.instance.Battle)//戦闘中ならば
         {
             this.delta += Time.deltaTime;
-            if (this.delta > this.span)
+            if (this.delta > this.span)//モンスターを召喚する
             {
                 this.delta = 0;
                 int Num = Random.Range(1, 100);
-                int SummonNum = Num % EnemyCount;
+                int SummonNum = Num % EnemyCount;//自分の召喚できるリストの大きさに合わせる
                 GameObject Enemy = Instantiate(EnemyList[SummonNum]) as GameObject;
                 Enemy.transform.position = new Vector3(this.transform.position.x-1.0f, 0.1f, this.transform.position.z);//場所微調整
             }
