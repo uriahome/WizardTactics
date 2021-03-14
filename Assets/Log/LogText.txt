@@ -29,3 +29,12 @@ KnightDualButton
 PotionFeverButton_L
 PotionFeverButton_R
 -----ここまで-----
+-----ここから-----
+2021年3月14日13:08:13
+勝利数0
+DemonicPactButton
+PotionExpansionButton
+IceSlimeButton
+SpiderwebButton_L
+SpiderwebButton_R
+-----ここまで-----

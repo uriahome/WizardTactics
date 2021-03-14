@@ -174,17 +174,17 @@ public class ButtonController : MonoBehaviour
                 PCon.ThrowPotionCountUp();
                 break;
             case "KnightDualButton"://ソードを2体召喚するがミスを3枚追加する//ツインソード
-                PCon.DualSummon(Card);
+                //PCon.DualSummon(Card);
+                PCon.MultipleSummon(Card,2);
                 DCon.AddMiss();
                 DCon.AddMiss();
                 DCon.AddMiss();
                 break;
-            
-            
-
+            case "IceSlimeButton"://アイススライム4体召喚するので2*2で出したい
+                PCon.MultipleSummon(Card,4);
+                break;
         }
     }
-
     public void RewardOnClick(int Num)
     {//報酬画面でのクリック時
         GManager.instance.BattleReward(Num);//自分の番号を送る
