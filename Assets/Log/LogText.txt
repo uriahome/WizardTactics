@@ -38,3 +38,16 @@ IceSlimeButton
 SpiderwebButton_L
 SpiderwebButton_R
 -----ここまで-----
+-----ここから-----
+2021年3月14日13:22:33
+勝利数7
+ThreeRedPotionButton
+ThreeRedPotionButton
+MagicExpansionButton
+MagicExpansionButton
+OverClockButton
+SnowstormButton
+MagicEnhanceButton
+Potion_kilnButton
+GreenPotionButton
+-----ここまで-----

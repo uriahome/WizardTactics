@@ -194,11 +194,11 @@ public class PlayerController : MonoBehaviour
         ThrowPotionCount++;
     }
 
-    public void MultipleSummon(GameObject Card , int  num){//num回同じモンスターを召喚する
+    public void MultipleSummon(GameObject Card,int  num){//num回同じモンスターを召喚する
        StartCoroutine(SummonDelay(Card,num));
     }
 
-    IEnumerator SummonDelay(GameObject Card, int num)//0.5秒の間隔を置いて召喚する
+    IEnumerator SummonDelay(GameObject Card,int num)//0.5秒の間隔を置いて召喚する
     {
         for(int i = 0; i< num;i++){
             GameObject Summon = Instantiate(Card) as GameObject;//生成する
