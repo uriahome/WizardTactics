@@ -11,3 +11,5 @@ Unity 2D Tower Defense Game
 魔法の中には2つ合わせて使用する[ペア]魔法が存在します。  
 ![demo](https://raw.githubusercontent.com/uriahome/WizardTactics/master/Assets/GIF/Battle3.gif)  
 [ビルド]魔法は好きな場所に設置して戦闘をサポートしてくれます。  
+ダウンロード[https://github.com/uriahome/WizardTactics/tree/master/Assets/Game]  
+zipファイルをダウンロード後、解凍してから[WizardTactics.exe]を起動することで遊ぶことができます。
