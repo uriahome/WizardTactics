@@ -12,4 +12,6 @@ Unity 2D Tower Defense Game
 ![demo](https://raw.githubusercontent.com/uriahome/WizardTactics/master/Assets/GIF/Battle3.gif)  
 [ビルド]魔法は好きな場所に設置して戦闘をサポートしてくれます。  
 ダウンロード[https://github.com/uriahome/WizardTactics/tree/master/Assets/Game]  
-zipファイルをダウンロード後、解凍してから[WizardTactics.exe]を起動することで遊ぶことができます。
+zipファイルをダウンロード後、解凍してから[WizardTactics.exe]を起動することで遊ぶことができます。  
+プレイ動画[https://github.com/uriahome/WizardTactics/blob/master/Assets/Movie/movie.mp4]  
+UnityRecorderを使用して録画した3分ほどの動画があります。  
