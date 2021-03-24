@@ -99,3 +99,12 @@ PotionFeverButton_L
 PotionExpansionButton
 Potion_kilnButton
 -----ここまで-----
+-----ここから-----
+2021年3月24日23:18:33
+勝利数0
+MagicEnhanceButton
+MagicExpansionButton
+ThreePotionButton
+ThreeRedPotionButton
+ThreeRedPotionButton
+-----ここまで-----
