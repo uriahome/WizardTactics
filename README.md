@@ -40,4 +40,14 @@ OS:Windows 10 64bit
     「ペア」魔法と呼ばれる2つの魔法のイラストが重なる魔法の実装に当たり。手札に該当する魔法がそろった場合にイラストが噛み合っていないと不自然になる機能が追加されました.  
     それに伴い、SortHands()を作成しHandListの中身を名前順に並べる機能を実装しました。  
     この機能は魔法を使用するたびに利用する、頻繁に利用する機能であるため、
-    GameObject.Find()のようなシーン全体から探索する重い処理を多用するのを避け、子オブジェクトを取得する方法を用いました.
+    GameObject.Find()のようなシーン全体から探索する重い処理を多用するのを避け、子オブジェクトを取得する方法を用いました.  
+# 使用ソフト 
+* Unity 2018.3.7f1  
+* Aseprite  ドット絵の素材を作成するのに使用しました。  
+# 謝辞  
+以下の素材を使用させていただきました。  
+- BGM・効果音
+  * 魔王魂 （https://maoudamashii.jokersounds.com/music_bgm.html）
+  * SKIPMORE(http://www.skipmore.com/)
+- フォント
+  * PixelMplus（ピクセル・エムプラス）(http://itouhiro.hatenablog.com/entry/20130602/font)
