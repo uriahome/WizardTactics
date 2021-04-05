@@ -16,6 +16,7 @@ Unity 2D Tower Defense Game
 # ダウンロード  
 [https://github.com/uriahome/WizardTactics/tree/master/Assets/Game]  
 zipファイルをダウンロード後、解凍してから[WizardTactics.exe]を起動することで遊ぶことができます。  
+また、起動する際に、アスペクト比が**16:9となるように解像度**を選択してください。  
 # プレイ動画  
 [https://github.com/uriahome/WizardTactics/blob/master/Assets/Movie/movie.mp4]  
 UnityRecorderを使用して録画した3分ほどの動画があります。 
