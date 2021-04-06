@@ -1,5 +1,10 @@
 # WizardTactics
 Unity 2D Tower Defense Game  
+# 目次  
+1. [概要](#anchor1)  
+2. [ダウンロード](#anchor2)
+
+<a id="anchor1"></a>
 # 概要  
 「うりあの魔導書」はタワーディフェンスゲームです。  
 ![demo](https://raw.githubusercontent.com/uriahome/WizardTactics/master/Assets/Sprite/UriaHead.png)  
@@ -13,6 +18,7 @@ Unity 2D Tower Defense Game
 魔法の中には2つ合わせて使用する[ペア]魔法が存在します。  
 ![demo](https://raw.githubusercontent.com/uriahome/WizardTactics/master/Assets/GIF/Battle3.gif)  
 [ビルド]魔法は好きな場所に設置して戦闘をサポートしてくれます。  
+<a id="anchor2"></a>
 # ダウンロード  
 [https://github.com/uriahome/WizardTactics/tree/master/Assets/Game]  
 zipファイルをダウンロード後、解凍してから[WizardTactics.exe]を起動することで遊ぶことができます。  
