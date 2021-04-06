@@ -3,6 +3,12 @@ Unity 2D Tower Defense Game
 # 目次  
 1. [概要](#anchor1)  
 2. [ダウンロード](#anchor2)
+3. [プレイ動画](#anchor3)
+4. [動作環境](#anchor4)
+5. [工夫した点](#anchor5)
+6. [基本操作](#anchor6)
+7. [使用ソフト](#anchor7)
+8. [謝辞](#anchor8)
 
 <a id="anchor1"></a>
 # 概要  
@@ -23,13 +29,16 @@ Unity 2D Tower Defense Game
 [https://github.com/uriahome/WizardTactics/tree/master/Assets/Game]  
 zipファイルをダウンロード後、解凍してから[WizardTactics.exe]を起動することで遊ぶことができます。  
 また、起動する際に、アスペクト比が**16:9となるように解像度**を選択してください。  
+<a id="anchor3"></a>
 # プレイ動画  
 [https://github.com/uriahome/WizardTactics/blob/master/Assets/Movie/movie.mp4]  
 UnityRecorderを使用して録画した3分ほどの動画があります。 
+<a id="anchor4"></a>
 # 動作環境  
 ※動作確認済み環境  
 PC  
 OS:Windows 10 64bit
+<a id="anchor5"></a>
 # 工夫した点  
 - デッキリストを4つに分割した点  
   https://github.com/uriahome/WizardTactics/blob/master/Assets/Script/DeckController.cs  
@@ -50,15 +59,18 @@ OS:Windows 10 64bit
     それに伴い、SortHands()を作成しHandListの中身を名前順に並べる機能を実装しました。  
     この機能は魔法を使用するたびに利用する、頻繁に利用する機能であるため、
     GameObject.Find()のようなシーン全体から探索する重い処理を多用するのを避け、子オブジェクトを取得する方法を用いました.  
+<a id="anchor6"></a>
 # 基本操作  
 　**すべての操作はマウスのクリックで行われます。**  
   1. タイトル画面で左右のどちらかのキャラクターをクリックして初期魔導書を選択します。  
   2. [START]をクリックすることで戦闘画面にシーンが移動します。  
   3. 戦闘シーンでは、5種類の魔法と一番右の通常攻撃をクリックすることで使用することができます。  
   4. 戦闘終了後の報酬画面やイベントもクリックすることでその選択を行うことができます。  
+<a id="anchor7"></a>
 # 使用ソフト 
 * Unity 2018.3.7f1  
 * Aseprite  ドット絵の素材を作成するのに使用しました。  
+<a id="anchor8"></a>
 # 謝辞  
 以下の素材を使用させていただきました。  
 - BGM・効果音
