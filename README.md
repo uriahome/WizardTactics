@@ -19,7 +19,7 @@ Unity 2D Tower Defense Game
 ![demo](https://raw.githubusercontent.com/uriahome/WizardTactics/master/Assets/GIF/Battle1.gif)  
 戦闘中はマナを消費して5つの魔法から1つをクリックして発動できます。発動した魔法は削除されて新しい魔法と入れ替わります。
 また、一番右の顔アイコンはマナを消費せず削除もされません。 
-戦闘終了後には、**3種類の魔法から1つ**習得することができます。
+戦闘終了後には、**3種類の魔法から1つ**習得することができます。  
 ![demo](https://raw.githubusercontent.com/uriahome/WizardTactics/master/Assets/GIF/Battle2.gif)  
 魔法の中には2つ合わせて使用する[ペア]魔法が存在します。  
 ![demo](https://raw.githubusercontent.com/uriahome/WizardTactics/master/Assets/GIF/Battle3.gif)  
