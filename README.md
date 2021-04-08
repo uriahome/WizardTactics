@@ -83,3 +83,6 @@ https://github.com/uriahome/WizardTactics/tree/master/Assets/Script
   * SKIPMORE(http://www.skipmore.com/)
 - フォント
   * PixelMplus（ピクセル・エムプラス）(http://itouhiro.hatenablog.com/entry/20130602/font)
+
+# 連絡先
+j318244@ns.kogakuin.ac.jp
