@@ -10,6 +10,7 @@ Unity 2D Tower Defense Game
 7. [基本操作](#anchor7)
 8. [使用ソフト](#anchor8)
 9. [謝辞](#anchor9)
+10. [連絡先](#anchor10)
 
 <a id="anchor1"></a>
 # 概要  
@@ -83,6 +84,6 @@ https://github.com/uriahome/WizardTactics/tree/master/Assets/Script
   * SKIPMORE(http://www.skipmore.com/)
 - フォント
   * PixelMplus（ピクセル・エムプラス）(http://itouhiro.hatenablog.com/entry/20130602/font)
-
+<a id="anchor10"></a>
 # 連絡先
 j318244@ns.kogakuin.ac.jp
