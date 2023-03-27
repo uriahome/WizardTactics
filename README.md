@@ -86,4 +86,4 @@ https://github.com/uriahome/WizardTactics/tree/master/Assets/Script
   * PixelMplus（ピクセル・エムプラス）(http://itouhiro.hatenablog.com/entry/20130602/font)
 <a id="anchor10"></a>
 # 連絡先
-j318244@ns.kogakuin.ac.jp
+em22020@ns.kogakuin.ac.jp
